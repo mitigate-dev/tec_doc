@@ -14,6 +14,7 @@ end
 
 RSpec.configure do |config|
   config.extend VCR::RSpec::Macros
+  config.before(:all) do
+    TecDoc.client = TecDoc::Client.new(:provider => 330)
+  end
 end
-
-TecDoc.client = TecDoc::Client.new(:provider => 330)

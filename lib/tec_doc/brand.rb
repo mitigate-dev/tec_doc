@@ -9,7 +9,7 @@ module TecDoc
       response = TecDoc.client.request(:get_brands_for_assortment)
       response.to_hash[:get_brands_for_assortment_response][:get_brands_for_assortment_return][:data][:array][:array].map do |attributes|
         manufacturer = new
-        manufacturer.number = attributes[:brand_no].to_s
+        manufacturer.number = attributes[:brand_no].to_i
         manufacturer.name = attributes[:brand_name].to_s
         manufacturer
       end

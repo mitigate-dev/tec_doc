@@ -11,7 +11,7 @@
       message: OK
     headers:
       date:
-      - Fri, 21 Oct 2011 15:29:18 GMT
+      - Fri, 21 Oct 2011 15:29:35 GMT
       server:
       - Apache
       transfer-encoding:
@@ -4709,32 +4709,106 @@
       xmlns:ins3="http://specialselection.datatype.tocinterface.cat.tecdoc.net" xmlns:ins4="http://axlesselection.datatype.tocinterface.cat.tecdoc.net"
       xmlns:ins5="http://carselection.datatype.tocinterface.cat.tecdoc.net" xmlns:ins6="http://options.datatype.tocinterface.cat.tecdoc.net"
       xmlns:ins7="http://motorselection.datatype.tocinterface.cat.tecdoc.net" xmlns:ins8="http://assemblygroupselection.datatype.tocinterface.cat.tecdoc.net"
-      xmlns:ins9="http://controlpanel.datatype.tocinterface.cat.tecdoc.net"><env:Body><ins0:getBrandsForAssortment><wsdl:in><wsdl:provider>330</wsdl:provider></wsdl:in></ins0:getBrandsForAssortment></env:Body></env:Envelope>
+      xmlns:ins9="http://controlpanel.datatype.tocinterface.cat.tecdoc.net"><env:Body><ins0:getVehicleModels3><wsdl:in><wsdl:provider>330</wsdl:provider><wsdl:lang>lv</wsdl:lang><wsdl:carType>1</wsdl:carType><wsdl:countryGroupFlag>false</wsdl:countryGroupFlag><wsdl:countriesCarSelection>lv</wsdl:countriesCarSelection><wsdl:manuId>16</wsdl:manuId><wsdl:evalFavor>false</wsdl:evalFavor></wsdl:in></ins0:getVehicleModels3></env:Body></env:Envelope>
     headers:
       soapaction:
-      - ! '"getBrandsForAssortment"'
+      - ! '"getVehicleModels3"'
       content-type:
       - text/xml;charset=UTF-8
       content-length:
-      - '1130'
+      - '1353'
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
       message: OK
     headers:
       date:
-      - Fri, 21 Oct 2011 15:29:26 GMT
+      - Fri, 21 Oct 2011 15:29:40 GMT
       server:
       - Apache
-      content-length:
-      - '1097'
+      transfer-encoding:
+      - chunked
       content-type:
       - text/xml;charset=utf-8
     body: <?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-      xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><getBrandsForAssortmentResponse
-      xmlns="http://webservicepilot.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"><getBrandsForAssortmentReturn
-      xmlns=""><data><array><array><brandName>A.B.S.</brandName><brandNo>206</brandNo></array><array><brandName>HELLA</brandName><brandNo>2</brandNo></array><array><brandName>BOSCH</brandName><brandNo>30</brandNo></array><array><brandName>MONROE</brandName><brandNo>37</brandNo></array><array><brandName>BOSAL</brandName><brandNo>41</brandNo></array><array><brandName>QUINTON
-      HAZELL</brandName><brandNo>57</brandNo></array><array><brandName>NWB</brandName><brandNo>145</brandNo></array><array><brandName>AMC
-      Filter</brandName><brandNo>146</brandNo></array></array><empty>false</empty></data><status>200</status><statusText
-      xsi:nil="true"/></getBrandsForAssortmentReturn></getBrandsForAssortmentResponse></soapenv:Body></soapenv:Envelope>
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><getVehicleModels3Response
+      xmlns="http://webservicepilot.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"><getVehicleModels3Return
+      xmlns=""><data><array><array><modelId>164</modelId><modelname>02 (E10)</modelname><yearOfConstrFrom>196604</yearOfConstrFrom><yearOfConstrTo>197707</yearOfConstrTo></array><array><modelId>1608</modelId><modelname>02
+      Kabriolets (E10)</modelname><yearOfConstrFrom>196712</yearOfConstrFrom><yearOfConstrTo>197510</yearOfConstrTo></array><array><modelId>1602</modelId><modelname>02
+      Touring (E6)</modelname><yearOfConstrFrom>197101</yearOfConstrFrom><yearOfConstrTo>197507</yearOfConstrTo></array><array><modelId>5114</modelId><modelname>1
+      (E81, E87)</modelname><yearOfConstrFrom>200409</yearOfConstrFrom><yearOfConstrTo
+      xsi:nil="true"/></array><array><modelId>9620</modelId><modelname>1 (F20)</modelname><yearOfConstrFrom>201106</yearOfConstrFrom><yearOfConstrTo
+      xsi:nil="true"/></array><array><modelId>6441</modelId><modelname>1 Coupe (E82)</modelname><yearOfConstrFrom>200710</yearOfConstrFrom><yearOfConstrTo
+      xsi:nil="true"/></array><array><modelId>6713</modelId><modelname>1 Kabriolets
+      (E88)</modelname><yearOfConstrFrom>200803</yearOfConstrFrom><yearOfConstrTo
+      xsi:nil="true"/></array><array><modelId>187</modelId><modelname>1500-2000</modelname><yearOfConstrFrom>196210</yearOfConstrFrom><yearOfConstrTo>197211</yearOfConstrTo></array><array><modelId>1640</modelId><modelname>1600
+      GT Coupe</modelname><yearOfConstrFrom>196710</yearOfConstrFrom><yearOfConstrTo>196905</yearOfConstrTo></array><array><modelId>1641</modelId><modelname>2.6-
+      3200 V8 Coupe</modelname><yearOfConstrFrom>195810</yearOfConstrFrom><yearOfConstrTo>196607</yearOfConstrTo></array><array><modelId>224</modelId><modelname>2000-3.2
+      Coupe (E9)</modelname><yearOfConstrFrom>196510</yearOfConstrFrom><yearOfConstrTo>197603</yearOfConstrTo></array><array><modelId>219</modelId><modelname>2500-3.3
+      (E3)</modelname><yearOfConstrFrom>196810</yearOfConstrFrom><yearOfConstrTo>197704</yearOfConstrTo></array><array><modelId>286</modelId><modelname>3
+      (E21)</modelname><yearOfConstrFrom>197506</yearOfConstrFrom><yearOfConstrTo>198403</yearOfConstrTo></array><array><modelId>290</modelId><modelname>3
+      (E30)</modelname><yearOfConstrFrom>198209</yearOfConstrFrom><yearOfConstrTo>199203</yearOfConstrTo></array><array><modelId>304</modelId><modelname>3
+      (E36)</modelname><yearOfConstrFrom>199009</yearOfConstrFrom><yearOfConstrTo>199802</yearOfConstrTo></array><array><modelId>3397</modelId><modelname>3
+      (E46)</modelname><yearOfConstrFrom>199802</yearOfConstrFrom><yearOfConstrTo>200504</yearOfConstrTo></array><array><modelId>5389</modelId><modelname>3
+      (E90)</modelname><yearOfConstrFrom>200501</yearOfConstrFrom><yearOfConstrTo
+      xsi:nil="true"/></array><array><modelId>299</modelId><modelname>3 Compact (E36)</modelname><yearOfConstrFrom>199403</yearOfConstrFrom><yearOfConstrTo>200008</yearOfConstrTo></array><array><modelId>4751</modelId><modelname>3
+      Compact (E46)</modelname><yearOfConstrFrom>200106</yearOfConstrFrom><yearOfConstrTo>200502</yearOfConstrTo></array><array><modelId>308</modelId><modelname>3
+      Coupe (E36)</modelname><yearOfConstrFrom>199203</yearOfConstrFrom><yearOfConstrTo>199904</yearOfConstrTo></array><array><modelId>3999</modelId><modelname>3
+      Coupe (E46)</modelname><yearOfConstrFrom>199904</yearOfConstrFrom><yearOfConstrTo
+      xsi:nil="true"/></array><array><modelId>5569</modelId><modelname>3 Coupe (E92)</modelname><yearOfConstrFrom>200606</yearOfConstrFrom><yearOfConstrTo
+      xsi:nil="true"/></array><array><modelId>430</modelId><modelname>3 Kabriolets
+      (E30)</modelname><yearOfConstrFrom>198512</yearOfConstrFrom><yearOfConstrTo>199310</yearOfConstrTo></array><array><modelId>434</modelId><modelname>3
+      Kabriolets (E36)</modelname><yearOfConstrFrom>199303</yearOfConstrFrom><yearOfConstrTo>199904</yearOfConstrTo></array><array><modelId>4571</modelId><modelname>3
+      Kabriolets (E46)</modelname><yearOfConstrFrom>200004</yearOfConstrFrom><yearOfConstrTo
+      xsi:nil="true"/></array><array><modelId>6241</modelId><modelname>3 Kabriolets
+      (E93)</modelname><yearOfConstrFrom>200608</yearOfConstrFrom><yearOfConstrTo
+      xsi:nil="true"/></array><array><modelId>294</modelId><modelname>3 Touring (E30)</modelname><yearOfConstrFrom>198707</yearOfConstrFrom><yearOfConstrTo>199410</yearOfConstrTo></array><array><modelId>1311</modelId><modelname>3
+      Touring (E36)</modelname><yearOfConstrFrom>199501</yearOfConstrFrom><yearOfConstrTo>199910</yearOfConstrTo></array><array><modelId>4088</modelId><modelname>3
+      Touring (E46)</modelname><yearOfConstrFrom>199910</yearOfConstrFrom><yearOfConstrTo>200502</yearOfConstrTo></array><array><modelId>5430</modelId><modelname>3
+      Touring (E91)</modelname><yearOfConstrFrom>200509</yearOfConstrFrom><yearOfConstrTo
+      xsi:nil="true"/></array><array><modelId>456</modelId><modelname>5 (E12)</modelname><yearOfConstrFrom>197208</yearOfConstrFrom><yearOfConstrTo>198108</yearOfConstrTo></array><array><modelId>452</modelId><modelname>5
+      (E28)</modelname><yearOfConstrFrom>198006</yearOfConstrFrom><yearOfConstrTo>199006</yearOfConstrTo></array><array><modelId>464</modelId><modelname>5
+      (E34)</modelname><yearOfConstrFrom>198712</yearOfConstrFrom><yearOfConstrTo>199511</yearOfConstrTo></array><array><modelId>1449</modelId><modelname>5
+      (E39)</modelname><yearOfConstrFrom>199511</yearOfConstrFrom><yearOfConstrTo>200306</yearOfConstrTo></array><array><modelId>4993</modelId><modelname>5
+      (E60)</modelname><yearOfConstrFrom>200307</yearOfConstrFrom><yearOfConstrTo
+      xsi:nil="true"/></array><array><modelId>8541</modelId><modelname>5 (F10)</modelname><yearOfConstrFrom>201003</yearOfConstrFrom><yearOfConstrTo
+      xsi:nil="true"/></array><array><modelId>8274</modelId><modelname>5 GRAN TURISMO
+      (F07)</modelname><yearOfConstrFrom>200910</yearOfConstrFrom><yearOfConstrTo
+      xsi:nil="true"/></array><array><modelId>459</modelId><modelname>5 Touring (E34)</modelname><yearOfConstrFrom>199111</yearOfConstrFrom><yearOfConstrTo>199701</yearOfConstrTo></array><array><modelId>1892</modelId><modelname>5
+      Touring (E39)</modelname><yearOfConstrFrom>199701</yearOfConstrFrom><yearOfConstrTo>200405</yearOfConstrTo></array><array><modelId>5079</modelId><modelname>5
+      Touring (E61)</modelname><yearOfConstrFrom>200406</yearOfConstrFrom><yearOfConstrTo
+      xsi:nil="true"/></array><array><modelId>8762</modelId><modelname>5 Touring (F11)</modelname><yearOfConstrFrom>201009</yearOfConstrFrom><yearOfConstrTo
+      xsi:nil="true"/></array><array><modelId>1642</modelId><modelname>501</modelname><yearOfConstrFrom>195207</yearOfConstrFrom><yearOfConstrTo>195901</yearOfConstrTo></array><array><modelId>3390</modelId><modelname>503
+      Kabriolets</modelname><yearOfConstrFrom>195701</yearOfConstrFrom><yearOfConstrTo>196105</yearOfConstrTo></array><array><modelId>486</modelId><modelname>6
+      (E24)</modelname><yearOfConstrFrom>197604</yearOfConstrFrom><yearOfConstrTo>199009</yearOfConstrTo></array><array><modelId>5086</modelId><modelname>6
+      (E63)</modelname><yearOfConstrFrom>200401</yearOfConstrFrom><yearOfConstrTo
+      xsi:nil="true"/></array><array><modelId>9160</modelId><modelname>6 Coupe (F13)</modelname><yearOfConstrFrom>201106</yearOfConstrFrom><yearOfConstrTo
+      xsi:nil="true"/></array><array><modelId>5087</modelId><modelname>6 Kabriolets
+      (E64)</modelname><yearOfConstrFrom>200404</yearOfConstrFrom><yearOfConstrTo
+      xsi:nil="true"/></array><array><modelId>9159</modelId><modelname>6 Kabriolets
+      (F12)</modelname><yearOfConstrFrom>201103</yearOfConstrFrom><yearOfConstrTo
+      xsi:nil="true"/></array><array><modelId>4002</modelId><modelname>600</modelname><yearOfConstrFrom>195712</yearOfConstrFrom><yearOfConstrTo>196105</yearOfConstrTo></array><array><modelId>539</modelId><modelname>7
+      (E23)</modelname><yearOfConstrFrom>197705</yearOfConstrFrom><yearOfConstrTo>198608</yearOfConstrTo></array><array><modelId>544</modelId><modelname>7
+      (E32)</modelname><yearOfConstrFrom>198609</yearOfConstrFrom><yearOfConstrTo>199409</yearOfConstrTo></array><array><modelId>549</modelId><modelname>7
+      (E38)</modelname><yearOfConstrFrom>199410</yearOfConstrFrom><yearOfConstrTo>200111</yearOfConstrTo></array><array><modelId>4816</modelId><modelname>7
+      (E65, E66)</modelname><yearOfConstrFrom>200111</yearOfConstrFrom><yearOfConstrTo
+      xsi:nil="true"/></array><array><modelId>7864</modelId><modelname>7 (F01, F02,
+      F03, F04)</modelname><yearOfConstrFrom>200810</yearOfConstrFrom><yearOfConstrTo
+      xsi:nil="true"/></array><array><modelId>2054</modelId><modelname>700</modelname><yearOfConstrFrom>195901</yearOfConstrFrom><yearOfConstrTo>196611</yearOfConstrTo></array><array><modelId>4805</modelId><modelname>700
+      Coupe</modelname><yearOfConstrFrom>195908</yearOfConstrFrom><yearOfConstrTo>196404</yearOfConstrTo></array><array><modelId>67</modelId><modelname>8
+      (E31)</modelname><yearOfConstrFrom>199004</yearOfConstrFrom><yearOfConstrTo>199912</yearOfConstrTo></array><array><modelId>1435</modelId><modelname>ISETTA</modelname><yearOfConstrFrom>195601</yearOfConstrFrom><yearOfConstrTo>196311</yearOfConstrTo></array><array><modelId>1790</modelId><modelname>M1</modelname><yearOfConstrFrom>197905</yearOfConstrFrom><yearOfConstrTo>198305</yearOfConstrTo></array><array><modelId>8277</modelId><modelname>X1
+      (E84)</modelname><yearOfConstrFrom>200910</yearOfConstrFrom><yearOfConstrTo
+      xsi:nil="true"/></array><array><modelId>5085</modelId><modelname>X3 (E83)</modelname><yearOfConstrFrom>200401</yearOfConstrFrom><yearOfConstrTo
+      xsi:nil="true"/></array><array><modelId>8763</modelId><modelname>X3 (F25)</modelname><yearOfConstrFrom>201009</yearOfConstrFrom><yearOfConstrTo
+      xsi:nil="true"/></array><array><modelId>4343</modelId><modelname>X5 (E53)</modelname><yearOfConstrFrom>200005</yearOfConstrFrom><yearOfConstrTo
+      xsi:nil="true"/></array><array><modelId>6414</modelId><modelname>X5 (E70)</modelname><yearOfConstrFrom>200702</yearOfConstrFrom><yearOfConstrTo
+      xsi:nil="true"/></array><array><modelId>7378</modelId><modelname>X6 (E71, E72)</modelname><yearOfConstrFrom>200805</yearOfConstrFrom><yearOfConstrTo
+      xsi:nil="true"/></array><array><modelId>138</modelId><modelname>Z1</modelname><yearOfConstrFrom>198806</yearOfConstrFrom><yearOfConstrTo>199106</yearOfConstrTo></array><array><modelId>3483</modelId><modelname>Z3
+      (E36)</modelname><yearOfConstrFrom>199510</yearOfConstrFrom><yearOfConstrTo>200301</yearOfConstrTo></array><array><modelId>2079</modelId><modelname>Z3
+      Coupe (E36)</modelname><yearOfConstrFrom>199704</yearOfConstrFrom><yearOfConstrTo>200306</yearOfConstrTo></array><array><modelId>4924</modelId><modelname>Z4
+      (E85)</modelname><yearOfConstrFrom>200302</yearOfConstrFrom><yearOfConstrTo
+      xsi:nil="true"/></array><array><modelId>8033</modelId><modelname>Z4 (E89)</modelname><yearOfConstrFrom>200905</yearOfConstrFrom><yearOfConstrTo
+      xsi:nil="true"/></array><array><modelId>5516</modelId><modelname>Z4 Coupe (E86)</modelname><yearOfConstrFrom>200603</yearOfConstrFrom><yearOfConstrTo
+      xsi:nil="true"/></array><array><modelId>4279</modelId><modelname>Z8 (E52)</modelname><yearOfConstrFrom>200006</yearOfConstrFrom><yearOfConstrTo>200306</yearOfConstrTo></array></array><empty>false</empty></data><status>200</status><statusText
+      xsi:nil="true"/></getVehicleModels3Return></getVehicleModels3Response></soapenv:Body></soapenv:Envelope>
     http_version: '1.1'

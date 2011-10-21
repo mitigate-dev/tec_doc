@@ -4,9 +4,9 @@ module TecDoc
 
     # Get all languages available for provider.
     # 
-    # @option options [String] :lang The language in which you want to get the results
+    # @option options [String] :lang language code according to ISO 639
     # @return [Array<TecDoc::Language>] list of languages
-    def self.all(options = {})
+    def self.all(options)
       response = TecDoc.client.request(:get_languages, options)
       response.to_hash[:get_languages_response][:get_languages_return][:data][:array][:array].map do |attributes|
         language = new
