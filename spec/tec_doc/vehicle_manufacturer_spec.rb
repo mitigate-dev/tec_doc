@@ -1,17 +1,17 @@
 require "spec_helper"
 
 describe TecDoc::VehicleManufacturer do
-  use_vcr_cassette
-
   context ".all" do
     before do
-      @manufacturers = TecDoc::VehicleManufacturer.all(
-        :lang => "lv",
-        :car_type => 1,
-        :country_group_flag => false,
-        :countries_car_selection => "lv",
-        :eval_favor => false
-      )
+      VCR.use_cassette('vehicle_manufacturer_all') do
+        @manufacturers = TecDoc::VehicleManufacturer.all(
+          :lang => "lv",
+          :car_type => 1,
+          :country_group_flag => false,
+          :countries_car_selection => "lv",
+          :eval_favor => false
+        )
+      end
     end
 
     it "should return array of manufacturers" do

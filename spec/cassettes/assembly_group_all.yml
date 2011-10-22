@@ -11,7 +11,7 @@
       message: OK
     headers:
       date:
-      - Fri, 21 Oct 2011 15:29:30 GMT
+      - Sat, 22 Oct 2011 15:14:49 GMT
       server:
       - Apache
       transfer-encoding:
@@ -4709,39 +4709,75 @@
       xmlns:ins3="http://specialselection.datatype.tocinterface.cat.tecdoc.net" xmlns:ins4="http://axlesselection.datatype.tocinterface.cat.tecdoc.net"
       xmlns:ins5="http://carselection.datatype.tocinterface.cat.tecdoc.net" xmlns:ins6="http://options.datatype.tocinterface.cat.tecdoc.net"
       xmlns:ins7="http://motorselection.datatype.tocinterface.cat.tecdoc.net" xmlns:ins8="http://assemblygroupselection.datatype.tocinterface.cat.tecdoc.net"
-      xmlns:ins9="http://controlpanel.datatype.tocinterface.cat.tecdoc.net"><env:Body><ins0:getVehicleManufacturers3><wsdl:in><wsdl:provider>330</wsdl:provider><wsdl:lang>lv</wsdl:lang><wsdl:carType>1</wsdl:carType><wsdl:countryGroupFlag>false</wsdl:countryGroupFlag><wsdl:countriesCarSelection>lv</wsdl:countriesCarSelection><wsdl:evalFavor>false</wsdl:evalFavor></wsdl:in></ins0:getVehicleManufacturers3></env:Body></env:Envelope>
+      xmlns:ins9="http://controlpanel.datatype.tocinterface.cat.tecdoc.net"><env:Body><ins0:getChildNodesAllLinkingTarget2><wsdl:in><wsdl:provider>330</wsdl:provider><wsdl:lang>lv</wsdl:lang><wsdl:childNodes>false</wsdl:childNodes><wsdl:linkingTargetType>C</wsdl:linkingTargetType></wsdl:in></ins0:getChildNodesAllLinkingTarget2></env:Body></env:Envelope>
     headers:
       soapaction:
-      - ! '"getVehicleManufacturers3"'
+      - ! '"getChildNodesAllLinkingTarget2"'
       content-type:
       - text/xml;charset=UTF-8
       content-length:
-      - '1338'
+      - '1261'
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
       message: OK
     headers:
       date:
-      - Fri, 21 Oct 2011 15:29:34 GMT
+      - Sat, 22 Oct 2011 15:14:53 GMT
       server:
       - Apache
-      transfer-encoding:
-      - chunked
+      content-length:
+      - '7138'
       content-type:
       - text/xml;charset=utf-8
     body: <?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-      xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><getVehicleManufacturers3Response
-      xmlns="http://webservicepilot.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"><getVehicleManufacturers3Return
-      xmlns=""><data><array><array><manuId>609</manuId><manuName>AC</manuName></array><array><manuId>1505</manuId><manuName>ACURA</manuName></array><array><manuId>1480</manuId><manuName>AIXAM</manuName></array><array><manuId>2</manuId><manuName>ALFA
-      ROMEO</manuName></array><array><manuId>866</manuId><manuName>ALPINA</manuName></array><array><manuId>810</manuId><manuName>ALPINE</manuName></array><array><manuId>758</manuId><manuName>AMERICANMOTORS(FORD)</manuName></array><array><manuId>1360</manuId><manuName>ARO</manuName></array><array><manuId>3495</manuId><manuName>ARTEGA</manuName></array><array><manuId>879</manuId><manuName>ASIA
-      MOTORS</manuName></array><array><manuId>881</manuId><manuName>ASTON MARTIN</manuName></array><array><manuId>5</manuId><manuName>AUDI</manuName></array><array><manuId>6</manuId><manuName>AUSTIN</manuName></array><array><manuId>1538</manuId><manuName>AUSTIN-HEALEY</manuName></array><array><manuId>3</manuId><manuName>AUTO
-      UNION</manuName></array><array><manuId>799</manuId><manuName>AUTOBIANCHI</manuName></array><array><manuId>134</manuId><manuName>BARKAS</manuName></array><array><manuId>10</manuId><manuName>BEDFORD</manuName></array><array><manuId>815</manuId><manuName>BENTLEY</manuName></array><array><manuId>1485</manuId><manuName>BERTONE</manuName></array><array><manuId>1486</manuId><manuName>BITTER</manuName></array><array><manuId>16</manuId><manuName>BMW</manuName></array><array><manuId>1537</manuId><manuName>BOND</manuName></array><array><manuId>136</manuId><manuName>BORGWARD</manuName></array><array><manuId>1487</manuId><manuName>BRISTOL</manuName></array><array><manuId>788</manuId><manuName>BUGATTI</manuName></array><array><manuId>816</manuId><manuName>BUICK</manuName></array><array><manuId>819</manuId><manuName>CADILLAC</manuName></array><array><manuId>1488</manuId><manuName>CALLAWAY</manuName></array><array><manuId>1489</manuId><manuName>CARBODIES</manuName></array><array><manuId>1490</manuId><manuName>CATERHAM</manuName></array><array><manuId>1491</manuId><manuName>CHECKER</manuName></array><array><manuId>138</manuId><manuName>CHEVROLET</manuName></array><array><manuId>20</manuId><manuName>CHRYSLER</manuName></array><array><manuId>21</manuId><manuName>CITRO&#x116;N</manuName></array><array><manuId>139</manuId><manuName>DACIA</manuName></array><array><manuId>185</manuId><manuName>DAEWOO</manuName></array><array><manuId>24</manuId><manuName>DAF</manuName></array><array><manuId>25</manuId><manuName>DAIHATSU</manuName></array><array><manuId>26</manuId><manuName>DAIMLER</manuName></array><array><manuId>1493</manuId><manuName>DALLAS</manuName></array><array><manuId>1494</manuId><manuName>DE
-      LOREAN</manuName></array><array><manuId>1495</manuId><manuName>DE TOMASO</manuName></array><array><manuId>29</manuId><manuName>DODGE</manuName></array><array><manuId>700</manuId><manuName>FERRARI</manuName></array><array><manuId>35</manuId><manuName>FIAT</manuName></array><array><manuId>36</manuId><manuName>FORD</manuName></array><array><manuId>808</manuId><manuName>FORD
-      OTOSAN</manuName></array><array><manuId>776</manuId><manuName>FORD USA</manuName></array><array><manuId>775</manuId><manuName>FSO</manuName></array><array><manuId>148</manuId><manuName>GAZ</manuName></array><array><manuId>2590</manuId><manuName>GEELY</manuName></array><array><manuId>831</manuId><manuName>GEO</manuName></array><array><manuId>1498</manuId><manuName>GINETTA</manuName></array><array><manuId>812</manuId><manuName>GLAS</manuName></array><array><manuId>39</manuId><manuName>GMC</manuName></array><array><manuId>1499</manuId><manuName>HINDUSTAN</manuName></array><array><manuId>1500</manuId><manuName>HOBBYCAR</manuName></array><array><manuId>801</manuId><manuName>HOLDEN</manuName></array><array><manuId>45</manuId><manuName>HONDA</manuName></array><array><manuId>1506</manuId><manuName>HUMMER</manuName></array><array><manuId>183</manuId><manuName>HYUNDAI</manuName></array><array><manuId>1507</manuId><manuName>INDIGO</manuName></array><array><manuId>1526</manuId><manuName>INFINITI</manuName></array><array><manuId>52</manuId><manuName>INNOCENTI</manuName></array><array><manuId>1508</manuId><manuName>IRMSCHER</manuName></array><array><manuId>1509</manuId><manuName>ISDERA</manuName></array><array><manuId>1510</manuId><manuName>ISH</manuName></array><array><manuId>54</manuId><manuName>ISUZU</manuName></array><array><manuId>55</manuId><manuName>IVECO</manuName></array><array><manuId>56</manuId><manuName>JAGUAR</manuName></array><array><manuId>882</manuId><manuName>JEEP</manuName></array><array><manuId>1511</manuId><manuName>JENSEN</manuName></array><array><manuId>184</manuId><manuName>KIA</manuName></array><array><manuId>63</manuId><manuName>LADA</manuName></array><array><manuId>701</manuId><manuName>LAMBORGHINI</manuName></array><array><manuId>64</manuId><manuName>LANCIA</manuName></array><array><manuId>1820</manuId><manuName>LAND
-      ROVER</manuName></array><array><manuId>2589</manuId><manuName>LANDWIND</manuName></array><array><manuId>1380</manuId><manuName>LDV</manuName></array><array><manuId>842</manuId><manuName>LEXUS</manuName></array><array><manuId>1513</manuId><manuName>LIGIER</manuName></array><array><manuId>1200</manuId><manuName>LINCOLN</manuName></array><array><manuId>802</manuId><manuName>LOTUS</manuName></array><array><manuId>3047</manuId><manuName>LTI</manuName></array><array><manuId>1280</manuId><manuName>MAHINDRA</manuName></array><array><manuId>1516</manuId><manuName>MARCOS</manuName></array><array><manuId>771</manuId><manuName>MASERATI</manuName></array><array><manuId>2164</manuId><manuName>MAYBACH</manuName></array><array><manuId>72</manuId><manuName>MAZDA</manuName></array><array><manuId>1518</manuId><manuName>MCLAREN</manuName></array><array><manuId>845</manuId><manuName>MEGA</manuName></array><array><manuId>74</manuId><manuName>MERCEDES-BENZ</manuName></array><array><manuId>1520</manuId><manuName>METROCAB</manuName></array><array><manuId>75</manuId><manuName>MG</manuName></array><array><manuId>1521</manuId><manuName>MIDDLEBRIDGE</manuName></array><array><manuId>1522</manuId><manuName>MINELLI</manuName></array><array><manuId>1523</manuId><manuName>MINI</manuName></array><array><manuId>77</manuId><manuName>MITSUBISHI</manuName></array><array><manuId>2904</manuId><manuName>MITSUOKA</manuName></array><array><manuId>803</manuId><manuName>MORGAN</manuName></array><array><manuId>78</manuId><manuName>MORRIS</manuName></array><array><manuId>813</manuId><manuName>MOSKVICH</manuName></array><array><manuId>80</manuId><manuName>NISSAN</manuName></array><array><manuId>81</manuId><manuName>NSU</manuName></array><array><manuId>1141</manuId><manuName>OLDSMOBILE</manuName></array><array><manuId>1527</manuId><manuName>OLTCIT</manuName></array><array><manuId>84</manuId><manuName>OPEL</manuName></array><array><manuId>1529</manuId><manuName>OSCA</manuName></array><array><manuId>1530</manuId><manuName>PANOZ</manuName></array><array><manuId>1531</manuId><manuName>PANTHER</manuName></array><array><manuId>1532</manuId><manuName>PAYKAN</manuName></array><array><manuId>88</manuId><manuName>PEUGEOT</manuName></array><array><manuId>181</manuId><manuName>PIAGGIO</manuName></array><array><manuId>3046</manuId><manuName>PININFARINA</manuName></array><array><manuId>850</manuId><manuName>PLYMOUTH</manuName></array><array><manuId>774</manuId><manuName>PONTIAC</manuName></array><array><manuId>92</manuId><manuName>PORSCHE</manuName></array><array><manuId>851</manuId><manuName>PREMIER</manuName></array><array><manuId>778</manuId><manuName>PROTON</manuName></array><array><manuId>1580</manuId><manuName>PUCH</manuName></array><array><manuId>1534</manuId><manuName>RANGER</manuName></array><array><manuId>1536</manuId><manuName>RAYTON
-      FISSORE</manuName></array><array><manuId>773</manuId><manuName>RELIANT</manuName></array><array><manuId>93</manuId><manuName>RENAULT</manuName></array><array><manuId>694</manuId><manuName>RENAULT
-      TRUCKS</manuName></array><array><manuId>1539</manuId><manuName>RILEY</manuName></array><array><manuId>705</manuId><manuName>ROLLS-ROYCE</manuName></array><array><manuId>95</manuId><manuName>ROVER</manuName></array><array><manuId>99</manuId><manuName>SAAB</manuName></array><array><manuId>171</manuId><manuName>SANTANA</manuName></array><array><manuId>104</manuId><manuName>SEAT</manuName></array><array><manuId>1547</manuId><manuName>SHELBY</manuName></array><array><manuId>1548</manuId><manuName>SIPANI</manuName></array><array><manuId>106</manuId><manuName>SKODA</manuName></array><array><manuId>1138</manuId><manuName>SMART</manuName></array><array><manuId>1549</manuId><manuName>SPECTRE</manuName></array><array><manuId>2755</manuId><manuName>SPYKER</manuName></array><array><manuId>175</manuId><manuName>SSANGYONG</manuName></array><array><manuId>1550</manuId><manuName>STANDARD</manuName></array><array><manuId>2810</manuId><manuName>STANGUELLINI</manuName></array><array><manuId>107</manuId><manuName>SUBARU</manuName></array><array><manuId>109</manuId><manuName>SUZUKI</manuName></array><array><manuId>110</manuId><manuName>TALBOT</manuName></array><array><manuId>178</manuId><manuName>TATA
-      (TELCO)</manuName></array><array><manuId>3443</manuId><manuName>TAZZARI</manuName></array><array><manuId>3328</manuId><manuName>TESLA</manuName></array><array><manuId>3514</manuId><manuName>THINK</manuName></array><array><manuId>111</manuId><manuName>TOYOTA</manuName></array><array><manuId>187</manuId><manuName>TRABANT</manuName></array><array><manuId>112</manuId><manuName>TRIUMPH</manuName></array><array><manuId>861</manuId><manuName>TVR</manuName></array><array><manuId>1553</manuId><manuName>UAZ</manuName></array><array><manuId>1554</manuId><manuName>UMM</manuName></array><array><manuId>117</manuId><manuName>VAUXHALL</manuName></array><array><manuId>1555</manuId><manuName>VECTOR</manuName></array><array><manuId>120</manuId><manuName>VOLVO</manuName></array><array><manuId>121</manuId><manuName>VW</manuName></array><array><manuId>186</manuId><manuName>WARTBURG</manuName></array><array><manuId>907</manuId><manuName>WESTFIELD</manuName></array><array><manuId>1558</manuId><manuName>WIESMANN</manuName></array><array><manuId>1541</manuId><manuName>WOLSELEY</manuName></array><array><manuId>1559</manuId><manuName>YULON</manuName></array><array><manuId>124</manuId><manuName>ZASTAVA</manuName></array><array><manuId>1139</manuId><manuName>ZAZ</manuName></array></array><empty>false</empty></data><status>200</status><statusText
-      xsi:nil="true"/></getVehicleManufacturers3Return></getVehicleManufacturers3Response></soapenv:Body></soapenv:Envelope>
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><getChildNodesAllLinkingTarget2Response
+      xmlns="http://webservicepilot.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"><getChildNodesAllLinkingTarget2Return
+      xmlns=""><data><array><array><assemblyGroupName>Aizdedzes sist&#x113;ma /Kv&#x113;lsve&#x10D;u
+      sist&#x113;ma</assemblyGroupName><assemblyGroupNodeId>100008</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Apsilde/Ventil&#x101;cija</assemblyGroupName><assemblyGroupNodeId>100241</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Brem&#x17E;u sist&#x113;ma</assemblyGroupName><assemblyGroupNodeId>100006</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Degmais&#x12B;juma sagatavo&#x161;ana</assemblyGroupName><assemblyGroupNodeId>100254</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Degvielas padeves sist&#x113;ma</assemblyGroupName><assemblyGroupNodeId>100214</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Dro&#x161;&#x12B;bas sist&#x113;ma</assemblyGroupName><assemblyGroupNodeId>100417</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Dzes&#x113;&#x161;anas sist&#x113;ma</assemblyGroupName><assemblyGroupNodeId>100007</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Dzin&#x113;js</assemblyGroupName><assemblyGroupNodeId>100002</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Elektroiek&#x101;rta</assemblyGroupName><assemblyGroupNodeId>100010</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Filtrs</assemblyGroupName><assemblyGroupNodeId>100005</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Gaisa kondicion&#x113;&#x161;anas
+      sist&#x113;ma</assemblyGroupName><assemblyGroupNodeId>100243</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Galvenais p&#x101;rvads</assemblyGroupName><assemblyGroupNodeId>100400</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Inform&#x101;cijas-/Komunik&#x101;cijas
+      sist&#x113;ma</assemblyGroupName><assemblyGroupNodeId>100339</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Izpl&#x16B;des g&#x101;zu
+      sist&#x113;ma</assemblyGroupName><assemblyGroupNodeId>100004</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Komforta apr&#x12B;kojums</assemblyGroupName><assemblyGroupNodeId>100335</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Logu t&#x12B;r&#x12B;taju
+      sist&#x113;ma</assemblyGroupName><assemblyGroupNodeId>100018</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Lukturu t&#x12B;r&#x12B;&#x161;anas
+      sist&#x113;ma</assemblyGroupName><assemblyGroupNodeId>100342</assemblyGroupNodeId><hasChilds>false</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Papildus pievads</assemblyGroupName><assemblyGroupNodeId>103202</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Piederumi</assemblyGroupName><assemblyGroupNodeId>100733</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Piekabes apr&#x12B;kojums/-komplekt&#x113;jo&#x161;&#x101;s
+      da&#x13C;as</assemblyGroupName><assemblyGroupNodeId>100015</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Piekare/ Amortiz&#x101;cija</assemblyGroupName><assemblyGroupNodeId>100011</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Pneimatisk&#x101; sist&#x113;ma</assemblyGroupName><assemblyGroupNodeId>103168</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Rite&#x146;i/Riepas</assemblyGroupName><assemblyGroupNodeId>103099</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Rite&#x146;u piedzi&#x146;as
+      meh&#x101;nisms</assemblyGroupName><assemblyGroupNodeId>100014</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Saj&#x16B;gs/-uzkares da&#x13C;as</assemblyGroupName><assemblyGroupNodeId>100050</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Salona apdare un apr&#x12B;kojums</assemblyGroupName><assemblyGroupNodeId>100341</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Servisa-/P&#x101;rbaudes-/Apkopes
+      deta&#x13C;as</assemblyGroupName><assemblyGroupNodeId>100019</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Siksnu pievads</assemblyGroupName><assemblyGroupNodeId>100016</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Sl&#x113;dzene</assemblyGroupName><assemblyGroupNodeId>100685</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>St&#x16B;res meh&#x101;nisms</assemblyGroupName><assemblyGroupNodeId>100012</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Tilta piekare/Rite&#x146;a
+      piekares vado&#x161;&#x101; sist&#x113;ma/Rite&#x146;i</assemblyGroupName><assemblyGroupNodeId>100013</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Transmisija</assemblyGroupName><assemblyGroupNodeId>100238</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Transport&#x113;&#x161;anas
+      iek&#x101;rta</assemblyGroupName><assemblyGroupNodeId>100343</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Virsb&#x16B;ve</assemblyGroupName><assemblyGroupNodeId>100001</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array></array><empty>false</empty></data><status>200</status><statusText
+      xsi:nil="true"/></getChildNodesAllLinkingTarget2Return></getChildNodesAllLinkingTarget2Response></soapenv:Body></soapenv:Envelope>
     http_version: '1.1'

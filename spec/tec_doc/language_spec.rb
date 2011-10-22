@@ -1,13 +1,16 @@
 require "spec_helper"
 
 describe TecDoc::Language do
-  use_vcr_cassette
-
   context ".all" do
+    before do
+      VCR.use_cassette('language_all') do
+        @languages = TecDoc::Language.all(:lang => "lv")
+      end
+    end
+
     it "should return array of languages" do
-      languages = TecDoc::Language.all(:lang => "lv")
-      languages.should be_an_instance_of(Array)
-      languages.each do |language|
+      @languages.should be_an_instance_of(Array)
+      @languages.each do |language|
         language.should be_an_instance_of(TecDoc::Language)
         language.code.should be_an_instance_of(String)
         language.code.size.should > 0

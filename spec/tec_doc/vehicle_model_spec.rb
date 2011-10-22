@@ -1,18 +1,18 @@
 require "spec_helper"
 
 describe TecDoc::VehicleModel do
-  use_vcr_cassette
-
   context ".all" do
     before do
-      @models = TecDoc::VehicleModel.all(
-        :lang => "lv",
-        :car_type => 1,
-        :country_group_flag => false,
-        :countries_car_selection => "lv",
-        :manu_id => 16, # BMW
-        :eval_favor => false
-      )
+      VCR.use_cassette('vehicle_model_all') do
+        @models = TecDoc::VehicleModel.all(
+          :lang => "lv",
+          :car_type => 1,
+          :country_group_flag => false,
+          :countries_car_selection => "lv",
+          :manu_id => 16, # BMW
+          :eval_favor => false
+        )
+      end
     end
 
     it "should return array of models" do

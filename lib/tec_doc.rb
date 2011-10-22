@@ -7,6 +7,7 @@ module TecDoc
 
   autoload :Client,               "tec_doc/client"
 
+  autoload :AssemblyGroup,        "tec_doc/assembly_group"
   autoload :Brand,                "tec_doc/brand"
   autoload :Language,             "tec_doc/language"
   autoload :VehicleManufacturer,  "tec_doc/vehicle_manufacturer"
