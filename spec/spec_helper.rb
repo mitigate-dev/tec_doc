@@ -4,6 +4,9 @@ require "rubygems"
 require "bundler/setup"
 require "tec_doc"
 require "vcr"
+require "simplecov"
+
+SimpleCov.start
 
 VCR.config do |c|
   c.cassette_library_dir = "spec/cassettes"
