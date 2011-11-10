@@ -2,6 +2,8 @@ module TecDoc
   class VehicleModel
     attr_accessor :id, :name, :date_of_construction_from, :date_of_construction_to
 
+    attr_accessor :scope
+
     # Get all vehicle models
     # 
     # @option options [Integer] :car_type vehicle type (1: Passenger car, 2: Commercial vehicle, 3: Light commercial)
@@ -16,6 +18,7 @@ module TecDoc
       response = TecDoc.client.request(:get_vehicle_models3, options)
       response.map do |attributes|
         model = new
+        model.scope = options
         model.id = attributes[:model_id].to_i
         model.name = attributes[:modelname].to_s
         if attributes[:year_of_constr_from]
@@ -28,6 +31,15 @@ module TecDoc
         end
         model
       end
+    end
+
+    # Get all vehicles for this model
+    # 
+    # @param [Hash] options see `TecDoc::Vehicle.all` for available options
+    def vehicles(options = {})
+      options = scope.merge(options.merge(:mod_id => id))
+      options.delete(:eval_favor)
+      Vehicle.all(options)
     end
   end
 end

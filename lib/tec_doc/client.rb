@@ -22,8 +22,9 @@ module TecDoc
     def node_to_hash(node)
       attributes = {}
       node.children.each do |n|
-        n_array = n.xpath("array/array")
-        if n_array.size > 0
+        if n.xpath("empty").text == "true"
+          attributes[n.name.snakecase.to_sym] = []
+        elsif (n_array = n.xpath("array/array")).size > 0
           attributes[n.name.snakecase.to_sym] = n_array.map { |nn| node_to_hash(nn) }
         elsif n.children.reject { |nn| nn.is_a?(Nokogiri::XML::Text) }.size > 0
           attributes[n.name.snakecase.to_sym] = node_to_hash(n)
