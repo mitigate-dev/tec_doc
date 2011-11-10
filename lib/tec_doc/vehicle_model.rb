@@ -11,10 +11,10 @@ module TecDoc
     # @option options [Integer, NilClass] :favoured_list simplified vehicle selection (1: first list selection, 0: rest) (optional)
     # @option options [String] :lang language code according to ISO 639
     # @option options [Integer] :manu_id manufacturer id
-    # @return [Array<TecDoc::VehicleManufacturer>] list of languages
+    # @return [Array<TecDoc::VehicleManufacturer>] list of vehicle models
     def self.all(options)
       response = TecDoc.client.request(:get_vehicle_models3, options)
-      response.to_hash[:get_vehicle_models3_response][:get_vehicle_models3_return][:data][:array][:array].map do |attributes|
+      response.map do |attributes|
         model = new
         model.id = attributes[:model_id].to_i
         model.name = attributes[:modelname].to_s

@@ -8,7 +8,7 @@ module TecDoc
     # @return [Array<TecDoc::Language>] list of languages
     def self.all(options)
       response = TecDoc.client.request(:get_languages, options)
-      response.to_hash[:get_languages_response][:get_languages_return][:data][:array][:array].map do |attributes|
+      response.map do |attributes|
         language = new
         language.code = attributes[:language_code].to_s
         language.name = attributes[:language_name].to_s

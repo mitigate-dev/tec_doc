@@ -16,7 +16,7 @@ module TecDoc
     # @return [Array<TecDoc::AssemblyGroup>] list of languages
     def self.all(options = {})
       response = TecDoc.client.request(:get_child_nodes_all_linking_target2, options)
-      response.to_hash[:get_child_nodes_all_linking_target2_response][:get_child_nodes_all_linking_target2_return][:data][:array][:array].map do |attributes|
+      groups = response.map do |attributes|
         group = new
         group.scope = options
         group.id = attributes[:assembly_group_node_id].to_i
@@ -27,16 +27,34 @@ module TecDoc
         end
         group
       end
+      if options[:child_nodes]
+        group_ids_map = {}
+        groups.each do |group|
+          group_ids_map[group.id] = group
+        end
+        groups.each do |group|
+          parent = group_ids_map[group.parent_id]
+          if parent
+            parent.add_child(group)
+          end
+        end
+      end
+      groups
     end
 
     def children
-      if has_children
-        @children ||= self.class.
+      @children ||= if has_children
+        self.class.
           all(scope.merge(:parent_node_id => id)).
           each { |child| child.parent = self }
       else
         []
       end
+    end
+
+    def add_child(child)
+      @children ||= []
+      @children << child
     end
 
     def inspect

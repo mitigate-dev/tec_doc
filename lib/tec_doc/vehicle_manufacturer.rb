@@ -2,6 +2,8 @@ module TecDoc
   class VehicleManufacturer
     attr_accessor :id, :name
 
+    attr_accessor :scope
+
     # Get all vehicle manufacturers
     # 
     # @option options [Integer] :car_type vehicle type (1: Passenger car, 2: Commercial vehicle, 3: Light commercial)
@@ -10,11 +12,12 @@ module TecDoc
     # @option options [TrueClass, FalseClass] :eval_favor simplified Flag: simplified vehicle selection
     # @option options [Integer, NilClass] :favoured_list simplified vehicle selection (1: first list selection, 0: rest) (optional)
     # @option options [String] :lang language code according to ISO 639
-    # @return [Array<TecDoc::VehicleManufacturer>] list of languages
+    # @return [Array<TecDoc::VehicleManufacturer>] list of vehicle manufacturers
     def self.all(options)
       response = TecDoc.client.request(:get_vehicle_manufacturers3, options)
-      response.to_hash[:get_vehicle_manufacturers3_response][:get_vehicle_manufacturers3_return][:data][:array][:array].map do |attributes|
+      response.map do |attributes|
         manufacturer = new
+        manufacturer.scope = options
         manufacturer.id = attributes[:manu_id].to_i
         manufacturer.name = attributes[:manu_name].to_s
         manufacturer
@@ -25,7 +28,7 @@ module TecDoc
     # 
     # @param [Hash] options see `TecDoc::VehicleModel.all` for available options
     def models(options = {})
-      VehicleModel.all(options.merge(:manu_id => id))
+      VehicleModel.all(scope.merge(options.merge(:manu_id => id)))
     end
   end
 end
