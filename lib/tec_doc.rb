@@ -17,3 +17,15 @@ module TecDoc
 
   attr_accessor :client
 end
+
+# Allow proxy with authentication
+module HTTPI
+  module Adapter
+    class NetHTTP
+      def new_client(request)
+        proxy = request.proxy || URI("")
+        Net::HTTP::Proxy(proxy.host, proxy.port, proxy.user, proxy.password).new request.url.host, request.url.port
+      end
+    end
+  end
+end
