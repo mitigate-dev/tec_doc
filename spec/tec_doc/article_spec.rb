@@ -25,6 +25,7 @@ describe TecDoc::Article do
         article.id.should > 0
         article.name.should be_an_instance_of(String)
         article.name.size.should > 0
+        article.search_number.size.should > 0
       end
     end
   end

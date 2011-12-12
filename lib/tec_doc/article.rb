@@ -24,6 +24,7 @@ module TecDoc
         article.brand_number       = attributes[:brand_no].to_s
         article.generic_article_id = attributes[:generic_article_id].to_i
         article.number_type        = attributes[:number_type].to_i
+        article.search_number      = attributes[:article_search_no].to_s
         article
       end
     end
