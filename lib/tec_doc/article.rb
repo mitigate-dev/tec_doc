@@ -41,6 +41,14 @@ module TecDoc
       @brand
     end
 
+    def documents
+      @documents ||= ArticleDocument.all({
+        :lang => scope[:lang],
+        :country => scope[:country],
+        :article_id => id
+      })
+    end
+
     def thumbnails
       @thumbnails ||= ArticleThumbnail.all(:article_id => id)
     end
