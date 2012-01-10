@@ -37,5 +37,9 @@ module TecDoc
       end
       @brand
     end
+
+    def thumbnails
+      @thumbnails ||= ArticleThumbnail.all(:article_id => id)
+    end
   end
 end

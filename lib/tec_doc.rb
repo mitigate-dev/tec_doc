@@ -8,6 +8,8 @@ module TecDoc
   autoload :Client,               "tec_doc/client"
 
   autoload :Article,              "tec_doc/article"
+  autoload :ArticleDocument,      "tec_doc/article_document"
+  autoload :ArticleThumbnail,     "tec_doc/article_thumbnail"
   autoload :AssemblyGroup,        "tec_doc/assembly_group"
   autoload :Brand,                "tec_doc/brand"
   autoload :Language,             "tec_doc/language"
