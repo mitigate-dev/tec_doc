@@ -1,6 +1,6 @@
 module TecDoc
   class ArticleThumbnail < ArticleDocument
-    # Find vehicle, axle, motor or universal assembly groups for the search tree
+    # Find article thumbnail documents
     # 
     # @option options [Integer] :article_id Article ID
     # @return [Array<TecDoc::ArticleThumbnail>] list of article thumbnails
