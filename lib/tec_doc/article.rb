@@ -2,6 +2,8 @@ module TecDoc
   class Article
     attr_accessor :id, :name, :number, :search_number, :brand_name, :brand_number, :generic_article_id, :number_type
 
+    attr_accessor :scope
+
     # Find article by all number types and brand number and generic article id.
     # 
     # @option options [String] :article_number Article number will be converted within the search process to a simplified article number
@@ -17,6 +19,7 @@ module TecDoc
       response = TecDoc.client.request(:get_article_direct_search_all_numbers2, options)
       response.map do |attributes|
         article = new
+        article.scope = options
         article.id                 = attributes[:article_id].to_i
         article.name               = attributes[:article_name].to_s
         article.number             = attributes[:article_no].to_s
@@ -40,6 +43,36 @@ module TecDoc
 
     def thumbnails
       @thumbnails ||= ArticleThumbnail.all(:article_id => id)
+    end
+
+    def attributes
+      @oe_numbers ||= assigned_article[:article_attributes].map do |attrs|
+        ArticleAttribute.new(attrs)
+      end
+    end
+
+    def ean_number
+      @ean_number ||= assigned_article[:ean_number].map(&:values).flatten.first
+    end
+
+    def oe_numbers
+      @oe_numbers ||= assigned_article[:oen_numbers].map do |attrs|
+        ArticleOENumber.new(attrs)
+      end
+    end
+
+    private
+
+    def assigned_article
+      @assigned_article ||= TecDoc.client.request(:get_assigned_articles_by_ids2_single, {
+        :lang => scope[:lang],
+        :country => scope[:country],
+        :linking_target_type => "U",
+        :article_id => id,
+        :attributs => true,
+        :ean_numbers => true,
+        :oe_numbers => true
+      })[0]
     end
   end
 end

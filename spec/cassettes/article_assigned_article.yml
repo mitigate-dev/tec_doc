@@ -1,0 +1,67 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :post
+    uri: http://webservicepilot.tecdoc.net:80/pegasus-2-0/services/TecdocToCatWL
+    body: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://webservicepilot.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="http://webservicepilot.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"
+      xmlns:ins1="http://options.datatype.tocinterface.cat.tecdoc.net" xmlns:ins2="http://controlpanel.datatype.tocinterface.cat.tecdoc.net"
+      xmlns:ins3="http://articles.datatype.tocinterface.cat.tecdoc.net" xmlns:ins4="http://carselection.datatype.tocinterface.cat.tecdoc.net"
+      xmlns:ins5="http://datatype.cat.tecdoc.net" xmlns:ins6="http://axlesselection.datatype.tocinterface.cat.tecdoc.net"
+      xmlns:ins7="http://motorselection.datatype.tocinterface.cat.tecdoc.net" xmlns:ins8="http://assemblygroupselection.datatype.tocinterface.cat.tecdoc.net"
+      xmlns:ins9="http://specialselection.datatype.tocinterface.cat.tecdoc.net"><env:Body><ins0:getAssignedArticlesByIds2Single><wsdl:in><wsdl:provider>330</wsdl:provider><wsdl:lang>lv</wsdl:lang><wsdl:country>lv</wsdl:country><wsdl:linkingTargetType>U</wsdl:linkingTargetType><wsdl:articleId>2930257</wsdl:articleId><wsdl:attributs>true</wsdl:attributs><wsdl:eanNumbers>true</wsdl:eanNumbers><wsdl:oeNumbers>true</wsdl:oeNumbers></wsdl:in></ins0:getAssignedArticlesByIds2Single></env:Body></env:Envelope>
+    headers:
+      soapaction:
+      - ! '"getAssignedArticlesByIds2Single"'
+      content-type:
+      - text/xml;charset=UTF-8
+      content-length:
+      - '1434'
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Tue, 10 Jan 2012 10:17:36 GMT
+      server:
+      - Apache
+      content-length:
+      - '4633'
+      content-type:
+      - text/xml;charset=utf-8
+      x-cache:
+      - MISS from demo.makit.lv
+      x-cache-lookup:
+      - MISS from demo.makit.lv:8080
+      via:
+      - 1.1 demo.makit.lv:8080 (squid/2.7.STABLE7)
+    body: <?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><getAssignedArticlesByIds2SingleResponse
+      xmlns="http://webservicepilot.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"><getAssignedArticlesByIds2SingleReturn
+      xmlns=""><data><array><array><articleAttributes><array><array><attrBlockNo>0</attrBlockNo><attrId>559</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>false</attrIsInterval><attrName>Str&#x101;vas
+      stiprums [A]</attrName><attrShortName>Nomin&#x101;l&#x101; str&#x101;va</attrShortName><attrSuccessorId
+      xsi:nil="true"/><attrType>N</attrType><attrUnit>A</attrUnit><attrValue>29</attrValue><attrValueId>8443582</attrValueId></array><array><attrBlockNo>0</attrBlockNo><attrId>643</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>false</attrIsInterval><attrName>Savienojumu
+      skaits</attrName><attrShortName>Savienojumu skaits</attrShortName><attrSuccessorId
+      xsi:nil="true"/><attrType>N</attrType><attrUnit xsi:nil="true"/><attrValue>5</attrValue><attrValueId>8443583</attrValueId></array><array><attrBlockNo>0</attrBlockNo><attrId>212</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>false</attrIsInterval><attrName>Masa
+      [kg]</attrName><attrShortName>Masa</attrShortName><attrSuccessorId xsi:nil="true"/><attrType>N</attrType><attrUnit>kg</attrUnit><attrValue>0,180</attrValue><attrValueId>8443584</attrValueId></array><array><attrBlockNo>0</attrBlockNo><attrId>490</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>false</attrIsInterval><attrName>Rievu
+      skaits</attrName><attrShortName>Rievu skaits</attrShortName><attrSuccessorId
+      xsi:nil="true"/><attrType>N</attrType><attrUnit xsi:nil="true"/><attrValue>58</attrValue><attrValueId>8443585</attrValueId></array><array><attrBlockNo>0</attrBlockNo><attrId>227</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>false</attrIsInterval><attrName>nepiecie&#x161;amais
+      daudzums</attrName><attrShortName>nepiecie&#x161;amais daudzums</attrShortName><attrSuccessorId
+      xsi:nil="true"/><attrType>N</attrType><attrUnit xsi:nil="true"/><attrValue>1</attrValue><attrValueId>8443586</attrValueId></array></array><empty>false</empty></articleAttributes><articleDocuments
+      xsi:nil="true"/><articleInfo xsi:nil="true"/><articlePrices xsi:nil="true"/><assignedArticle><articleAddName
+      xsi:nil="true"/><articleId>2930257</articleId><articleLinkId>0</articleLinkId><articleNo>31966</articleNo><articleState>1</articleState><articleStateName>Norm&#x101;ls</articleStateName><hasAppendage>false</hasAppendage><hasAxleLink>false</hasAxleLink><hasCsGraphics>false</hasCsGraphics><hasDocuments>true</hasDocuments><hasLessDiscount>false</hasLessDiscount><hasMarkLink>false</hasMarkLink><hasMotorLink>false</hasMotorLink><hasOEN>true</hasOEN><hasPartList>false</hasPartList><hasPrices>false</hasPrices><hasSecurityInfo>false</hasSecurityInfo><hasUsage>false</hasUsage><hasVehicleLink>true</hasVehicleLink><packingUnit>1</packingUnit><quantityPerPackingUnit
+      xsi:nil="true"/></assignedArticle><directArticle xsi:nil="true"/><documentData
+      xsi:nil="true"/><eanNumber><array><array><eanNumber>4027816319665</eanNumber></array></array><empty>false</empty></eanNumber><immediateAttributs
+      xsi:nil="true"/><immediateInfo xsi:nil="true"/><mainArticle xsi:nil="true"/><normalAustauschPrice
+      xsi:nil="true"/><oenNumbers><array><array><blockNumber>1</blockNumber><brandName>BMW</brandName><oeNumber>64
+      11 6 920 365</oeNumber><sortNumber>1</sortNumber></array><array><blockNumber>2</blockNumber><brandName>BMW</brandName><oeNumber>64
+      11 8 364 173</oeNumber><sortNumber>1</sortNumber></array><array><blockNumber>3</blockNumber><brandName>BMW</brandName><oeNumber>64
+      11 8 385 549</oeNumber><sortNumber>1</sortNumber></array><array><blockNumber>4</blockNumber><brandName>BMW</brandName><oeNumber>64
+      11 6 929 486</oeNumber><sortNumber>1</sortNumber></array><array><blockNumber>5</blockNumber><brandName>BMW</brandName><oeNumber>64
+      11 8 377 579</oeNumber><sortNumber>1</sortNumber></array><array><blockNumber>6</blockNumber><brandName>BMW</brandName><oeNumber>64
+      11 8 383 835</oeNumber><sortNumber>1</sortNumber></array></array><empty>false</empty></oenNumbers><replacedByNumber
+      xsi:nil="true"/><replacedNumber xsi:nil="true"/><usageNumbers xsi:nil="true"/></array></array><empty>false</empty></data><status>200</status><statusText
+      xsi:nil="true"/></getAssignedArticlesByIds2SingleReturn></getAssignedArticlesByIds2SingleResponse></soapenv:Body></soapenv:Envelope>
+    http_version: '1.0'

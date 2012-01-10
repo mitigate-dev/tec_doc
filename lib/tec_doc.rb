@@ -10,6 +10,8 @@ module TecDoc
   autoload :Article,              "tec_doc/article"
   autoload :ArticleDocument,      "tec_doc/article_document"
   autoload :ArticleThumbnail,     "tec_doc/article_thumbnail"
+  autoload :ArticleOENumber,      "tec_doc/article_oe_number"
+  autoload :ArticleAttribute,     "tec_doc/article_attribute"
   autoload :AssemblyGroup,        "tec_doc/assembly_group"
   autoload :Brand,                "tec_doc/brand"
   autoload :Language,             "tec_doc/language"
