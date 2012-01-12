@@ -97,27 +97,42 @@ module TecDoc
     end
     
     def linked_vehicles
-      # IDs split into batches, because API accepts 25 max
-      # This could also be moved somewhere as helper for any longlists
-      long_list = linked_vehicle_ids.each_slice(25).to_a.map do |batch|
-        batch.inject({}) do |arr, id|
-          arr["id_#{id}"] = id
-          arr
+      unless @linked_vehicles
+        # IDs split into batches, because API accepts 25 max
+        # This could also be moved somewhere as helper for any longlists
+        long_list = linked_vehicle_ids.each_slice(25).to_a.map do |batch|
+          batch.inject({}) do |arr, id|
+            arr["id_#{id}"] = id
+            arr
+          end
+        end
+        
+        # Response from all batches
+        response = long_list.inject([]) do |result, ids_batch|
+          result += TecDoc.client.request(:get_vehicle_by_ids_2,
+            {:car_ids => {:array => ids_batch},
+            :lang => scope[:lang],
+            :country => scope[:country],
+            :country_user_setting => scope[:country],
+            :countries_car_selection => scope[:country],
+            :motor_codes => true,
+            :axles => true,
+            :cabs => true,
+            :secondary_types => true,
+            :vehicle_details2 => true,
+            :vehicle_terms => true,
+            :wheelbases => true
+          })
+          result
+        end
+        @linked_vehicles = response.map do |attrs|
+          #TODO: create builder  for vehicle
+          vehicle = Vehicle.new
+          vehicle.id = attrs[:car_id].to_i
+          vehicle
         end
       end
-      
-      # Response from all batches
-      response = long_list.inject([]) do |result, ids_batch|
-        result += TecDoc.client.request(:get_vehicle_by_ids_2,
-          {:car_ids => {:array => ids_batch},
-          :lang => "lv",
-          :country => "lv",
-          :country_user_setting => "lv",
-          :countries_car_selection => "lv"
-        })
-        result
-      end
-      response
+      @linked_vehicles
     end
 
     private
