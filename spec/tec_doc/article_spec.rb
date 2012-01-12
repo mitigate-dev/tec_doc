@@ -87,7 +87,7 @@ describe TecDoc::Article do
       VCR.use_cassette('article_linked_vehicle_ids') do
         @articles[0].linked_vehicle_ids
       end
-      @articles[0].linked_vehicle_ids.count == 18
+      @articles[0].linked_vehicle_ids.count.should == 16
     end
   end
 end

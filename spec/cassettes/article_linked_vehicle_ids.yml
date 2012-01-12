@@ -17,14 +17,14 @@
       content-type:
       - text/xml;charset=UTF-8
       content-length:
-      - '1333'
+      - '1434'
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
       message: OK
     headers:
       date:
-      - Thu, 12 Jan 2012 17:13:55 GMT
+      - Thu, 12 Jan 2012 19:09:03 GMT
       server:
       - Apache
       content-length:
