@@ -95,6 +95,19 @@ module TecDoc
         :article_id => id
       }).map{ |attrs| attrs[:linking_target_id].to_i }
     end
+    
+    def linked_vehicles
+      TecDoc.client.request(:get_vehicle_by_ids_2,
+        {:car_ids => {
+          :empty => false, 
+          :array => {:id1 => 4241, :id2 => 4247}
+        }, 
+        :lang => "lv", 
+        :country => "lv", 
+        :country_user_setting => "lv", 
+        :countries_car_selection => "lv"}
+      )
+    end
 
     private
 
