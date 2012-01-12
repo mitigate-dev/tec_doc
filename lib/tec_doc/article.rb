@@ -68,6 +68,33 @@ module TecDoc
         ArticleOENumber.new(attrs)
       end
     end
+    
+    def linked_manufacturers
+      unless @linked_manufacturers
+        response = TecDoc.client.request(:get_article_linked_all_linking_target_manufacturer, {
+          :country => scope[:country],
+          :linking_target_type => "C",
+          :article_id => id
+        })
+        @linked_manufacturers = response.map do |attrs|
+          manufacturer = VehicleManufacturer.new
+          manufacturer.name = attrs[:manu_name].to_s
+          manufacturer.id = attrs[:manu_id].to_i
+          manufacturer
+        end
+      end
+      @linked_manufacturers
+    end
+    
+    def linked_vehicle_ids
+      @linked_vehicle_ids ||= TecDoc.client.request(:get_article_linked_all_linking_target_2, {
+        :lang => scope[:lang],
+        :country => scope[:country],
+        :linking_target_type => "C",
+        :linking_target_id => -1,
+        :article_id => id
+      }).map{ |attrs| attrs[:linking_target_id].to_i }
+    end
 
     private
 
