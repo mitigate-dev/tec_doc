@@ -54,7 +54,7 @@ module TecDoc
     end
 
     def attributes
-      @oe_numbers ||= assigned_article[:article_attributes].map do |attrs|
+      @attributes ||= assigned_article[:article_attributes].map do |attrs|
         ArticleAttribute.new(attrs)
       end
     end
