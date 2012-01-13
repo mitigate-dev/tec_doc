@@ -1,5 +1,9 @@
+require "tec_doc/helpers/date_parser_helper"
+
 module TecDoc
   class Vehicle
+    extend Helpers::DateParserHelper
+    
     attr_accessor \
       :id,
       :name,
@@ -33,23 +37,17 @@ module TecDoc
         vehicle = new
         car_attributes = attributes[:car_details]
         if car_attributes
-          vehicle.id                = car_attributes[:car_id].to_i
-          vehicle.name              = car_attributes[:car_name].to_s
-          vehicle.cylinder_capacity = car_attributes[:cylinder_capacity].to_i
-          vehicle.first_country     = car_attributes[:first_country].to_s
-          vehicle.linked            = car_attributes[:linked]
-          vehicle.power_hp_from     = car_attributes[:power_hp_from].to_i
-          vehicle.power_hp_to       = car_attributes[:power_hp_to].to_i
-          vehicle.power_kw_from     = car_attributes[:power_kw_from].to_i
-          vehicle.power_kw_to       = car_attributes[:power_kw_to].to_i
-          if car_attributes[:year_of_constr_from]
-            year, month = car_attributes[:year_of_constr_from].to_i.divmod(100)
-            vehicle.date_of_construction_from = Date.new(year, month, 1)
-          end
-          if car_attributes[:year_of_constr_to]
-            year, month = car_attributes[:year_of_constr_to].to_i.divmod(100)
-            vehicle.date_of_construction_to = Date.new(year, month, 1)
-          end
+          vehicle.id                        = car_attributes[:car_id].to_i
+          vehicle.name                      = car_attributes[:car_name].to_s
+          vehicle.cylinder_capacity         = car_attributes[:cylinder_capacity].to_i
+          vehicle.first_country             = car_attributes[:first_country].to_s
+          vehicle.linked                    = car_attributes[:linked]
+          vehicle.power_hp_from             = car_attributes[:power_hp_from].to_i
+          vehicle.power_hp_to               = car_attributes[:power_hp_to].to_i
+          vehicle.power_kw_from             = car_attributes[:power_kw_from].to_i
+          vehicle.power_kw_to               = car_attributes[:power_kw_to].to_i
+          vehicle.date_of_construction_from = parse_tec_doc_date car_attributes[:year_of_constr_from]
+          vehicle.date_of_construction_to   = parse_tec_doc_date car_attributes[:year_of_constr_to]
         end
         vehicle.motor_codes = attributes[:motor_codes].map { |mc| mc[:motor_code] }
         vehicle

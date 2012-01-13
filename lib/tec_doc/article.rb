@@ -1,8 +1,10 @@
 require "tec_doc/helpers/long_list_helper"
+require "tec_doc/helpers/date_parser_helper"
 
 module TecDoc
   class Article
     include Helpers::LongListHelper
+    include Helpers::DateParserHelper
     
     attr_accessor :id, :name, :number, :search_number, :brand_name, :brand_number, :generic_article_id, :number_type
 
@@ -123,9 +125,15 @@ module TecDoc
           result
         end
         @linked_vehicles = response.map do |attrs|
-          #TODO: create builder  for vehicle
+          details = (attrs[:vehicle_details2] || {})
           vehicle = Vehicle.new
           vehicle.id = attrs[:car_id].to_i
+          vehicle.name = "#{details[:manu_name]} - #{details[:model_name]} - #{details[:type_name]}"
+          vehicle.cylinder_capacity
+          vehicle.power_hp_from             = details[:power_hp].to_i
+          vehicle.power_kw_from             = details[:power_kw].to_i
+          vehicle.date_of_construction_from = parse_tec_doc_date details[:year_of_construction_from]
+          vehicle.date_of_construction_to   = parse_tec_doc_date details[:year_of_construction_to]
           vehicle
         end
       end
