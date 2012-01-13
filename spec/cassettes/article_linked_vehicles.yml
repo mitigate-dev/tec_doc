@@ -1,0 +1,240 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :post
+    uri: http://webservicepilot.tecdoc.net:80/pegasus-2-0/services/TecdocToCatWL
+    body: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://webservicepilot.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="http://webservicepilot.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"
+      xmlns:ins1="http://options.datatype.tocinterface.cat.tecdoc.net" xmlns:ins2="http://controlpanel.datatype.tocinterface.cat.tecdoc.net"
+      xmlns:ins3="http://articles.datatype.tocinterface.cat.tecdoc.net" xmlns:ins4="http://carselection.datatype.tocinterface.cat.tecdoc.net"
+      xmlns:ins5="http://datatype.cat.tecdoc.net" xmlns:ins6="http://axlesselection.datatype.tocinterface.cat.tecdoc.net"
+      xmlns:ins7="http://motorselection.datatype.tocinterface.cat.tecdoc.net" xmlns:ins8="http://assemblygroupselection.datatype.tocinterface.cat.tecdoc.net"
+      xmlns:ins9="http://specialselection.datatype.tocinterface.cat.tecdoc.net"><env:Body><ins0:getArticleLinkedAllLinkingTarget2><wsdl:in><wsdl:provider>330</wsdl:provider><wsdl:lang>lv</wsdl:lang><wsdl:country>lv</wsdl:country><wsdl:linkingTargetType>C</wsdl:linkingTargetType><wsdl:linkingTargetId>-1</wsdl:linkingTargetId><wsdl:articleId>1540027</wsdl:articleId></wsdl:in></ins0:getArticleLinkedAllLinkingTarget2></env:Body></env:Envelope>
+    headers:
+      soapaction:
+      - ! '"getArticleLinkedAllLinkingTarget2"'
+      content-type:
+      - text/xml;charset=UTF-8
+      content-length:
+      - '1333'
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Fri, 13 Jan 2012 08:20:31 GMT
+      server:
+      - Apache
+      content-length:
+      - '3014'
+      content-type:
+      - text/xml;charset=utf-8
+      x-cache:
+      - MISS from demo.makit.lv
+      x-cache-lookup:
+      - MISS from demo.makit.lv:8080
+      via:
+      - 1.1 demo.makit.lv:8080 (squid/2.7.STABLE7)
+    body: <?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><getArticleLinkedAllLinkingTarget2Response
+      xmlns="http://webservicepilot.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"><getArticleLinkedAllLinkingTarget2Return
+      xmlns=""><data><array><array><articleLinkId>15140566</articleLinkId><linkingTargetId>2158</linkingTargetId><linkingTargetType>C</linkingTargetType></array><array><articleLinkId>15140585</articleLinkId><linkingTargetId>18472</linkingTargetId><linkingTargetType>C</linkingTargetType></array><array><articleLinkId>15140567</articleLinkId><linkingTargetId>4241</linkingTargetId><linkingTargetType>C</linkingTargetType></array><array><articleLinkId>15140572</articleLinkId><linkingTargetId>4710</linkingTargetId><linkingTargetType>C</linkingTargetType></array><array><articleLinkId>15140568</articleLinkId><linkingTargetId>4242</linkingTargetId><linkingTargetType>C</linkingTargetType></array><array><articleLinkId>15140576</articleLinkId><linkingTargetId>7821</linkingTargetId><linkingTargetType>C</linkingTargetType></array><array><articleLinkId>15140580</articleLinkId><linkingTargetId>11510</linkingTargetId><linkingTargetType>C</linkingTargetType></array><array><articleLinkId>15140581</articleLinkId><linkingTargetId>15955</linkingTargetId><linkingTargetType>C</linkingTargetType></array><array><articleLinkId>15140569</articleLinkId><linkingTargetId>4294</linkingTargetId><linkingTargetType>C</linkingTargetType></array><array><articleLinkId>15140570</articleLinkId><linkingTargetId>4298</linkingTargetId><linkingTargetType>C</linkingTargetType></array><array><articleLinkId>15140571</articleLinkId><linkingTargetId>4298</linkingTargetId><linkingTargetType>C</linkingTargetType></array><array><articleLinkId>15140573</articleLinkId><linkingTargetId>7283</linkingTargetId><linkingTargetType>C</linkingTargetType></array><array><articleLinkId>15140574</articleLinkId><linkingTargetId>7283</linkingTargetId><linkingTargetType>C</linkingTargetType></array><array><articleLinkId>15140579</articleLinkId><linkingTargetId>11239</linkingTargetId><linkingTargetType>C</linkingTargetType></array><array><articleLinkId>15140584</articleLinkId><linkingTargetId>18287</linkingTargetId><linkingTargetType>C</linkingTargetType></array><array><articleLinkId>15140582</articleLinkId><linkingTargetId>16550</linkingTargetId><linkingTargetType>C</linkingTargetType></array><array><articleLinkId>15140583</articleLinkId><linkingTargetId>17763</linkingTargetId><linkingTargetType>C</linkingTargetType></array><array><articleLinkId>15140575</articleLinkId><linkingTargetId>7692</linkingTargetId><linkingTargetType>C</linkingTargetType></array></array><empty>false</empty></data><status>200</status><statusText
+      xsi:nil="true"/></getArticleLinkedAllLinkingTarget2Return></getArticleLinkedAllLinkingTarget2Response></soapenv:Body></soapenv:Envelope>
+    http_version: '1.0'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :post
+    uri: http://webservicepilot.tecdoc.net:80/pegasus-2-0/services/TecdocToCatWL
+    body: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://webservicepilot.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="http://webservicepilot.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"
+      xmlns:ins1="http://options.datatype.tocinterface.cat.tecdoc.net" xmlns:ins2="http://controlpanel.datatype.tocinterface.cat.tecdoc.net"
+      xmlns:ins3="http://articles.datatype.tocinterface.cat.tecdoc.net" xmlns:ins4="http://carselection.datatype.tocinterface.cat.tecdoc.net"
+      xmlns:ins5="http://datatype.cat.tecdoc.net" xmlns:ins6="http://axlesselection.datatype.tocinterface.cat.tecdoc.net"
+      xmlns:ins7="http://motorselection.datatype.tocinterface.cat.tecdoc.net" xmlns:ins8="http://assemblygroupselection.datatype.tocinterface.cat.tecdoc.net"
+      xmlns:ins9="http://specialselection.datatype.tocinterface.cat.tecdoc.net"><env:Body><ins0:getVehicleByIds2><wsdl:in><wsdl:provider>330</wsdl:provider><wsdl:carIds><wsdl:array><wsdl:id_2158>2158</wsdl:id_2158><wsdl:id_18472>18472</wsdl:id_18472><wsdl:id_4241>4241</wsdl:id_4241><wsdl:id_4710>4710</wsdl:id_4710><wsdl:id_4242>4242</wsdl:id_4242><wsdl:id_7821>7821</wsdl:id_7821><wsdl:id_11510>11510</wsdl:id_11510><wsdl:id_15955>15955</wsdl:id_15955><wsdl:id_4294>4294</wsdl:id_4294><wsdl:id_4298>4298</wsdl:id_4298><wsdl:id_7283>7283</wsdl:id_7283><wsdl:id_11239>11239</wsdl:id_11239><wsdl:id_18287>18287</wsdl:id_18287><wsdl:id_16550>16550</wsdl:id_16550><wsdl:id_17763>17763</wsdl:id_17763><wsdl:id_7692>7692</wsdl:id_7692></wsdl:array></wsdl:carIds><wsdl:lang>lv</wsdl:lang><wsdl:country>lv</wsdl:country><wsdl:countryUserSetting>lv</wsdl:countryUserSetting><wsdl:countriesCarSelection>lv</wsdl:countriesCarSelection><wsdl:motorCodes>true</wsdl:motorCodes><wsdl:axles>true</wsdl:axles><wsdl:cabs>true</wsdl:cabs><wsdl:secondaryTypes>true</wsdl:secondaryTypes><wsdl:vehicleDetails2>true</wsdl:vehicleDetails2><wsdl:vehicleTerms>true</wsdl:vehicleTerms><wsdl:wheelbases>true</wsdl:wheelbases></wsdl:in></ins0:getVehicleByIds2></env:Body></env:Envelope>
+    headers:
+      soapaction:
+      - ! '"getVehicleByIds2"'
+      content-type:
+      - text/xml;charset=UTF-8
+      content-length:
+      - '1333'
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Fri, 13 Jan 2012 08:20:31 GMT
+      server:
+      - Apache
+      content-type:
+      - text/xml;charset=utf-8
+      x-cache:
+      - MISS from demo.makit.lv
+      x-cache-lookup:
+      - MISS from demo.makit.lv:8080
+      via:
+      - 1.1 demo.makit.lv:8080 (squid/2.7.STABLE7)
+    body: <?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><getVehicleByIds2Response
+      xmlns="http://webservicepilot.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"><getVehicleByIds2Return
+      xmlns=""><data><array><array><axles xsi:nil="true"/><cabs xsi:nil="true"/><carId>2158</carId><motorCodes><array><array><motorCode>KDX
+      (TU3M/Z)</motorCode></array><array><motorCode>KDY (TU3FM)</motorCode></array><array><motorCode>KDY
+      (TU3M)</motorCode></array><array><motorCode>KDZ (TU3M/Z)</motorCode></array></array><empty>false</empty></motorCodes><secondaryTypes
+      xsi:nil="true"/><vehicleDetails><axisConfiguration xsi:nil="true"/><carId>2158</carId><ccmTech>1360</ccmTech><constructionType>He&#x10D;beka
+      virsb&#x16B;ve</constructionType><manuId>21</manuId><modId>393</modId><powerHpFrom>75</powerHpFrom><powerHpTo>75</powerHpTo><powerKwFrom>55</powerKwFrom><powerKwTo>55</powerKwTo><tonnage
+      xsi:nil="true"/><yearOfConstrFrom>198704</yearOfConstrFrom><yearOfConstrTo>199704</yearOfConstrTo></vehicleDetails><vehicleDetails2><brakeSystem>Hidraulisks</brakeSystem><constructionType>He&#x10D;beka
+      virsb&#x16B;ve</constructionType><cylinder>4</cylinder><cylinderCapacityCcm>1360</cylinderCapacityCcm><cylinderCapacityLiter>140</cylinderCapacityLiter><fuelType>Benz&#x12B;ns</fuelType><fuelTypeProcess>Iesmidzin&#x101;&#x161;ana
+      iepl&#x16B;des kolektor&#x101;/Karburators</fuelTypeProcess><impulsionType>Priek&#x161;piedzi&#x146;a</impulsionType><manuName>CITRO&#x116;N</manuName><modelName>AX
+      (ZA-_)</modelName><motorType>Otto</motorType><powerHP>75</powerHP><powerKW>55</powerKW><typeName>14</typeName><typeNumber>2158</typeNumber><valves>2</valves><yearOfConstructionFrom>198704</yearOfConstructionFrom><yearOfConstructionTo>199704</yearOfConstructionTo></vehicleDetails2><vehicleTerms><carId>2158</carId><carType>14</carType><manuId>21</manuId><manuName>CITRO&#x116;N</manuName><modId>393</modId><modelName>AX
+      (ZA-_)</modelName></vehicleTerms><wheelBases xsi:nil="true"/></array><array><axles
+      xsi:nil="true"/><cabs xsi:nil="true"/><carId>18472</carId><motorCodes><array><array><motorCode>D17A2</motorCode></array></array><empty>false</empty></motorCodes><secondaryTypes
+      xsi:nil="true"/><vehicleDetails><axisConfiguration xsi:nil="true"/><carId>18472</carId><ccmTech>1668</ccmTech><constructionType>He&#x10D;beka
+      virsb&#x16B;ve</constructionType><manuId>45</manuId><modId>5158</modId><powerHpFrom>125</powerHpFrom><powerHpTo>125</powerHpTo><powerKwFrom>92</powerKwFrom><powerKwTo>92</powerKwTo><tonnage
+      xsi:nil="true"/><yearOfConstrFrom>200502</yearOfConstrFrom><yearOfConstrTo xsi:nil="true"/></vehicleDetails><vehicleDetails2><brakeSystem
+      xsi:nil="true"/><constructionType>He&#x10D;beka virsb&#x16B;ve</constructionType><cylinder>4</cylinder><cylinderCapacityCcm>1668</cylinderCapacityCcm><cylinderCapacityLiter>170</cylinderCapacityLiter><fuelType>Benz&#x12B;ns</fuelType><fuelTypeProcess>Iesmidzin&#x101;&#x161;ana
+      iepl&#x16B;des kolektor&#x101;/Karburators</fuelTypeProcess><impulsionType>Priek&#x161;piedzi&#x146;a</impulsionType><manuName>HONDA</manuName><modelName>FR-V
+      (BE)</modelName><motorType>Otto</motorType><powerHP>125</powerHP><powerKW>92</powerKW><typeName>1.7</typeName><typeNumber>18472</typeNumber><valves>4</valves><yearOfConstructionFrom>200502</yearOfConstructionFrom><yearOfConstructionTo
+      xsi:nil="true"/></vehicleDetails2><vehicleTerms><carId>18472</carId><carType>1.7</carType><manuId>45</manuId><manuName>HONDA</manuName><modId>5158</modId><modelName>FR-V
+      (BE)</modelName></vehicleTerms><wheelBases xsi:nil="true"/></array><array><axles
+      xsi:nil="true"/><cabs xsi:nil="true"/><carId>4241</carId><motorCodes><array><array><motorCode>F20A4</motorCode></array></array><empty>false</empty></motorCodes><secondaryTypes
+      xsi:nil="true"/><vehicleDetails><axisConfiguration xsi:nil="true"/><carId>4241</carId><ccmTech>1997</ccmTech><constructionType>Coupe</constructionType><manuId>45</manuId><modId>1277</modId><powerHpFrom>133</powerHpFrom><powerHpTo>133</powerHpTo><powerKwFrom>98</powerKwFrom><powerKwTo>98</powerKwTo><tonnage
+      xsi:nil="true"/><yearOfConstrFrom>199202</yearOfConstrFrom><yearOfConstrTo>199609</yearOfConstrTo></vehicleDetails><vehicleDetails2><brakeSystem>Hidraulisks</brakeSystem><constructionType>Coupe</constructionType><cylinder>4</cylinder><cylinderCapacityCcm>1997</cylinderCapacityCcm><cylinderCapacityLiter>200</cylinderCapacityLiter><fuelType>Benz&#x12B;ns</fuelType><fuelTypeProcess>Iesmidzin&#x101;&#x161;ana
+      iepl&#x16B;des kolektor&#x101;/Karburators</fuelTypeProcess><impulsionType>Priek&#x161;piedzi&#x146;a</impulsionType><manuName>HONDA</manuName><modelName>PRELUDE
+      IV (BB)</modelName><motorType>Otto</motorType><powerHP>133</powerHP><powerKW>98</powerKW><typeName>2.0
+      i 16V (BB3)</typeName><typeNumber>4241</typeNumber><valves>4</valves><yearOfConstructionFrom>199202</yearOfConstructionFrom><yearOfConstructionTo>199609</yearOfConstructionTo></vehicleDetails2><vehicleTerms><carId>4241</carId><carType>2.0
+      i 16V (BB3)</carType><manuId>45</manuId><manuName>HONDA</manuName><modId>1277</modId><modelName>PRELUDE
+      IV (BB)</modelName></vehicleTerms><wheelBases xsi:nil="true"/></array><array><axles
+      xsi:nil="true"/><cabs xsi:nil="true"/><carId>4710</carId><motorCodes><array><array><motorCode>H22A2</motorCode></array></array><empty>false</empty></motorCodes><secondaryTypes
+      xsi:nil="true"/><vehicleDetails><axisConfiguration xsi:nil="true"/><carId>4710</carId><ccmTech>2157</ccmTech><constructionType>Coupe</constructionType><manuId>45</manuId><modId>1277</modId><powerHpFrom>185</powerHpFrom><powerHpTo>185</powerHpTo><powerKwFrom>136</powerKwFrom><powerKwTo>136</powerKwTo><tonnage
+      xsi:nil="true"/><yearOfConstrFrom>199302</yearOfConstrFrom><yearOfConstrTo>199609</yearOfConstrTo></vehicleDetails><vehicleDetails2><brakeSystem>Hidraulisks</brakeSystem><constructionType>Coupe</constructionType><cylinder>4</cylinder><cylinderCapacityCcm>2157</cylinderCapacityCcm><cylinderCapacityLiter>220</cylinderCapacityLiter><fuelType>Benz&#x12B;ns</fuelType><fuelTypeProcess>Iesmidzin&#x101;&#x161;ana
+      iepl&#x16B;des kolektor&#x101;/Karburators</fuelTypeProcess><impulsionType>Priek&#x161;piedzi&#x146;a</impulsionType><manuName>HONDA</manuName><modelName>PRELUDE
+      IV (BB)</modelName><motorType>Otto</motorType><powerHP>185</powerHP><powerKW>136</powerKW><typeName>2.2
+      i 16V Vtec (BB1)</typeName><typeNumber>4710</typeNumber><valves>4</valves><yearOfConstructionFrom>199302</yearOfConstructionFrom><yearOfConstructionTo>199609</yearOfConstructionTo></vehicleDetails2><vehicleTerms><carId>4710</carId><carType>2.2
+      i 16V Vtec (BB1)</carType><manuId>45</manuId><manuName>HONDA</manuName><modId>1277</modId><modelName>PRELUDE
+      IV (BB)</modelName></vehicleTerms><wheelBases xsi:nil="true"/></array><array><axles
+      xsi:nil="true"/><cabs xsi:nil="true"/><carId>4242</carId><motorCodes><array><array><motorCode>H23A2</motorCode></array></array><empty>false</empty></motorCodes><secondaryTypes
+      xsi:nil="true"/><vehicleDetails><axisConfiguration xsi:nil="true"/><carId>4242</carId><ccmTech>2259</ccmTech><constructionType>Coupe</constructionType><manuId>45</manuId><modId>1277</modId><powerHpFrom>160</powerHpFrom><powerHpTo>160</powerHpTo><powerKwFrom>118</powerKwFrom><powerKwTo>118</powerKwTo><tonnage
+      xsi:nil="true"/><yearOfConstrFrom>199202</yearOfConstrFrom><yearOfConstrTo>199609</yearOfConstrTo></vehicleDetails><vehicleDetails2><brakeSystem>Hidraulisks</brakeSystem><constructionType>Coupe</constructionType><cylinder>4</cylinder><cylinderCapacityCcm>2259</cylinderCapacityCcm><cylinderCapacityLiter>230</cylinderCapacityLiter><fuelType>Benz&#x12B;ns</fuelType><fuelTypeProcess>Iesmidzin&#x101;&#x161;ana
+      iepl&#x16B;des kolektor&#x101;/Karburators</fuelTypeProcess><impulsionType>Priek&#x161;piedzi&#x146;a</impulsionType><manuName>HONDA</manuName><modelName>PRELUDE
+      IV (BB)</modelName><motorType>Otto</motorType><powerHP>160</powerHP><powerKW>118</powerKW><typeName>2.3
+      i 16V (BB2)</typeName><typeNumber>4242</typeNumber><valves>4</valves><yearOfConstructionFrom>199202</yearOfConstructionFrom><yearOfConstructionTo>199609</yearOfConstructionTo></vehicleDetails2><vehicleTerms><carId>4242</carId><carType>2.3
+      i 16V (BB2)</carType><manuId>45</manuId><manuName>HONDA</manuName><modId>1277</modId><modelName>PRELUDE
+      IV (BB)</modelName></vehicleTerms><wheelBases xsi:nil="true"/></array><array><axles
+      xsi:nil="true"/><cabs xsi:nil="true"/><carId>7821</carId><motorCodes><array><array><motorCode>H22A5</motorCode></array></array><empty>false</empty></motorCodes><secondaryTypes
+      xsi:nil="true"/><vehicleDetails><axisConfiguration xsi:nil="true"/><carId>7821</carId><ccmTech>2157</ccmTech><constructionType>Coupe</constructionType><manuId>45</manuId><modId>3500</modId><powerHpFrom>185</powerHpFrom><powerHpTo>185</powerHpTo><powerKwFrom>136</powerKwFrom><powerKwTo>136</powerKwTo><tonnage
+      xsi:nil="true"/><yearOfConstrFrom>199610</yearOfConstrFrom><yearOfConstrTo>200010</yearOfConstrTo></vehicleDetails><vehicleDetails2><brakeSystem>Hidraulisks</brakeSystem><constructionType>Coupe</constructionType><cylinder>4</cylinder><cylinderCapacityCcm>2157</cylinderCapacityCcm><cylinderCapacityLiter>220</cylinderCapacityLiter><fuelType>Benz&#x12B;ns</fuelType><fuelTypeProcess>Iesmidzin&#x101;&#x161;ana
+      iepl&#x16B;des kolektor&#x101;/Karburators</fuelTypeProcess><impulsionType>Priek&#x161;piedzi&#x146;a</impulsionType><manuName>HONDA</manuName><modelName>PRELUDE
+      V (BB)</modelName><motorType>Otto</motorType><powerHP>185</powerHP><powerKW>136</powerKW><typeName>2.2
+      16V (BB6, BB8)</typeName><typeNumber>7821</typeNumber><valves>4</valves><yearOfConstructionFrom>199610</yearOfConstructionFrom><yearOfConstructionTo>200010</yearOfConstructionTo></vehicleDetails2><vehicleTerms><carId>7821</carId><carType>2.2
+      16V (BB6, BB8)</carType><manuId>45</manuId><manuName>HONDA</manuName><modId>3500</modId><modelName>PRELUDE
+      V (BB)</modelName></vehicleTerms><wheelBases xsi:nil="true"/></array><array><axles
+      xsi:nil="true"/><cabs xsi:nil="true"/><carId>11510</carId><motorCodes><array><array><motorCode>H22A5</motorCode></array></array><empty>false</empty></motorCodes><secondaryTypes
+      xsi:nil="true"/><vehicleDetails><axisConfiguration xsi:nil="true"/><carId>11510</carId><ccmTech>2157</ccmTech><constructionType>Coupe</constructionType><manuId>45</manuId><modId>3500</modId><powerHpFrom>200</powerHpFrom><powerHpTo>200</powerHpTo><powerKwFrom>147</powerKwFrom><powerKwTo>147</powerKwTo><tonnage
+      xsi:nil="true"/><yearOfConstrFrom>199610</yearOfConstrFrom><yearOfConstrTo>200010</yearOfConstrTo></vehicleDetails><vehicleDetails2><brakeSystem>Hidraulisks</brakeSystem><constructionType>Coupe</constructionType><cylinder>4</cylinder><cylinderCapacityCcm>2157</cylinderCapacityCcm><cylinderCapacityLiter>220</cylinderCapacityLiter><fuelType>Benz&#x12B;ns</fuelType><fuelTypeProcess>Iesmidzin&#x101;&#x161;ana
+      iepl&#x16B;des kolektor&#x101;/Karburators</fuelTypeProcess><impulsionType>Priek&#x161;piedzi&#x146;a</impulsionType><manuName>HONDA</manuName><modelName>PRELUDE
+      V (BB)</modelName><motorType>Otto</motorType><powerHP>200</powerHP><powerKW>147</powerKW><typeName>2.2
+      16V</typeName><typeNumber>11510</typeNumber><valves>4</valves><yearOfConstructionFrom>199610</yearOfConstructionFrom><yearOfConstructionTo>200010</yearOfConstructionTo></vehicleDetails2><vehicleTerms><carId>11510</carId><carType>2.2
+      16V</carType><manuId>45</manuId><manuName>HONDA</manuName><modId>3500</modId><modelName>PRELUDE
+      V (BB)</modelName></vehicleTerms><wheelBases xsi:nil="true"/></array><array><axles
+      xsi:nil="true"/><cabs xsi:nil="true"/><carId>15955</carId><motorCodes><array><array><motorCode>D17A2</motorCode></array></array><empty>false</empty></motorCodes><secondaryTypes
+      xsi:nil="true"/><vehicleDetails><axisConfiguration xsi:nil="true"/><carId>15955</carId><ccmTech>1668</ccmTech><constructionType>Lielas
+      ietilp&#x12B;bas automobilis</constructionType><manuId>45</manuId><modId>4783</modId><powerHpFrom>125</powerHpFrom><powerHpTo>125</powerHpTo><powerKwFrom>92</powerKwFrom><powerKwTo>92</powerKwTo><tonnage
+      xsi:nil="true"/><yearOfConstrFrom>200105</yearOfConstrFrom><yearOfConstrTo xsi:nil="true"/></vehicleDetails><vehicleDetails2><brakeSystem
+      xsi:nil="true"/><constructionType>Lielas ietilp&#x12B;bas automobilis</constructionType><cylinder>4</cylinder><cylinderCapacityCcm>1668</cylinderCapacityCcm><cylinderCapacityLiter>170</cylinderCapacityLiter><fuelType>Benz&#x12B;ns</fuelType><fuelTypeProcess>Iesmidzin&#x101;&#x161;ana
+      iepl&#x16B;des kolektor&#x101;/Karburators</fuelTypeProcess><impulsionType>Priek&#x161;piedzi&#x146;a</impulsionType><manuName>HONDA</manuName><modelName>STREAM
+      (RN)</modelName><motorType>Otto</motorType><powerHP>125</powerHP><powerKW>92</powerKW><typeName>1.7
+      16V</typeName><typeNumber>15955</typeNumber><valves>4</valves><yearOfConstructionFrom>200105</yearOfConstructionFrom><yearOfConstructionTo
+      xsi:nil="true"/></vehicleDetails2><vehicleTerms><carId>15955</carId><carType>1.7
+      16V</carType><manuId>45</manuId><manuName>HONDA</manuName><modId>4783</modId><modelName>STREAM
+      (RN)</modelName></vehicleTerms><wheelBases xsi:nil="true"/></array><array><axles
+      xsi:nil="true"/><cabs xsi:nil="true"/><carId>4294</carId><motorCodes><array><array><motorCode>VG30E</motorCode></array></array><empty>false</empty></motorCodes><secondaryTypes
+      xsi:nil="true"/><vehicleDetails><axisConfiguration xsi:nil="true"/><carId>4294</carId><ccmTech>2960</ccmTech><constructionType>Targa</constructionType><manuId>80</manuId><modId>3434</modId><powerHpFrom>170</powerHpFrom><powerHpTo>170</powerHpTo><powerKwFrom>125</powerKwFrom><powerKwTo>125</powerKwTo><tonnage
+      xsi:nil="true"/><yearOfConstrFrom>198401</yearOfConstrFrom><yearOfConstrTo>198712</yearOfConstrTo></vehicleDetails><vehicleDetails2><brakeSystem>Hidraulisks</brakeSystem><constructionType>Targa</constructionType><cylinder>6</cylinder><cylinderCapacityCcm>2960</cylinderCapacityCcm><cylinderCapacityLiter>300</cylinderCapacityLiter><fuelType>Benz&#x12B;ns</fuelType><fuelTypeProcess>Iesmidzin&#x101;&#x161;ana
+      iepl&#x16B;des kolektor&#x101;/Karburators</fuelTypeProcess><impulsionType>Aizmugur&#x113;j&#x101;
+      piedzi&#x146;a</impulsionType><manuName>NISSAN</manuName><modelName>300 ZX (Z31)</modelName><motorType>Otto</motorType><powerHP>170</powerHP><powerKW>125</powerKW><typeName>3.0</typeName><typeNumber>4294</typeNumber><valves>2</valves><yearOfConstructionFrom>198401</yearOfConstructionFrom><yearOfConstructionTo>198712</yearOfConstructionTo></vehicleDetails2><vehicleTerms><carId>4294</carId><carType>3.0</carType><manuId>80</manuId><manuName>NISSAN</manuName><modId>3434</modId><modelName>300
+      ZX (Z31)</modelName></vehicleTerms><wheelBases xsi:nil="true"/></array><array><axles
+      xsi:nil="true"/><cabs xsi:nil="true"/><carId>4298</carId><motorCodes><array><array><motorCode>VG30ET</motorCode></array></array><empty>false</empty></motorCodes><secondaryTypes
+      xsi:nil="true"/><vehicleDetails><axisConfiguration xsi:nil="true"/><carId>4298</carId><ccmTech>2960</ccmTech><constructionType>Targa</constructionType><manuId>80</manuId><modId>3434</modId><powerHpFrom>203</powerHpFrom><powerHpTo>203</powerHpTo><powerKwFrom>149</powerKwFrom><powerKwTo>149</powerKwTo><tonnage
+      xsi:nil="true"/><yearOfConstrFrom>198705</yearOfConstrFrom><yearOfConstrTo>199010</yearOfConstrTo></vehicleDetails><vehicleDetails2><brakeSystem>Hidraulisks</brakeSystem><constructionType>Targa</constructionType><cylinder>6</cylinder><cylinderCapacityCcm>2960</cylinderCapacityCcm><cylinderCapacityLiter>300</cylinderCapacityLiter><fuelType>Benz&#x12B;ns</fuelType><fuelTypeProcess>Iesmidzin&#x101;&#x161;ana
+      iepl&#x16B;des kolektor&#x101;/Karburators</fuelTypeProcess><impulsionType>Aizmugur&#x113;j&#x101;
+      piedzi&#x146;a</impulsionType><manuName>NISSAN</manuName><modelName>300 ZX (Z31)</modelName><motorType>Otto</motorType><powerHP>203</powerHP><powerKW>149</powerKW><typeName>3.0
+      Turbo</typeName><typeNumber>4298</typeNumber><valves>2</valves><yearOfConstructionFrom>198705</yearOfConstructionFrom><yearOfConstructionTo>199010</yearOfConstructionTo></vehicleDetails2><vehicleTerms><carId>4298</carId><carType>3.0
+      Turbo</carType><manuId>80</manuId><manuName>NISSAN</manuName><modId>3434</modId><modelName>300
+      ZX (Z31)</modelName></vehicleTerms><wheelBases xsi:nil="true"/></array><array><axles
+      xsi:nil="true"/><cabs xsi:nil="true"/><carId>7283</carId><motorCodes><array><array><motorCode>VG30T</motorCode></array></array><empty>false</empty></motorCodes><secondaryTypes
+      xsi:nil="true"/><vehicleDetails><axisConfiguration xsi:nil="true"/><carId>7283</carId><ccmTech>2960</ccmTech><constructionType>Targa</constructionType><manuId>80</manuId><modId>3434</modId><powerHpFrom>228</powerHpFrom><powerHpTo>228</powerHpTo><powerKwFrom>168</powerKwFrom><powerKwTo>168</powerKwTo><tonnage
+      xsi:nil="true"/><yearOfConstrFrom>198404</yearOfConstrFrom><yearOfConstrTo>199010</yearOfConstrTo></vehicleDetails><vehicleDetails2><brakeSystem>Hidraulisks</brakeSystem><constructionType>Targa</constructionType><cylinder>6</cylinder><cylinderCapacityCcm>2960</cylinderCapacityCcm><cylinderCapacityLiter>300</cylinderCapacityLiter><fuelType>Benz&#x12B;ns</fuelType><fuelTypeProcess>Iesmidzin&#x101;&#x161;ana
+      iepl&#x16B;des kolektor&#x101;/Karburators</fuelTypeProcess><impulsionType>Aizmugur&#x113;j&#x101;
+      piedzi&#x146;a</impulsionType><manuName>NISSAN</manuName><modelName>300 ZX (Z31)</modelName><motorType>Otto</motorType><powerHP>228</powerHP><powerKW>168</powerKW><typeName>3.0
+      Turbo</typeName><typeNumber>7283</typeNumber><valves>2</valves><yearOfConstructionFrom>198404</yearOfConstructionFrom><yearOfConstructionTo>199010</yearOfConstructionTo></vehicleDetails2><vehicleTerms><carId>7283</carId><carType>3.0
+      Turbo</carType><manuId>80</manuId><manuName>NISSAN</manuName><modId>3434</modId><modelName>300
+      ZX (Z31)</modelName></vehicleTerms><wheelBases xsi:nil="true"/></array><array><axles
+      xsi:nil="true"/><cabs xsi:nil="true"/><carId>11239</carId><motorCodes><array><array><motorCode>H
+      25 A</motorCode></array></array><empty>false</empty></motorCodes><secondaryTypes
+      xsi:nil="true"/><vehicleDetails><axisConfiguration xsi:nil="true"/><carId>11239</carId><ccmTech>2493</ccmTech><constructionType>Sl&#x113;gta
+      tipa visurg&#x101;j&#x113;js</constructionType><manuId>109</manuId><modId>4097</modId><powerHpFrom>144</powerHpFrom><powerHpTo>144</powerHpTo><powerKwFrom>106</powerKwFrom><powerKwTo>106</powerKwTo><tonnage
+      xsi:nil="true"/><yearOfConstrFrom>199804</yearOfConstrFrom><yearOfConstrTo xsi:nil="true"/></vehicleDetails><vehicleDetails2><brakeSystem>Hidraulisks</brakeSystem><constructionType>Sl&#x113;gta
+      tipa visurg&#x101;j&#x113;js</constructionType><cylinder>6</cylinder><cylinderCapacityCcm>2493</cylinderCapacityCcm><cylinderCapacityLiter>250</cylinderCapacityLiter><fuelType>Benz&#x12B;ns</fuelType><fuelTypeProcess>Iesmidzin&#x101;&#x161;ana
+      iepl&#x16B;des kolektor&#x101;/Karburators</fuelTypeProcess><impulsionType>Visu
+      rite&#x146;u piedzi&#x146;a</impulsionType><manuName>SUZUKI</manuName><modelName>GRAND
+      VITARA (FT, GT)</modelName><motorType>Otto</motorType><powerHP>144</powerHP><powerKW>106</powerKW><typeName>2.5
+      V6 24V (FT)</typeName><typeNumber>11239</typeNumber><valves>4</valves><yearOfConstructionFrom>199804</yearOfConstructionFrom><yearOfConstructionTo
+      xsi:nil="true"/></vehicleDetails2><vehicleTerms><carId>11239</carId><carType>2.5
+      V6 24V (FT)</carType><manuId>109</manuId><manuName>SUZUKI</manuName><modId>4097</modId><modelName>GRAND
+      VITARA (FT, GT)</modelName></vehicleTerms><wheelBases xsi:nil="true"/></array><array><axles
+      xsi:nil="true"/><cabs xsi:nil="true"/><carId>18287</carId><motorCodes><array><array><motorCode>H
+      25 A</motorCode></array></array><empty>false</empty></motorCodes><secondaryTypes
+      xsi:nil="true"/><vehicleDetails><axisConfiguration xsi:nil="true"/><carId>18287</carId><ccmTech>2493</ccmTech><constructionType>Sl&#x113;gta
+      tipa visurg&#x101;j&#x113;js</constructionType><manuId>109</manuId><modId>4097</modId><powerHpFrom>158</powerHpFrom><powerHpTo>158</powerHpTo><powerKwFrom>116</powerKwFrom><powerKwTo>116</powerKwTo><tonnage
+      xsi:nil="true"/><yearOfConstrFrom>200104</yearOfConstrFrom><yearOfConstrTo xsi:nil="true"/></vehicleDetails><vehicleDetails2><brakeSystem
+      xsi:nil="true"/><constructionType>Sl&#x113;gta tipa visurg&#x101;j&#x113;js</constructionType><cylinder>6</cylinder><cylinderCapacityCcm>2493</cylinderCapacityCcm><cylinderCapacityLiter>250</cylinderCapacityLiter><fuelType>Benz&#x12B;ns</fuelType><fuelTypeProcess>Iesmidzin&#x101;&#x161;ana
+      iepl&#x16B;des kolektor&#x101;/Karburators</fuelTypeProcess><impulsionType>Visu
+      rite&#x146;u piedzi&#x146;a</impulsionType><manuName>SUZUKI</manuName><modelName>GRAND
+      VITARA (FT, GT)</modelName><motorType>Otto</motorType><powerHP>158</powerHP><powerKW>116</powerKW><typeName>2.5
+      V6 24V</typeName><typeNumber>18287</typeNumber><valves>4</valves><yearOfConstructionFrom>200104</yearOfConstructionFrom><yearOfConstructionTo
+      xsi:nil="true"/></vehicleDetails2><vehicleTerms><carId>18287</carId><carType>2.5
+      V6 24V</carType><manuId>109</manuId><manuName>SUZUKI</manuName><modId>4097</modId><modelName>GRAND
+      VITARA (FT, GT)</modelName></vehicleTerms><wheelBases xsi:nil="true"/></array><array><axles
+      xsi:nil="true"/><cabs xsi:nil="true"/><carId>16550</carId><motorCodes><array/><empty>true</empty></motorCodes><secondaryTypes
+      xsi:nil="true"/><vehicleDetails><axisConfiguration xsi:nil="true"/><carId>16550</carId><ccmTech>2736</ccmTech><constructionType>Sl&#x113;gta
+      tipa visurg&#x101;j&#x113;js</constructionType><manuId>109</manuId><modId>4097</modId><powerHpFrom>173</powerHpFrom><powerHpTo>173</powerHpTo><powerKwFrom>127</powerKwFrom><powerKwTo>127</powerKwTo><tonnage
+      xsi:nil="true"/><yearOfConstrFrom>200109</yearOfConstrFrom><yearOfConstrTo xsi:nil="true"/></vehicleDetails><vehicleDetails2><brakeSystem
+      xsi:nil="true"/><constructionType>Sl&#x113;gta tipa visurg&#x101;j&#x113;js</constructionType><cylinder>6</cylinder><cylinderCapacityCcm>2736</cylinderCapacityCcm><cylinderCapacityLiter>270</cylinderCapacityLiter><fuelType>Benz&#x12B;ns</fuelType><fuelTypeProcess>Iesmidzin&#x101;&#x161;ana
+      iepl&#x16B;des kolektor&#x101;/Karburators</fuelTypeProcess><impulsionType>Visu
+      rite&#x146;u piedzi&#x146;a</impulsionType><manuName>SUZUKI</manuName><modelName>GRAND
+      VITARA (FT, GT)</modelName><motorType>Otto</motorType><powerHP>173</powerHP><powerKW>127</powerKW><typeName>2.7
+      XL-7</typeName><typeNumber>16550</typeNumber><valves>2</valves><yearOfConstructionFrom>200109</yearOfConstructionFrom><yearOfConstructionTo
+      xsi:nil="true"/></vehicleDetails2><vehicleTerms><carId>16550</carId><carType>2.7
+      XL-7</carType><manuId>109</manuId><manuName>SUZUKI</manuName><modId>4097</modId><modelName>GRAND
+      VITARA (FT, GT)</modelName></vehicleTerms><wheelBases xsi:nil="true"/></array><array><axles
+      xsi:nil="true"/><cabs xsi:nil="true"/><carId>17763</carId><motorCodes><array><array><motorCode>H
+      27 A</motorCode></array></array><empty>false</empty></motorCodes><secondaryTypes
+      xsi:nil="true"/><vehicleDetails><axisConfiguration xsi:nil="true"/><carId>17763</carId><ccmTech>2736</ccmTech><constructionType>Sl&#x113;gta
+      tipa visurg&#x101;j&#x113;js</constructionType><manuId>109</manuId><modId>4097</modId><powerHpFrom>184</powerHpFrom><powerHpTo>184</powerHpTo><powerKwFrom>135</powerKwFrom><powerKwTo>135</powerKwTo><tonnage
+      xsi:nil="true"/><yearOfConstrFrom>200304</yearOfConstrFrom><yearOfConstrTo xsi:nil="true"/></vehicleDetails><vehicleDetails2><brakeSystem
+      xsi:nil="true"/><constructionType>Sl&#x113;gta tipa visurg&#x101;j&#x113;js</constructionType><cylinder>6</cylinder><cylinderCapacityCcm>2736</cylinderCapacityCcm><cylinderCapacityLiter>270</cylinderCapacityLiter><fuelType>Benz&#x12B;ns</fuelType><fuelTypeProcess>Iesmidzin&#x101;&#x161;ana
+      iepl&#x16B;des kolektor&#x101;/Karburators</fuelTypeProcess><impulsionType>Visu
+      rite&#x146;u piedzi&#x146;a</impulsionType><manuName>SUZUKI</manuName><modelName>GRAND
+      VITARA (FT, GT)</modelName><motorType>Otto</motorType><powerHP>184</powerHP><powerKW>135</powerKW><typeName>2.7
+      XL-7</typeName><typeNumber>17763</typeNumber><valves>4</valves><yearOfConstructionFrom>200304</yearOfConstructionFrom><yearOfConstructionTo
+      xsi:nil="true"/></vehicleDetails2><vehicleTerms><carId>17763</carId><carType>2.7
+      XL-7</carType><manuId>109</manuId><manuName>SUZUKI</manuName><modId>4097</modId><modelName>GRAND
+      VITARA (FT, GT)</modelName></vehicleTerms><wheelBases xsi:nil="true"/></array><array><axles
+      xsi:nil="true"/><cabs xsi:nil="true"/><carId>7692</carId><motorCodes><array><array><motorCode>J20A</motorCode></array></array><empty>false</empty></motorCodes><secondaryTypes
+      xsi:nil="true"/><vehicleDetails><axisConfiguration xsi:nil="true"/><carId>7692</carId><ccmTech>1995</ccmTech><constructionType>Sl&#x113;gta
+      tipa visurg&#x101;j&#x113;js</constructionType><manuId>109</manuId><modId>1237</modId><powerHpFrom>132</powerHpFrom><powerHpTo>132</powerHpTo><powerKwFrom>97</powerKwFrom><powerKwTo>97</powerKwTo><tonnage
+      xsi:nil="true"/><yearOfConstrFrom>199612</yearOfConstrFrom><yearOfConstrTo>199803</yearOfConstrTo></vehicleDetails><vehicleDetails2><brakeSystem>Hidraulisks</brakeSystem><constructionType>Sl&#x113;gta
+      tipa visurg&#x101;j&#x113;js</constructionType><cylinder>4</cylinder><cylinderCapacityCcm>1995</cylinderCapacityCcm><cylinderCapacityLiter>200</cylinderCapacityLiter><fuelType>Benz&#x12B;ns</fuelType><fuelTypeProcess>Iesmidzin&#x101;&#x161;ana
+      iepl&#x16B;des kolektor&#x101;/Karburators</fuelTypeProcess><impulsionType>Visu
+      rite&#x146;u piedzi&#x146;a</impulsionType><manuName>SUZUKI</manuName><modelName>VITARA
+      (ET, TA)</modelName><motorType>Otto</motorType><powerHP>132</powerHP><powerKW>97</powerKW><typeName>2.0
+      16V (ET, TA51)</typeName><typeNumber>7692</typeNumber><valves>4</valves><yearOfConstructionFrom>199612</yearOfConstructionFrom><yearOfConstructionTo>199803</yearOfConstructionTo></vehicleDetails2><vehicleTerms><carId>7692</carId><carType>2.0
+      16V (ET, TA51)</carType><manuId>109</manuId><manuName>SUZUKI</manuName><modId>1237</modId><modelName>VITARA
+      (ET, TA)</modelName></vehicleTerms><wheelBases xsi:nil="true"/></array></array><empty>false</empty></data><status>200</status><statusText
+      xsi:nil="true"/></getVehicleByIds2Return></getVehicleByIds2Response></soapenv:Body></soapenv:Envelope>
+    http_version: '1.0'

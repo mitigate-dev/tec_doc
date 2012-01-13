@@ -4,7 +4,7 @@ require "tec_doc/version"
 
 module TecDoc
   extend self
-
+  
   autoload :Client,               "tec_doc/client"
 
   autoload :Article,              "tec_doc/article"

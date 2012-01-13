@@ -1,5 +1,9 @@
+require "tec_doc/helpers/long_list_helper"
+
 module TecDoc
   class Article
+    include Helpers::LongListHelper
+    
     attr_accessor :id, :name, :number, :search_number, :brand_name, :brand_number, :generic_article_id, :number_type
 
     attr_accessor :scope
@@ -96,21 +100,14 @@ module TecDoc
       }).map{ |attrs| attrs[:linking_target_id].to_i }.uniq
     end
     
-    def linked_vehicles
+    def linked_vehicles(options = {})
       unless @linked_vehicles
-        # IDs split into batches, because API accepts 25 max
-        # This could also be moved somewhere as helper for any longlists
-        long_list = linked_vehicle_ids.each_slice(25).to_a.map do |batch|
-          batch.inject({}) do |arr, id|
-            arr["id_#{id}"] = id
-            arr
-          end
-        end
+        batch_list = array_to_batch_list(linked_vehicle_ids)
         
         # Response from all batches
-        response = long_list.inject([]) do |result, ids_batch|
+        response = batch_list.inject([]) do |result, long_list|
           result += TecDoc.client.request(:get_vehicle_by_ids_2,
-            {:car_ids => {:array => ids_batch},
+            {:car_ids => {:array => long_list},
             :lang => scope[:lang],
             :country => scope[:country],
             :country_user_setting => scope[:country],

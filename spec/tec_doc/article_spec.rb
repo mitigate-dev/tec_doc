@@ -89,5 +89,13 @@ describe TecDoc::Article do
       end
       @articles[0].linked_vehicle_ids.count.should == 16
     end
+    
+    it "should return array of linked vehicles" do
+      VCR.use_cassette('article_linked_vehicles') do
+        @articles[0].linked_vehicles
+      end
+      @articles[0].linked_vehicles.count.should == 16
+      @articles[0].linked_vehicles.first.class.should == TecDoc::Vehicle
+    end
   end
 end
