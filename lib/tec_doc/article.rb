@@ -114,13 +114,13 @@ module TecDoc
             :country => scope[:country],
             :country_user_setting => scope[:country],
             :countries_car_selection => scope[:country],
-            :motor_codes => true,
-            :axles => true,
-            :cabs => true,
-            :secondary_types => true,
+            :motor_codes => false,
+            :axles => false,
+            :cabs => false,
+            :secondary_types => false,
             :vehicle_details2 => true,
-            :vehicle_terms => true,
-            :wheelbases => true
+            :vehicle_terms => false,
+            :wheelbases => false
           })
           result
         end
@@ -129,7 +129,6 @@ module TecDoc
           vehicle = Vehicle.new
           vehicle.id = attrs[:car_id].to_i
           vehicle.name = "#{details[:manu_name]} - #{details[:model_name]} - #{details[:type_name]}"
-          vehicle.cylinder_capacity
           vehicle.power_hp_from             = details[:power_hp].to_i
           vehicle.power_kw_from             = details[:power_kw].to_i
           vehicle.date_of_construction_from = parse_tec_doc_date details[:year_of_construction_from]
