@@ -1,0 +1,83 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :post
+    uri: http://webservicepilot.tecdoc.net:80/pegasus-2-0/services/TecdocToCatWL
+    body: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://webservicepilot.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="http://webservicepilot.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"
+      xmlns:ins1="http://datatype.cat.tecdoc.net" xmlns:ins2="http://articles.datatype.tocinterface.cat.tecdoc.net"
+      xmlns:ins3="http://specialselection.datatype.tocinterface.cat.tecdoc.net" xmlns:ins4="http://axlesselection.datatype.tocinterface.cat.tecdoc.net"
+      xmlns:ins5="http://carselection.datatype.tocinterface.cat.tecdoc.net" xmlns:ins6="http://options.datatype.tocinterface.cat.tecdoc.net"
+      xmlns:ins7="http://motorselection.datatype.tocinterface.cat.tecdoc.net" xmlns:ins8="http://assemblygroupselection.datatype.tocinterface.cat.tecdoc.net"
+      xmlns:ins9="http://controlpanel.datatype.tocinterface.cat.tecdoc.net"><env:Body><ins0:getLinkedChildNodesAllLinkingTarget><wsdl:in><wsdl:provider>330</wsdl:provider><wsdl:linkingTargetType>C</wsdl:linkingTargetType><wsdl:lang>lv</wsdl:lang><wsdl:country>lv</wsdl:country><wsdl:linkingTargetId>10502</wsdl:linkingTargetId></wsdl:in></ins0:getLinkedChildNodesAllLinkingTarget></env:Body></env:Envelope>
+    headers:
+      soapaction:
+      - ! '"getLinkedChildNodesAllLinkingTarget"'
+      content-type:
+      - text/xml;charset=UTF-8
+      content-length:
+      - '1495'
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Mon, 16 Jan 2012 10:56:07 GMT
+      server:
+      - Apache
+      content-length:
+      - '6183'
+      content-type:
+      - text/xml;charset=utf-8
+      x-cache:
+      - MISS from demo.makit.lv
+      x-cache-lookup:
+      - MISS from demo.makit.lv:8080
+      via:
+      - 1.1 demo.makit.lv:8080 (squid/2.7.STABLE7)
+    body: <?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><getLinkedChildNodesAllLinkingTargetResponse
+      xmlns="http://webservicepilot.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"><getLinkedChildNodesAllLinkingTargetReturn
+      xmlns=""><data><array><array><assemblyGroupName>Aizdedzes sist&#x113;ma /Kv&#x113;lsve&#x10D;u
+      sist&#x113;ma</assemblyGroupName><assemblyGroupNodeId>100008</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Apsilde/Ventil&#x101;cija</assemblyGroupName><assemblyGroupNodeId>100241</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Brem&#x17E;u sist&#x113;ma</assemblyGroupName><assemblyGroupNodeId>100006</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Degmais&#x12B;juma sagatavo&#x161;ana</assemblyGroupName><assemblyGroupNodeId>100254</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Degvielas padeves sist&#x113;ma</assemblyGroupName><assemblyGroupNodeId>100214</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Dzes&#x113;&#x161;anas sist&#x113;ma</assemblyGroupName><assemblyGroupNodeId>100007</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Dzin&#x113;js</assemblyGroupName><assemblyGroupNodeId>100002</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Elektroiek&#x101;rta</assemblyGroupName><assemblyGroupNodeId>100010</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Filtrs</assemblyGroupName><assemblyGroupNodeId>100005</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Gaisa kondicion&#x113;&#x161;anas
+      sist&#x113;ma</assemblyGroupName><assemblyGroupNodeId>100243</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Galvenais p&#x101;rvads</assemblyGroupName><assemblyGroupNodeId>100400</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Izpl&#x16B;des g&#x101;zu
+      sist&#x113;ma</assemblyGroupName><assemblyGroupNodeId>100004</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Komforta apr&#x12B;kojums</assemblyGroupName><assemblyGroupNodeId>100335</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Logu t&#x12B;r&#x12B;taju
+      sist&#x113;ma</assemblyGroupName><assemblyGroupNodeId>100018</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Lukturu t&#x12B;r&#x12B;&#x161;anas
+      sist&#x113;ma</assemblyGroupName><assemblyGroupNodeId>100342</assemblyGroupNodeId><hasChilds>false</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Piederumi</assemblyGroupName><assemblyGroupNodeId>100733</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Piekabes apr&#x12B;kojums/-komplekt&#x113;jo&#x161;&#x101;s
+      da&#x13C;as</assemblyGroupName><assemblyGroupNodeId>100015</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Piekare/ Amortiz&#x101;cija</assemblyGroupName><assemblyGroupNodeId>100011</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Rite&#x146;i/Riepas</assemblyGroupName><assemblyGroupNodeId>103099</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Rite&#x146;u piedzi&#x146;as
+      meh&#x101;nisms</assemblyGroupName><assemblyGroupNodeId>100014</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Saj&#x16B;gs/-uzkares da&#x13C;as</assemblyGroupName><assemblyGroupNodeId>100050</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Salona apdare un apr&#x12B;kojums</assemblyGroupName><assemblyGroupNodeId>100341</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Servisa-/P&#x101;rbaudes-/Apkopes
+      deta&#x13C;as</assemblyGroupName><assemblyGroupNodeId>100019</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Siksnu pievads</assemblyGroupName><assemblyGroupNodeId>100016</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Sl&#x113;dzene</assemblyGroupName><assemblyGroupNodeId>100685</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>St&#x16B;res meh&#x101;nisms</assemblyGroupName><assemblyGroupNodeId>100012</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Tilta piekare/Rite&#x146;a
+      piekares vado&#x161;&#x101; sist&#x113;ma/Rite&#x146;i</assemblyGroupName><assemblyGroupNodeId>100013</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Transmisija</assemblyGroupName><assemblyGroupNodeId>100238</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array><array><assemblyGroupName>Virsb&#x16B;ve</assemblyGroupName><assemblyGroupNodeId>100001</assemblyGroupNodeId><hasChilds>true</hasChilds><parentNodeId
+      xsi:nil="true"/></array></array><empty>false</empty></data><status>200</status><statusText
+      xsi:nil="true"/></getLinkedChildNodesAllLinkingTargetReturn></getLinkedChildNodesAllLinkingTargetResponse></soapenv:Body></soapenv:Envelope>
+    http_version: '1.0'

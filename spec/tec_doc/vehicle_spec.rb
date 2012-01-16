@@ -1,3 +1,4 @@
+#encoding: utf-8
 require "spec_helper"
 
 describe TecDoc::Vehicle do
@@ -42,6 +43,16 @@ describe TecDoc::Vehicle do
         vehicle.power_kw_from.should == 125
         vehicle.power_kw_to.should == 125
         vehicle.motor_codes.should == ["M52 B25 (Vanos)"]
+      end
+      
+      it "should return root linked assembly groups" do
+        @vehicle = @vehicles.find { |m| m.id == 10502 }
+        VCR.use_cassette('vehicle_assembly_groups') do
+          @assembly_groups = @vehicle.assembly_groups
+        end
+        @assembly_groups.count.should == 29
+        @assembly_groups.first.class.should == TecDoc::AssemblyGroup
+        @assembly_groups.any?{ |group| group.name == "Dzesēšanas sistēma" }.should be_true
       end
     end
   end

@@ -53,5 +53,25 @@ module TecDoc
         vehicle
       end
     end
+    
+    # Vehicle linked assembly parent groups
+    def assembly_groups(lang="lv")
+      if @groups.to_a.empty? || @groups.first.scope[:lang] != lang
+        options = { :linking_target_type => "C", :lang => lang, :country => lang, :linking_target_id => id }
+        response = TecDoc.client.request(:get_linked_child_nodes_all_linking_target, options)
+        @groups = response.map do |attributes|
+          group = AssemblyGroup.new
+          group.scope = options
+          group.id = attributes[:assembly_group_node_id].to_i
+          group.name = attributes[:assembly_group_name].to_s
+          group.has_children = attributes[:has_childs]
+          if attributes[:parent_node_id]
+            group.parent_id = attributes[:parent_node_id].to_i
+          end
+          group
+        end
+      end
+      @groups
+    end
   end
 end
