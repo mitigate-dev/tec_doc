@@ -1,9 +1,7 @@
-require "tec_doc/helpers/long_list_helper"
 require "tec_doc/helpers/date_parser_helper"
 
 module TecDoc
   class Article
-    include Helpers::LongListHelper
     include Helpers::DateParserHelper
     
     attr_accessor :id, :name, :number, :search_number, :brand_name, :brand_number, :generic_article_id, :number_type
@@ -104,12 +102,14 @@ module TecDoc
     
     def linked_vehicles(options = {})
       unless @linked_vehicles
-        batch_list = array_to_batch_list(linked_vehicle_ids)
+        batch_list = linked_vehicle_ids.each_slice(25).to_a
         
         # Response from all batches
         response = batch_list.inject([]) do |result, long_list|
           result += TecDoc.client.request(:get_vehicle_by_ids_2,
-            {:car_ids => {:array => long_list},
+            {:car_ids => {
+              :array => {:ids => long_list}
+            },
             :lang => scope[:lang],
             :country => scope[:country],
             :country_user_setting => scope[:country],
@@ -124,6 +124,7 @@ module TecDoc
           })
           result
         end
+        
         @linked_vehicles = response.map do |attrs|
           details = (attrs[:vehicle_details2] || {})
           vehicle = Vehicle.new
