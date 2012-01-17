@@ -52,6 +52,16 @@ describe TecDoc::Vehicle do
         @assembly_groups.first.class.should == TecDoc::AssemblyGroup
         @assembly_groups.any?{ |group| group.name == "Dzesēšanas sistēma" }.should be_true
       end
+      
+      it "should return all child assembly groups" do
+        @vehicle = TecDoc::Vehicle.new
+        @vehicle.id = 10502
+        VCR.use_cassette('vehicle_child_assembly_groups') do
+          @assembly_groups = @vehicle.assembly_groups(100005)
+        end
+        @assembly_groups.count.should == 5
+        @assembly_groups.any?{ |group| group.name == "Gaisa filtrs" }.should be_true
+      end
     end
   end
 end

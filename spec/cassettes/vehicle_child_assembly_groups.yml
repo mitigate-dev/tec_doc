@@ -1,0 +1,49 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :post
+    uri: http://webservicepilot.tecdoc.net:80/pegasus-2-0/services/TecdocToCatWL
+    body: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://webservicepilot.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="http://webservicepilot.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"
+      xmlns:ins1="http://options.datatype.tocinterface.cat.tecdoc.net" xmlns:ins2="http://controlpanel.datatype.tocinterface.cat.tecdoc.net"
+      xmlns:ins3="http://articles.datatype.tocinterface.cat.tecdoc.net" xmlns:ins4="http://carselection.datatype.tocinterface.cat.tecdoc.net"
+      xmlns:ins5="http://datatype.cat.tecdoc.net" xmlns:ins6="http://axlesselection.datatype.tocinterface.cat.tecdoc.net"
+      xmlns:ins7="http://motorselection.datatype.tocinterface.cat.tecdoc.net" xmlns:ins8="http://assemblygroupselection.datatype.tocinterface.cat.tecdoc.net"
+      xmlns:ins9="http://specialselection.datatype.tocinterface.cat.tecdoc.net"><env:Body><ins0:getLinkedChildNodesAllLinkingTarget><wsdl:in><wsdl:provider>330</wsdl:provider><wsdl:lang>lv</wsdl:lang><wsdl:linkingTargetType>C</wsdl:linkingTargetType><wsdl:country>lv</wsdl:country><wsdl:linkingTargetId>10502</wsdl:linkingTargetId><wsdl:parentNodeId>100005</wsdl:parentNodeId></wsdl:in></ins0:getLinkedChildNodesAllLinkingTarget></env:Body></env:Envelope>
+    headers:
+      soapaction:
+      - ! '"getLinkedChildNodesAllLinkingTarget"'
+      content-type:
+      - text/xml;charset=UTF-8
+      content-length:
+      - '1495'
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Tue, 17 Jan 2012 17:58:41 GMT
+      server:
+      - Apache
+      content-length:
+      - '1536'
+      content-type:
+      - text/xml;charset=utf-8
+      x-cache:
+      - MISS from demo.makit.lv
+      x-cache-lookup:
+      - MISS from demo.makit.lv:8080
+      via:
+      - 1.1 demo.makit.lv:8080 (squid/2.7.STABLE7)
+    body: <?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><getLinkedChildNodesAllLinkingTargetResponse
+      xmlns="http://webservicepilot.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"><getLinkedChildNodesAllLinkingTargetReturn
+      xmlns=""><data><array><array><assemblyGroupName>Degvielas filtrs</assemblyGroupName><assemblyGroupNodeId>100261</assemblyGroupNodeId><hasChilds>false</hasChilds><parentNodeId>100005</parentNodeId></array><array><assemblyGroupName>E&#x13C;&#x13C;as
+      filtrs</assemblyGroupName><assemblyGroupNodeId>100259</assemblyGroupNodeId><hasChilds>false</hasChilds><parentNodeId>100005</parentNodeId></array><array><assemblyGroupName>Gaisa
+      filtrs</assemblyGroupName><assemblyGroupNodeId>100260</assemblyGroupNodeId><hasChilds>false</hasChilds><parentNodeId>100005</parentNodeId></array><array><assemblyGroupName>Hidrauliskais
+      filtrs</assemblyGroupName><assemblyGroupNodeId>100262</assemblyGroupNodeId><hasChilds>false</hasChilds><parentNodeId>100005</parentNodeId></array><array><assemblyGroupName>Salona
+      filtrs</assemblyGroupName><assemblyGroupNodeId>100263</assemblyGroupNodeId><hasChilds>false</hasChilds><parentNodeId>100005</parentNodeId></array></array><empty>false</empty></data><status>200</status><statusText
+      xsi:nil="true"/></getLinkedChildNodesAllLinkingTargetReturn></getLinkedChildNodesAllLinkingTargetResponse></soapenv:Body></soapenv:Envelope>
+    http_version: '1.0'
