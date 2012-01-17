@@ -4,13 +4,7 @@ describe TecDoc::VehicleManufacturer do
   context ".all" do
     before do
       VCR.use_cassette('vehicle_manufacturer_all') do
-        @manufacturers = TecDoc::VehicleManufacturer.all(
-          :lang => "lv",
-          :car_type => 1,
-          :country_group_flag => false,
-          :countries_car_selection => "lv",
-          :eval_favor => false
-        )
+        @manufacturers = TecDoc::VehicleManufacturer.all
       end
     end
 

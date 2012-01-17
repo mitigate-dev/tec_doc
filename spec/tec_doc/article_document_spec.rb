@@ -4,7 +4,7 @@ describe TecDoc::ArticleDocument do
   context ".all" do
     before do
       VCR.use_cassette('article_document_all') do
-        @documents = TecDoc::ArticleDocument.all(:article_id => 201756, :country => "lv", :lang => "lv")
+        @documents = TecDoc::ArticleDocument.all(:article_id => 201756)
       end
     end
 

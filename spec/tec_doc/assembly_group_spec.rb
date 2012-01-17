@@ -5,7 +5,6 @@ describe TecDoc::AssemblyGroup do
     before do
       VCR.use_cassette('assembly_group_all') do
         @groups = TecDoc::AssemblyGroup.all(
-          :lang => "lv",
           :child_nodes => false,
           :linking_target_type => "C"
         )

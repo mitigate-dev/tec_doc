@@ -1,3 +1,4 @@
+require "i18n"
 require "savon"
 
 require "tec_doc/version"

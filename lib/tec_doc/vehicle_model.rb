@@ -15,6 +15,13 @@ module TecDoc
     # @option options [Integer] :manu_id manufacturer id
     # @return [Array<TecDoc::VehicleManufacturer>] list of vehicle models
     def self.all(options)
+      options = {
+        :car_type => 1,
+        :countries_car_selection => TecDoc.client.country,
+        :country_group_flag => false,
+        :eval_favor => false,
+        :lang => I18n.locale.to_s
+      }.merge(options)
       response = TecDoc.client.request(:get_vehicle_models3, options)
       response.map do |attributes|
         model = new

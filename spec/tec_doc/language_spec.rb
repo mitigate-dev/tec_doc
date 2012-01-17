@@ -4,7 +4,7 @@ describe TecDoc::Language do
   context ".all" do
     before do
       VCR.use_cassette('language_all') do
-        @languages = TecDoc::Language.all(:lang => "lv")
+        @languages = TecDoc::Language.all
       end
     end
 

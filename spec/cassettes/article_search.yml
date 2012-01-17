@@ -11,7 +11,7 @@
       message: OK
     headers:
       date:
-      - Tue, 10 Jan 2012 10:17:30 GMT
+      - Tue, 17 Jan 2012 16:30:25 GMT
       server:
       - Apache
       content-type:
@@ -4685,22 +4685,21 @@
       xmlns:ins3="http://articles.datatype.tocinterface.cat.tecdoc.net" xmlns:ins4="http://carselection.datatype.tocinterface.cat.tecdoc.net"
       xmlns:ins5="http://datatype.cat.tecdoc.net" xmlns:ins6="http://axlesselection.datatype.tocinterface.cat.tecdoc.net"
       xmlns:ins7="http://motorselection.datatype.tocinterface.cat.tecdoc.net" xmlns:ins8="http://assemblygroupselection.datatype.tocinterface.cat.tecdoc.net"
-      xmlns:ins9="http://specialselection.datatype.tocinterface.cat.tecdoc.net"><env:Body><ins0:getArticleDirectSearchAllNumbers2><wsdl:in><wsdl:provider>330</wsdl:provider><wsdl:articleNumber>31966</wsdl:articleNumber><wsdl:numberType>10</wsdl:numberType><wsdl:lang>lv</wsdl:lang><wsdl:country>lv</wsdl:country><wsdl:sortType>1</wsdl:sortType><wsdl:searchExact>false</wsdl:searchExact><wsdl:brandno
-      xsi:nil="true"/><wsdl:genericArticleId xsi:nil="true"/></wsdl:in></ins0:getArticleDirectSearchAllNumbers2></env:Body></env:Envelope>
+      xmlns:ins9="http://specialselection.datatype.tocinterface.cat.tecdoc.net"><env:Body><ins0:getArticleDirectSearchAllNumbers2><wsdl:in><wsdl:provider>330</wsdl:provider><wsdl:country>lv</wsdl:country><wsdl:lang>lv</wsdl:lang><wsdl:numberType>10</wsdl:numberType><wsdl:searchExact>false</wsdl:searchExact><wsdl:sortType>1</wsdl:sortType><wsdl:articleNumber>31966</wsdl:articleNumber></wsdl:in></ins0:getArticleDirectSearchAllNumbers2></env:Body></env:Envelope>
     headers:
       soapaction:
       - ! '"getArticleDirectSearchAllNumbers2"'
       content-type:
       - text/xml;charset=UTF-8
       content-length:
-      - '1434'
+      - '1365'
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
       message: OK
     headers:
       date:
-      - Tue, 10 Jan 2012 10:17:35 GMT
+      - Tue, 17 Jan 2012 16:30:30 GMT
       server:
       - Apache
       content-length:

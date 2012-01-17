@@ -20,6 +20,13 @@ module TecDoc
     # @option options [Integer] :sort_type Sort mode (1: Brand, 2: Product group)
     # @return [Array<TecDoc::Article>] list of articles
     def self.search(options = {})
+      options = {
+        :country => TecDoc.client.country,
+        :lang => I18n.locale.to_s,
+        :number_type => 10,
+        :search_exact => 1,
+        :sort_type => 1
+      }.merge(options)
       response = TecDoc.client.request(:get_article_direct_search_all_numbers2, options)
       response.map do |attributes|
         article = new

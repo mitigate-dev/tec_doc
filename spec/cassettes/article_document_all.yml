@@ -11,7 +11,7 @@
       message: OK
     headers:
       date:
-      - Tue, 10 Jan 2012 10:30:39 GMT
+      - Tue, 17 Jan 2012 16:30:19 GMT
       server:
       - Apache
       content-type:
@@ -4685,7 +4685,7 @@
       xmlns:ins3="http://articles.datatype.tocinterface.cat.tecdoc.net" xmlns:ins4="http://carselection.datatype.tocinterface.cat.tecdoc.net"
       xmlns:ins5="http://datatype.cat.tecdoc.net" xmlns:ins6="http://axlesselection.datatype.tocinterface.cat.tecdoc.net"
       xmlns:ins7="http://motorselection.datatype.tocinterface.cat.tecdoc.net" xmlns:ins8="http://assemblygroupselection.datatype.tocinterface.cat.tecdoc.net"
-      xmlns:ins9="http://specialselection.datatype.tocinterface.cat.tecdoc.net"><env:Body><ins0:getArticleDocuments><wsdl:in><wsdl:provider>330</wsdl:provider><wsdl:articleId>201756</wsdl:articleId><wsdl:country>lv</wsdl:country><wsdl:lang>lv</wsdl:lang></wsdl:in></ins0:getArticleDocuments></env:Body></env:Envelope>
+      xmlns:ins9="http://specialselection.datatype.tocinterface.cat.tecdoc.net"><env:Body><ins0:getArticleDocuments><wsdl:in><wsdl:provider>330</wsdl:provider><wsdl:country>lv</wsdl:country><wsdl:lang>lv</wsdl:lang><wsdl:articleId>201756</wsdl:articleId></wsdl:in></ins0:getArticleDocuments></env:Body></env:Envelope>
     headers:
       soapaction:
       - ! '"getArticleDocuments"'
@@ -4699,7 +4699,7 @@
       message: OK
     headers:
       date:
-      - Tue, 10 Jan 2012 10:30:43 GMT
+      - Tue, 17 Jan 2012 16:30:23 GMT
       server:
       - Apache
       content-length:

@@ -1,9 +1,10 @@
 module TecDoc
   class Client
-    attr_accessor :provider, :connection
+    attr_accessor :provider, :country, :connection
 
     def initialize(options = {})
       self.provider = options[:provider]
+      self.country  = options[:country]
       self.connection = Savon::Client.new do |wsdl, http|
         wsdl.document = File.expand_path("wsdl.xml", __FILE__)
         wsdl.document = "http://webservicepilot.tecdoc.net/pegasus-2-0/wsdl/TecdocToCatWL"

@@ -6,11 +6,9 @@ describe TecDoc::Vehicle do
     before do
       VCR.use_cassette('vehicle_all') do
         @vehicles = TecDoc::Vehicle.all(
-          :lang => "lv",
           :car_type => 1,
           :country_group_flag => false,
-          :countries_car_selection => "lv",
-          :country_user_setting => "lv",
+          :country_user_setting => TecDoc.client.country,
           :manu_id => 16, # BMW
           :mod_id => 3999, # E46 Coupe
           :linked => false,

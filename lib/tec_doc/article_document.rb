@@ -11,6 +11,10 @@ module TecDoc
     # @option options [String] :lang language code according to ISO 639
     # @return [Array<TecDoc::ArticleDocument>] list of article documents
     def self.all(options = {})
+      options = {
+        :country => TecDoc.client.country,
+        :lang => I18n.locale.to_s
+      }.merge(options)
       response = TecDoc.client.request(:get_article_documents, options)
       response.map do |attributes|
         document = new

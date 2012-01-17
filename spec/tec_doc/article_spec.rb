@@ -7,12 +7,7 @@ describe TecDoc::Article do
         @articles = TecDoc::Article.search(
           :article_number => "31966",
           :number_type => 10,
-          :lang => "lv",
-          :country => "lv",
-          :sort_type => 1,
-          :search_exact => false,
-          :brandno => nil,
-          :generic_article_id => nil
+          :search_exact => false
         )
       end
     end
@@ -68,28 +63,26 @@ describe TecDoc::Article do
       VCR.use_cassette('article_search_for_linked_manufacturers') do
         @articles = TecDoc::Article.search(
           :article_number => "4PK1025",
-          :number_type => "0",
-          :lang => "lv",
-          :country => "lv",
+          :number_type => 0,
           :search_exact => true
         )
       end
     end
-      
+
     it "should return array of linked manufacturers" do
       VCR.use_cassette('article_linked_manufacturers') do
         @articles[0].linked_manufacturers
       end
       @articles[0].linked_manufacturers.map(&:name).should == ["CITRO","HONDA","NISSA","SUZUK"]
     end
-    
+
     it "should return array of linked vehicle ids" do
       VCR.use_cassette('article_linked_vehicle_ids') do
         @articles[0].linked_vehicle_ids
       end
       @articles[0].linked_vehicle_ids.count.should == 16
     end
-    
+
     it "should return array of linked vehicles" do
       VCR.use_cassette('article_linked_vehicles') do
         @articles[0].linked_vehicles

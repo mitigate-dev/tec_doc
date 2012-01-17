@@ -26,12 +26,19 @@ module TecDoc
     # @option options [String] :country_user_setting country for article assignments, country code according to assignments ISO 3166 (optional)
     # @option options [Integer, NilClass] :favoured_list simplified vehicle selection (1: first list selection, 0: rest)
     # @option options [String] :lang language code according to ISO 639
-    # @option options [Integer] :manu_id manufacturer id
     # @option options [TrueClass, FalseClass] :linked selection with/without article assignments (false: all, true: only linked articles)
     # @option options [Integer] :manu_id manufacturer ID
     # @option options [Integer] :mod_id vehicle ID
     # @return [Array<TecDoc::VehicleManufacturer>] list of vehicles with motor codes
     def self.all(options = {})
+      options = {
+        :car_type => 1,
+        :countries_car_selection => TecDoc.client.country,
+        :country_group_flag => false,
+        :favoured_list => 1,
+        :lang => I18n.locale.to_s,
+        :linked => false
+      }.merge(options)
       response = TecDoc.client.request(:get_vehicle_simplified_selection4, options)
       response.map do |attributes|
         vehicle = new

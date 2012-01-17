@@ -6,11 +6,11 @@
     body: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://webservicepilot.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"
       xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="http://webservicepilot.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"
-      xmlns:ins1="http://datatype.cat.tecdoc.net" xmlns:ins2="http://articles.datatype.tocinterface.cat.tecdoc.net"
-      xmlns:ins3="http://specialselection.datatype.tocinterface.cat.tecdoc.net" xmlns:ins4="http://axlesselection.datatype.tocinterface.cat.tecdoc.net"
-      xmlns:ins5="http://carselection.datatype.tocinterface.cat.tecdoc.net" xmlns:ins6="http://options.datatype.tocinterface.cat.tecdoc.net"
+      xmlns:ins1="http://options.datatype.tocinterface.cat.tecdoc.net" xmlns:ins2="http://controlpanel.datatype.tocinterface.cat.tecdoc.net"
+      xmlns:ins3="http://articles.datatype.tocinterface.cat.tecdoc.net" xmlns:ins4="http://carselection.datatype.tocinterface.cat.tecdoc.net"
+      xmlns:ins5="http://datatype.cat.tecdoc.net" xmlns:ins6="http://axlesselection.datatype.tocinterface.cat.tecdoc.net"
       xmlns:ins7="http://motorselection.datatype.tocinterface.cat.tecdoc.net" xmlns:ins8="http://assemblygroupselection.datatype.tocinterface.cat.tecdoc.net"
-      xmlns:ins9="http://controlpanel.datatype.tocinterface.cat.tecdoc.net"><env:Body><ins0:getChildNodesAllLinkingTarget2><wsdl:in><wsdl:provider>330</wsdl:provider><wsdl:lang>lv</wsdl:lang><wsdl:childNodes>false</wsdl:childNodes><wsdl:linkingTargetType>C</wsdl:linkingTargetType><wsdl:parentNodeId>100008</wsdl:parentNodeId></wsdl:in></ins0:getChildNodesAllLinkingTarget2></env:Body></env:Envelope>
+      xmlns:ins9="http://specialselection.datatype.tocinterface.cat.tecdoc.net"><env:Body><ins0:getChildNodesAllLinkingTarget2><wsdl:in><wsdl:provider>330</wsdl:provider><wsdl:lang>lv</wsdl:lang><wsdl:childNodes>false</wsdl:childNodes><wsdl:linkingTargetType>C</wsdl:linkingTargetType><wsdl:parentNodeId>100008</wsdl:parentNodeId></wsdl:in></ins0:getChildNodesAllLinkingTarget2></env:Body></env:Envelope>
     headers:
       soapaction:
       - ! '"getChildNodesAllLinkingTarget2"'
@@ -24,13 +24,19 @@
       message: OK
     headers:
       date:
-      - Sat, 22 Oct 2011 15:15:39 GMT
+      - Tue, 17 Jan 2012 16:30:51 GMT
       server:
       - Apache
       content-length:
       - '3603'
       content-type:
       - text/xml;charset=utf-8
+      x-cache:
+      - MISS from demo.makit.lv
+      x-cache-lookup:
+      - MISS from demo.makit.lv:8080
+      via:
+      - 1.1 demo.makit.lv:8080 (squid/2.7.STABLE7)
     body: <?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
       xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><getChildNodesAllLinkingTarget2Response
       xmlns="http://webservicepilot.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"><getChildNodesAllLinkingTarget2Return
@@ -46,4 +52,4 @@
       atvieglo&#x161;anas elektroiek&#x101;rta</assemblyGroupName><assemblyGroupNodeId>100830</assemblyGroupNodeId><hasChilds>false</hasChilds><parentNodeId>100008</parentNodeId></array><array><assemblyGroupName>Papildpretest&#x12B;ba</assemblyGroupName><assemblyGroupNodeId>100757</assemblyGroupNodeId><hasChilds>false</hasChilds><parentNodeId>100008</parentNodeId></array><array><assemblyGroupName>Sl&#x113;dzis</assemblyGroupName><assemblyGroupNodeId>100848</assemblyGroupNodeId><hasChilds>false</hasChilds><parentNodeId>100008</parentNodeId></array><array><assemblyGroupName>Vad&#x12B;bas
       iek&#x101;rta/Releji/Dev&#x113;ji</assemblyGroupName><assemblyGroupNodeId>100247</assemblyGroupNodeId><hasChilds>false</hasChilds><parentNodeId>100008</parentNodeId></array><array><assemblyGroupName>Vakuumsist&#x113;ma</assemblyGroupName><assemblyGroupNodeId>100827</assemblyGroupNodeId><hasChilds>false</hasChilds><parentNodeId>100008</parentNodeId></array></array><empty>false</empty></data><status>200</status><statusText
       xsi:nil="true"/></getChildNodesAllLinkingTarget2Return></getChildNodesAllLinkingTarget2Response></soapenv:Body></soapenv:Envelope>
-    http_version: '1.1'
+    http_version: '1.0'

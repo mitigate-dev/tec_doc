@@ -5,8 +5,6 @@ module TecDoc
 
     attr_accessor :scope
 
-    # TODO Handle :child_nodes true
-    # 
     # Find vehicle, axle, motor or universal assembly groups for the search tree
     # 
     # @option options [TrueClass, FalseClass] :child_nodes include child nodes
@@ -15,6 +13,9 @@ module TecDoc
     # @option options [Integer] :parent_node_id parent node id (optional)
     # @return [Array<TecDoc::AssemblyGroup>] list of languages
     def self.all(options = {})
+      options = {
+        :lang => I18n.locale.to_s
+      }.merge(options)
       response = TecDoc.client.request(:get_child_nodes_all_linking_target2, options)
       groups = response.map do |attributes|
         group = new

@@ -13,7 +13,14 @@ module TecDoc
     # @option options [Integer, NilClass] :favoured_list simplified vehicle selection (1: first list selection, 0: rest) (optional)
     # @option options [String] :lang language code according to ISO 639
     # @return [Array<TecDoc::VehicleManufacturer>] list of vehicle manufacturers
-    def self.all(options)
+    def self.all(options = {})
+      options = {
+        :car_type => 1,
+        :countries_car_selection => TecDoc.client.country,
+        :country_group_flag => false,
+        :eval_favor => false,
+        :lang => I18n.locale.to_s
+      }.merge(options)
       response = TecDoc.client.request(:get_vehicle_manufacturers3, options)
       response.map do |attributes|
         manufacturer = new
