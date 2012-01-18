@@ -28,7 +28,7 @@ module TecDoc
       }.merge(options)
       
       if options[:linking_target_id]
-        options[:country] = options[:lang]
+        options[:country] ||= TecDoc.client.country
         response = TecDoc.client.request(:get_linked_child_nodes_all_linking_target, options)
       else
         response = TecDoc.client.request(:get_child_nodes_all_linking_target2, options)
