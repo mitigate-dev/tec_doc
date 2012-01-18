@@ -62,16 +62,11 @@ module TecDoc
     end
     
     # Vehicle linked assembly parent groups
-    #
-    # @option options [Integer] :parent_node_id parent assembly_group id
     def assembly_groups(options = {})
-      options.delete(:linking_target_id)
-      options.delete(:linking_target_type)
-      options = { :linking_target_type => "C",
-        :lang => I18n.locale.to_s,
-        :country => TecDoc.client.country,
+      options.merge!({
+        :linking_target_type => "C",
         :linking_target_id => id,
-      }.merge(options)
+      })
       AssemblyGroup.all(options)
     end
   end

@@ -15,6 +15,7 @@ module TecDoc
   autoload :ArticleAttribute,     "tec_doc/article_attribute"
   autoload :AssemblyGroup,        "tec_doc/assembly_group"
   autoload :Brand,                "tec_doc/brand"
+  autoload :GenericArticle,       "tec_doc/generic_article"
   autoload :Language,             "tec_doc/language"
   autoload :VehicleManufacturer,  "tec_doc/vehicle_manufacturer"
   autoload :VehicleModel,         "tec_doc/vehicle_model"

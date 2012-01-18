@@ -57,7 +57,22 @@ describe TecDoc::Article do
       end
     end
   end
-  
+
+  context ".all" do
+    it "should return all vehicles articles with specified generic article" do
+      VCR.use_cassette('article_all') do
+        @articles = TecDoc::Article.all(
+          :linking_target_type => "C",
+          :linking_target_id => 10502,
+          :generic_article_id => { :array => {:id => [7] } }
+        )
+      end
+      
+      @articles.count.should == 30
+      @articles.map(&:generic_article_id).uniq.should == [7]
+    end
+  end
+
   context "for linked_manufacturers and linked vehicles" do
     before do
       VCR.use_cassette('article_search_for_linked_manufacturers') do

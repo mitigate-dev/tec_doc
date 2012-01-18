@@ -16,7 +16,7 @@ module TecDoc
     # @option options [Integer] :generic_article_id result of generic article selection (optional)
     # @option options [String] :lang language code according to ISO 639
     # @option options [String] :number_type Number type (0: Article number, 1: OE number, 2: Trade number, 3: Comparable number, 4: Replacement number, 5: Replaced number, 6: EAN number, 10: Any number)
-    # @option options [TrueClass, FalseClass] :search_exact Search mode (true: exact search, false: similar searc)
+    # @option options [TrueClass, FalseClass] :search_exact Search mode (true: exact search, false: similar search)
     # @option options [Integer] :sort_type Sort mode (1: Brand, 2: Product group)
     # @return [Array<TecDoc::Article>] list of articles
     def self.search(options = {})
@@ -27,20 +27,40 @@ module TecDoc
         :search_exact => 1,
         :sort_type => 1
       }.merge(options)
-      response = TecDoc.client.request(:get_article_direct_search_all_numbers2, options)
-      response.map do |attributes|
-        article = new
-        article.scope = options
-        article.id                 = attributes[:article_id].to_i
-        article.name               = attributes[:article_name].to_s
-        article.number             = attributes[:article_no].to_s
-        article.brand_name         = attributes[:brand_name].to_s
-        article.brand_number       = attributes[:brand_no].to_s
-        article.generic_article_id = attributes[:generic_article_id].to_i
-        article.number_type        = attributes[:number_type].to_i
-        article.search_number      = attributes[:article_search_no].to_s
-        article
+      TecDoc.client.request(:get_article_direct_search_all_numbers2, options).map do |attributes|
+        new(attributes, options)
       end
+    end
+    
+    # All articles by linked vehicle and brand number, generic article and assembly group
+    #
+    # @option options [String] :lang
+    # @option options [String] :country
+    # @option options [String] :linking_target_type
+    # @option options [Integer] :linking_target_id
+    # @option options [LongList] :brand_id
+    # @option options [LongList] :generic_article_id
+    # @option options [Long] :article_assembly_group_node_id
+    def self.all(options)
+      options = {
+        :lang => I18n.locale.to_s,
+        :country => TecDoc.client.country
+      }.merge(options)
+      TecDoc.client.request(:get_article_ids3, options).map do |attributes|
+        new(attributes, options)
+      end
+    end
+    
+    def initialize(attributes = {}, scope = {})
+      @id                 = attributes[:article_id].to_i
+      @name               = attributes[:article_name].to_s
+      @number             = attributes[:article_no].to_s
+      @brand_name         = attributes[:brand_name].to_s
+      @brand_number       = attributes[:brand_no].to_s
+      @generic_article_id = attributes[:generic_article_id].to_i
+      @number_type        = attributes[:number_type].to_i
+      @search_number      = attributes[:article_search_no].to_s
+      @scope              = scope
     end
 
     def brand
