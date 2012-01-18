@@ -1,9 +1,8 @@
 require "spec_helper"
 
-describe TecDoc::GenericArticle do 
+describe TecDoc::GenericArticle do
   it "should return all vehicles articles" do
-    generic_article = TecDoc::GenericArticle.new
-    generic_article.id = 7
+    generic_article = TecDoc::GenericArticle.new(:id => 7)
     VCR.use_cassette("article_all") do
       @articles = generic_article.articles(
         :linking_target_type => "C",

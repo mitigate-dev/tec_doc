@@ -5,6 +5,10 @@ module TecDoc
     # getGenericArticlesByManufacturer5()
     # getGenericArticlesByManufacturer6()
     
+    def initialize(attributes = {})
+      @id = attributes[:id]
+    end
+    
     # Generic article linked articles
     def articles(options = {})
       options.merge!({
