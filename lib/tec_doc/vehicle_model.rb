@@ -28,14 +28,8 @@ module TecDoc
         model.scope = options
         model.id = attributes[:model_id].to_i
         model.name = attributes[:modelname].to_s
-        if attributes[:year_of_constr_from]
-          year, month = attributes[:year_of_constr_from].to_i.divmod(100)
-          model.date_of_construction_from = Date.new(year, month, 1)
-        end
-        if attributes[:year_of_constr_to]
-          year, month = attributes[:year_of_constr_to].to_i.divmod(100)
-          model.date_of_construction_to = Date.new(year, month, 1)
-        end
+        model.date_of_construction_from = DateParser.new(attributes[:year_of_constr_from]).to_date
+        model.date_of_construction_to = DateParser.new(attributes[:year_of_constr_to]).to_date
         model
       end
     end
