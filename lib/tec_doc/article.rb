@@ -37,6 +37,7 @@ module TecDoc
     # @option options [LongList] :brand_id
     # @option options [LongList] :generic_article_id
     # @option options [Long] :article_assembly_group_node_id
+    # @return [Array<TecDoc::Article>] list of articles
     def self.all(options)
       options = {
         :lang => I18n.locale.to_s,
@@ -47,6 +48,35 @@ module TecDoc
       end
     end
     
+        
+    # All requested articles detail information
+    #
+    # @option options [String]  :lang
+    # @option options [String]  :country
+    # @option options [Array]   :ids
+    # @option options [Boolean] :attributs
+    # @option options [Boolean] :ean_numbers
+    # @option options [Boolean] :info
+    # @option options [Boolean] :oe_numbers
+    # @option options [Boolean] :usage_numbers
+    # @return [Array<TecDoc::Article>] list of articles
+    def self.all_with_details(options)
+      options = {
+        :lang => I18n.locale.to_s,
+        :country => TecDoc.client.country,
+        :attributs => true,
+        :ean_numbers => true,
+        :info => true,
+        :oe_numbers => true,
+        :usage_numbers => true,
+        :article_id => { :array => { :ids => options.delete(:ids) } }
+      }.merge(options)
+
+      TecDoc.client.request(:get_direct_articles_by_ids2, options).map do |attributes|
+        new(attributes, options)
+      end
+    end
+
     def initialize(attributes = {}, scope = {})
       @id                 = attributes[:article_id].to_i
       @name               = attributes[:article_name].to_s
@@ -57,6 +87,21 @@ module TecDoc
       @number_type        = attributes[:number_type].to_i
       @search_number      = attributes[:article_search_no].to_s
       @scope              = scope
+
+      @ean_number   = attributes[:ean_number].to_a.map(&:values).flatten.first
+      @trade_number = attributes[:usage_numbers].to_a.map(&:values).flatten.first
+      
+      if attributes[:article_attributes]
+        @attributes = attributes[:article_attributes].map do |attrs|
+          ArticleAttribute.new(attrs)
+        end
+      end
+
+      if attributes[:oen_numbers]
+        @oe_numbers = attributes[:oen_numbers].map do |attrs|
+          ArticleOENumber.new(attrs)
+        end
+      end
     end
 
     def brand

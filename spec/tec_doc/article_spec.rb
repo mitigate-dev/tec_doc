@@ -94,6 +94,19 @@ describe TecDoc::Article do
     end
   end
 
+  context ".all_with_details" do
+    it "should get all article detail information in and set it to articles" do
+      VCR.use_cassette("article_all_with_details") do
+        @articles = TecDoc::Article.all_with_details(:ids => [208662, 212551])
+      end
+
+      @articles[0].instance_variable_get(:@trade_number).should == "07642101"
+      @articles[1].instance_variable_get(:@trade_number).should == "07642077"
+      @articles[0].instance_variable_get(:@attributes).to_a.empty?.should be_false
+      @articles[1].instance_variable_get(:@attributes).to_a.empty?.should be_false
+    end
+  end
+
   context "for linked_manufacturers and linked vehicles" do
     before do
       VCR.use_cassette('article_search_for_linked_manufacturers') do
