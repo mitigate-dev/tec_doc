@@ -13,9 +13,9 @@ Gem::Specification.new do |s|
 
   s.rubyforge_project = "tec_doc"
 
-  s.files         = `git ls-files`.split("\n")
-  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
-  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+  s.files         = Dir.glob("lib/**/*") + %w(README.md LICENSE)
+  s.test_files    = Dir.glob("spec/**/*")
+  s.executables   = []
   s.require_paths = ["lib"]
 
   s.add_development_dependency "rake"
