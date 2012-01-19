@@ -5,7 +5,7 @@ require "tec_doc/version"
 
 module TecDoc
   extend self
-  
+
   autoload :Client,               "tec_doc/client"
 
   autoload :Article,              "tec_doc/article"
@@ -20,6 +20,8 @@ module TecDoc
   autoload :VehicleManufacturer,  "tec_doc/vehicle_manufacturer"
   autoload :VehicleModel,         "tec_doc/vehicle_model"
   autoload :Vehicle,              "tec_doc/vehicle"
+
+  autoload :DateParser,           "tec_doc/date_parser"
 
   attr_accessor :client
 end

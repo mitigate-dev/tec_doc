@@ -1,9 +1,5 @@
-require "tec_doc/helpers/date_parser_helper"
-
 module TecDoc
   class Vehicle
-    extend Helpers::DateParserHelper
-    
     attr_accessor \
       :id,
       :name,
@@ -53,8 +49,8 @@ module TecDoc
           vehicle.power_hp_to               = car_attributes[:power_hp_to].to_i
           vehicle.power_kw_from             = car_attributes[:power_kw_from].to_i
           vehicle.power_kw_to               = car_attributes[:power_kw_to].to_i
-          vehicle.date_of_construction_from = parse_tec_doc_date car_attributes[:year_of_constr_from]
-          vehicle.date_of_construction_to   = parse_tec_doc_date car_attributes[:year_of_constr_to]
+          vehicle.date_of_construction_from = DateParser.new(car_attributes[:year_of_constr_from]).to_date
+          vehicle.date_of_construction_to   = DateParser.new(car_attributes[:year_of_constr_to]).to_date
         end
         vehicle.motor_codes = attributes[:motor_codes].map { |mc| mc[:motor_code] }
         vehicle
