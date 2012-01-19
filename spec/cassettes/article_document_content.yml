@@ -11,15 +11,15 @@
       message: OK
     headers:
       date:
-      - Tue, 17 Jan 2012 16:30:25 GMT
+      - Thu, 19 Jan 2012 15:42:08 GMT
       server:
       - Apache
       cache-control:
       - max-age=86400
       expires:
-      - Wed, 18 Jan 2012 16:30:25 GMT
+      - Fri, 20 Jan 2012 15:42:08 GMT
       last-modified:
-      - Tue, 17 Jan 2012 16:30:25 GMT
+      - Thu, 19 Jan 2012 15:42:08 GMT
       content-length:
       - '32764'
       content-type:

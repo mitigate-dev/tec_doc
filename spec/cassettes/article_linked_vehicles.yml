@@ -24,7 +24,7 @@
       message: OK
     headers:
       date:
-      - Tue, 17 Jan 2012 16:30:35 GMT
+      - Thu, 19 Jan 2012 15:43:12 GMT
       server:
       - Apache
       content-length:
@@ -68,7 +68,7 @@
       message: OK
     headers:
       date:
-      - Tue, 17 Jan 2012 16:30:36 GMT
+      - Thu, 19 Jan 2012 15:43:18 GMT
       server:
       - Apache
       content-type:

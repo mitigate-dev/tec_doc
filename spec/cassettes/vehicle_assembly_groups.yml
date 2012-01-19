@@ -10,7 +10,7 @@
       xmlns:ins3="http://articles.datatype.tocinterface.cat.tecdoc.net" xmlns:ins4="http://carselection.datatype.tocinterface.cat.tecdoc.net"
       xmlns:ins5="http://datatype.cat.tecdoc.net" xmlns:ins6="http://axlesselection.datatype.tocinterface.cat.tecdoc.net"
       xmlns:ins7="http://motorselection.datatype.tocinterface.cat.tecdoc.net" xmlns:ins8="http://assemblygroupselection.datatype.tocinterface.cat.tecdoc.net"
-      xmlns:ins9="http://specialselection.datatype.tocinterface.cat.tecdoc.net"><env:Body><ins0:getLinkedChildNodesAllLinkingTarget><wsdl:in><wsdl:provider>330</wsdl:provider><wsdl:linkingTargetType>C</wsdl:linkingTargetType><wsdl:lang>lv</wsdl:lang><wsdl:country>lv</wsdl:country><wsdl:linkingTargetId>10502</wsdl:linkingTargetId></wsdl:in></ins0:getLinkedChildNodesAllLinkingTarget></env:Body></env:Envelope>
+      xmlns:ins9="http://specialselection.datatype.tocinterface.cat.tecdoc.net"><env:Body><ins0:getLinkedChildNodesAllLinkingTarget><wsdl:in><wsdl:provider>330</wsdl:provider><wsdl:lang>lv</wsdl:lang><wsdl:linkingTargetType>C</wsdl:linkingTargetType><wsdl:linkingTargetId>10502</wsdl:linkingTargetId><wsdl:country>lv</wsdl:country></wsdl:in></ins0:getLinkedChildNodesAllLinkingTarget></env:Body></env:Envelope>
     headers:
       soapaction:
       - ! '"getLinkedChildNodesAllLinkingTarget"'
@@ -24,7 +24,7 @@
       message: OK
     headers:
       date:
-      - Tue, 17 Jan 2012 16:31:29 GMT
+      - Thu, 19 Jan 2012 15:44:19 GMT
       server:
       - Apache
       content-length:
