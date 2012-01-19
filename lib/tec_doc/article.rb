@@ -219,11 +219,11 @@ module TecDoc
     private
 
     def assigned_article
-      @assigned_article ||= TecDoc.client.request(:get_assigned_articles_by_ids2_single, {
+      @assigned_article ||= TecDoc.client.request(:get_assigned_articles_by_ids2, {
         :lang => scope[:lang],
         :country => scope[:country],
         :linking_target_type => "U",
-        :article_id => id,
+        :article_id => {:array => { :ids => [id] } },
         :attributs => true,
         :ean_numbers => true,
         :oe_numbers => true,
@@ -233,11 +233,11 @@ module TecDoc
     
     # Article info is defined only for EN lang
     def assigned_article_en
-      @assigned_article_en ||= TecDoc.client.request(:get_assigned_articles_by_ids2_single, {
+      @assigned_article_en ||= TecDoc.client.request(:get_assigned_articles_by_ids2, {
         :lang => "en",
         :country => scope[:country],
         :linking_target_type => "U",
-        :article_id => id,
+        :article_id => {:array => { :ids => [id] } },
         :info => true
       })[0]
     end
