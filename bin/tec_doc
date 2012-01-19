@@ -1,0 +1,40 @@
+#!/usr/bin/env ruby
+
+$:.unshift File.dirname(__FILE__) + '/../lib'
+
+require "rubygems"
+require "tec_doc"
+require "optparse"
+require "irb"
+
+I18n.locale = "en"
+TecDoc.client = TecDoc::Client.new
+
+parser = OptionParser.new do |opts|
+
+  opts.banner = "Usage: tec_doc -p <provider id> -c <country code> [-l <language code>]"
+
+  opts.on("-p", "--provider <provider id>", "TecDoc provider ID") do |provider|
+    TecDoc.client.provider = provider
+  end
+
+  opts.on("-c", "--country <country code>", "Country code according to ISO 3166") do |country|
+    TecDoc.client.country = country
+  end
+
+  opts.on("-l", "--lang <language code>", "Language code according to ISO 639") do |lang|
+    I18n.locale = lang
+  end
+
+end
+
+parser.parse!
+
+unless TecDoc.client.provider && TecDoc.client.country
+  puts parser
+  exit 1
+end
+
+puts "TecDoc shell v#{TecDoc::VERSION}"
+ARGV.clear # otherwise all script parameters get passed to IRB
+IRB.start
