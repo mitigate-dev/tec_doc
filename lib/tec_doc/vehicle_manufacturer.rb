@@ -31,8 +31,13 @@ module TecDoc
       end
     end
 
+    def initialize(attributes = {})
+      @id = attributes[:manu_id].to_i
+      @name = attributes[:manu_name].to_s
+    end
+
     # Get all models that manufacturer has made
-    # 
+    #
     # @param [Hash] options see `TecDoc::VehicleModel.all` for available options
     def models(options = {})
       VehicleModel.all(scope.merge(options.merge(:manu_id => id)))

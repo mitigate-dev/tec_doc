@@ -156,11 +156,9 @@ module TecDoc
           :linking_target_type => "C",
           :article_id => id
         })
+        
         @linked_manufacturers = response.map do |attrs|
-          manufacturer = VehicleManufacturer.new
-          manufacturer.name = attrs[:manu_name].to_s
-          manufacturer.id = attrs[:manu_id].to_i
-          manufacturer
+          VehicleManufacturer.new(attrs)
         end
       end
       @linked_manufacturers
