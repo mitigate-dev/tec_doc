@@ -9,10 +9,12 @@ require "irb"
 
 I18n.locale = "en"
 TecDoc.client = TecDoc::Client.new
+Savon.logger.level = Logger::INFO
+HTTPI.logger.level = Logger::INFO
 
 parser = OptionParser.new do |opts|
 
-  opts.banner = "Usage: tec_doc -p <provider id> -c <country code> [-l <language code>]"
+  opts.banner = "Usage: tec_doc -p <provider id> -c <country code> [-l <language code>] [-v]"
 
   opts.on("-p", "--provider <provider id>", "TecDoc provider ID") do |provider|
     TecDoc.client.provider = provider
@@ -24,6 +26,11 @@ parser = OptionParser.new do |opts|
 
   opts.on("-l", "--lang <language code>", "Language code according to ISO 639") do |lang|
     I18n.locale = lang
+  end
+
+  opts.on("-v", "--verbose", "") do |verbose|
+    Savon.logger.level = Logger::DEBUG
+    HTTPI.logger.level = Logger::DEBUG
   end
 
 end
