@@ -6,8 +6,8 @@ module TecDoc
       self.provider = options[:provider]
       self.country  = options[:country]
       self.connection = Savon::Client.new do |wsdl, http|
-        wsdl.document = File.expand_path("wsdl.xml", __FILE__)
-        wsdl.document = "http://webservicepilot.tecdoc.net/pegasus-2-0/wsdl/TecdocToCatWL"
+        wsdl.document = File.expand_path("../wsdl.xml", __FILE__)
+        wsdl.endpoint = "http://webservicepilot.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"
         proxy = options[:proxy] || ENV['http_proxy']
         http.proxy = proxy if proxy
       end

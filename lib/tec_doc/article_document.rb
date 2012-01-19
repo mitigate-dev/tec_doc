@@ -29,7 +29,7 @@ module TecDoc
     end
 
     def url
-      base_url = TecDoc.client.connection.wsdl.document.gsub("/wsdl/TecdocToCatWL", "")
+      base_url = TecDoc.client.connection.wsdl.endpoint.gsub("/services/TecdocToCatWL", "")
       provider = TecDoc.client.provider
       thumbnail_flag = self.is_a?(ArticleThumbnail) ? "1" : "0"
       "#{base_url}/documents/#{provider}/#{id}/#{thumbnail_flag}"
