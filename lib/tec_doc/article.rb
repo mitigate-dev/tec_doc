@@ -96,6 +96,14 @@ module TecDoc
       end
     end
     
+    def trade_number
+      @trade_number ||= assigned_article[:usage_numbers].map(&:values).flatten.first
+    end
+    
+    def information
+      @information ||= assigned_article_en[:article_info]
+    end
+    
     def linked_manufacturers
       unless @linked_manufacturers
         response = TecDoc.client.request(:get_article_linked_all_linking_target_manufacturer, {
@@ -173,7 +181,19 @@ module TecDoc
         :article_id => id,
         :attributs => true,
         :ean_numbers => true,
-        :oe_numbers => true
+        :oe_numbers => true,
+        :usage_numbers => true
+      })[0]
+    end
+    
+    # Article info is defined only for EN lang
+    def assigned_article_en
+      @assigned_article_en ||= TecDoc.client.request(:get_assigned_articles_by_ids2_single, {
+        :lang => "en",
+        :country => scope[:country],
+        :linking_target_type => "U",
+        :article_id => id,
+        :info => true
       })[0]
     end
   end

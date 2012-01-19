@@ -1,0 +1,49 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :post
+    uri: http://webservicepilot.tecdoc.net:80/pegasus-2-0/services/TecdocToCatWL
+    body: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://webservicepilot.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="http://webservicepilot.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"
+      xmlns:ins1="http://options.datatype.tocinterface.cat.tecdoc.net" xmlns:ins2="http://controlpanel.datatype.tocinterface.cat.tecdoc.net"
+      xmlns:ins3="http://articles.datatype.tocinterface.cat.tecdoc.net" xmlns:ins4="http://carselection.datatype.tocinterface.cat.tecdoc.net"
+      xmlns:ins5="http://datatype.cat.tecdoc.net" xmlns:ins6="http://axlesselection.datatype.tocinterface.cat.tecdoc.net"
+      xmlns:ins7="http://motorselection.datatype.tocinterface.cat.tecdoc.net" xmlns:ins8="http://assemblygroupselection.datatype.tocinterface.cat.tecdoc.net"
+      xmlns:ins9="http://specialselection.datatype.tocinterface.cat.tecdoc.net"><env:Body><ins0:getArticleDirectSearchAllNumbers2><wsdl:in><wsdl:provider>330</wsdl:provider><wsdl:country>lv</wsdl:country><wsdl:lang>lv</wsdl:lang><wsdl:numberType>0</wsdl:numberType><wsdl:searchExact>true</wsdl:searchExact><wsdl:sortType>1</wsdl:sortType><wsdl:articleNumber>OC
+      47</wsdl:articleNumber></wsdl:in></ins0:getArticleDirectSearchAllNumbers2></env:Body></env:Envelope>
+    headers:
+      soapaction:
+      - ! '"getArticleDirectSearchAllNumbers2"'
+      content-type:
+      - text/xml;charset=UTF-8
+      content-length:
+      - '1365'
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Thu, 19 Jan 2012 12:07:15 GMT
+      server:
+      - Apache
+      content-length:
+      - '1176'
+      content-type:
+      - text/xml;charset=utf-8
+      x-cache:
+      - MISS from demo.makit.lv
+      x-cache-lookup:
+      - MISS from demo.makit.lv:8080
+      via:
+      - 1.1 demo.makit.lv:8080 (squid/2.7.STABLE7)
+    body: <?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><getArticleDirectSearchAllNumbers2Response
+      xmlns="http://webservicepilot.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"><getArticleDirectSearchAllNumbers2Return
+      xmlns=""><data><array><array><articleId>208662</articleId><articleName>E&#x13C;&#x13C;as
+      filtrs</articleName><articleNo>OC 47</articleNo><articleSearchNo>OC 47</articleSearchNo><brandName>KNECHT</brandName><brandNo>34</brandNo><genericArticleId>7</genericArticleId><numberType>0</numberType></array><array><articleId>212551</articleId><articleName>E&#x13C;&#x13C;as
+      filtrs</articleName><articleNo>OC 47</articleNo><articleSearchNo>OC 47</articleSearchNo><brandName>MAHLE
+      ORIGINAL</brandName><brandNo>287</brandNo><genericArticleId>7</genericArticleId><numberType>0</numberType></array></array><empty>false</empty></data><status>200</status><statusText
+      xsi:nil="true"/></getArticleDirectSearchAllNumbers2Return></getArticleDirectSearchAllNumbers2Response></soapenv:Body></soapenv:Envelope>
+    http_version: '1.0'

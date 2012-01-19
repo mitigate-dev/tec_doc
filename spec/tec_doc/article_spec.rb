@@ -35,6 +35,27 @@ describe TecDoc::Article do
       it "should have EAN number" do
         @article.ean_number.should == "4027816319665"
       end
+      
+      it "should have information" do
+        VCR.use_cassette("article_information") do
+          @article.send(:assigned_article_en)
+        end
+        @article.information[0][:info_text].should == "for air conditioning"
+      end
+      
+      it "should have trade number" do
+        VCR.use_cassette('article_trade_number') do
+          @article = TecDoc::Article.search(
+            :article_number => "OC 47",
+            :number_type => 0,
+            :search_exact => true
+          )[0]
+        end
+        VCR.use_cassette('article_assigned_article_for_trade_number') do
+          @article.send(:assigned_article)
+        end
+        @article.trade_number.should == "07642101"
+      end
 
       it "should have OE numbers" do
         @article.oe_numbers.size.should > 0

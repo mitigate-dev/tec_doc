@@ -10,7 +10,7 @@
       xmlns:ins3="http://articles.datatype.tocinterface.cat.tecdoc.net" xmlns:ins4="http://carselection.datatype.tocinterface.cat.tecdoc.net"
       xmlns:ins5="http://datatype.cat.tecdoc.net" xmlns:ins6="http://axlesselection.datatype.tocinterface.cat.tecdoc.net"
       xmlns:ins7="http://motorselection.datatype.tocinterface.cat.tecdoc.net" xmlns:ins8="http://assemblygroupselection.datatype.tocinterface.cat.tecdoc.net"
-      xmlns:ins9="http://specialselection.datatype.tocinterface.cat.tecdoc.net"><env:Body><ins0:getAssignedArticlesByIds2Single><wsdl:in><wsdl:provider>330</wsdl:provider><wsdl:lang>lv</wsdl:lang><wsdl:country>lv</wsdl:country><wsdl:linkingTargetType>U</wsdl:linkingTargetType><wsdl:articleId>2930257</wsdl:articleId><wsdl:attributs>true</wsdl:attributs><wsdl:eanNumbers>true</wsdl:eanNumbers><wsdl:oeNumbers>true</wsdl:oeNumbers></wsdl:in></ins0:getAssignedArticlesByIds2Single></env:Body></env:Envelope>
+      xmlns:ins9="http://specialselection.datatype.tocinterface.cat.tecdoc.net"><env:Body><ins0:getAssignedArticlesByIds2Single><wsdl:in><wsdl:provider>330</wsdl:provider><wsdl:lang>lv</wsdl:lang><wsdl:country>lv</wsdl:country><wsdl:linkingTargetType>U</wsdl:linkingTargetType><wsdl:articleId>2930257</wsdl:articleId><wsdl:attributs>true</wsdl:attributs><wsdl:eanNumbers>true</wsdl:eanNumbers><wsdl:oeNumbers>true</wsdl:oeNumbers><wsdl:usageNumbers>true</wsdl:usageNumbers></wsdl:in></ins0:getAssignedArticlesByIds2Single></env:Body></env:Envelope>
     headers:
       soapaction:
       - ! '"getAssignedArticlesByIds2Single"'
@@ -24,11 +24,11 @@
       message: OK
     headers:
       date:
-      - Tue, 17 Jan 2012 16:30:31 GMT
+      - Thu, 19 Jan 2012 11:15:42 GMT
       server:
       - Apache
       content-length:
-      - '4633'
+      - '4659'
       content-type:
       - text/xml;charset=utf-8
       x-cache:
@@ -62,6 +62,6 @@
       11 6 929 486</oeNumber><sortNumber>1</sortNumber></array><array><blockNumber>5</blockNumber><brandName>BMW</brandName><oeNumber>64
       11 8 377 579</oeNumber><sortNumber>1</sortNumber></array><array><blockNumber>6</blockNumber><brandName>BMW</brandName><oeNumber>64
       11 8 383 835</oeNumber><sortNumber>1</sortNumber></array></array><empty>false</empty></oenNumbers><replacedByNumber
-      xsi:nil="true"/><replacedNumber xsi:nil="true"/><usageNumbers xsi:nil="true"/></array></array><empty>false</empty></data><status>200</status><statusText
+      xsi:nil="true"/><replacedNumber xsi:nil="true"/><usageNumbers><array/><empty>true</empty></usageNumbers></array></array><empty>false</empty></data><status>200</status><statusText
       xsi:nil="true"/></getAssignedArticlesByIds2SingleReturn></getAssignedArticlesByIds2SingleResponse></soapenv:Body></soapenv:Envelope>
     http_version: '1.0'
