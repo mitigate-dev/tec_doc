@@ -12,7 +12,7 @@ I18n.locale = "lv"
 TecDoc.client = TecDoc::Client.new(:provider => 330, :country => "lv")
 ```
 
-## Console
+## Shell
 
 ```
 $ tec_doc -h

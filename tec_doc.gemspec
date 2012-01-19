@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
 
   s.files         = Dir.glob("lib/**/*") + %w(README.md LICENSE)
   s.test_files    = Dir.glob("spec/**/*")
-  s.executables   = Dir.glob("bin/*")
+  s.executables   = ["tec_doc"]
   s.require_paths = ["lib"]
 
   s.add_development_dependency "rake"
