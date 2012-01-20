@@ -78,14 +78,16 @@ module TecDoc
     end
 
     def initialize(attributes = {}, scope = {})
-      @id                 = attributes[:article_id].to_i
-      @name               = attributes[:article_name].to_s
-      @number             = attributes[:article_no].to_s
-      @brand_name         = attributes[:brand_name].to_s
-      @brand_number       = attributes[:brand_no].to_i
-      @generic_article_id = attributes[:generic_article_id].to_i
-      @number_type        = attributes[:number_type].to_i
-      @search_number      = attributes[:article_search_no].to_s
+      article_data = (attributes[:direct_article] || attributes)
+      
+      @id                 = article_data[:article_id].to_i
+      @name               = article_data[:article_name].to_s
+      @number             = article_data[:article_no].to_s
+      @brand_name         = article_data[:brand_name].to_s
+      @brand_number       = article_data[:brand_no].to_i
+      @generic_article_id = article_data[:generic_article_id].to_i
+      @number_type        = article_data[:number_type].to_i
+      @search_number      = article_data[:article_search_no].to_s
       @scope              = scope
 
       @ean_number   = attributes[:ean_number].to_a.map(&:values).flatten.first

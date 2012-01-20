@@ -104,6 +104,12 @@ describe TecDoc::Article do
       @articles[1].instance_variable_get(:@trade_number).should == "07642077"
       @articles[0].instance_variable_get(:@attributes).to_a.empty?.should be_false
       @articles[1].instance_variable_get(:@attributes).to_a.empty?.should be_false
+      @articles[0].id.should_not be_nil
+      @articles[1].id.should_not be_nil
+      @articles[0].number.should_not be_nil
+      @articles[1].number.should_not be_nil
+      @articles[0].brand_number.should_not be_nil
+      @articles[1].brand_number.should_not be_nil
     end
   end
 
