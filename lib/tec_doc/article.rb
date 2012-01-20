@@ -82,7 +82,7 @@ module TecDoc
       @name               = attributes[:article_name].to_s
       @number             = attributes[:article_no].to_s
       @brand_name         = attributes[:brand_name].to_s
-      @brand_number       = attributes[:brand_no].to_s
+      @brand_number       = attributes[:brand_no].to_i
       @generic_article_id = attributes[:generic_article_id].to_i
       @number_type        = attributes[:number_type].to_i
       @search_number      = attributes[:article_search_no].to_s
