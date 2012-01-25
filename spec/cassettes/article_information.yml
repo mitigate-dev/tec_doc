@@ -10,10 +10,10 @@
       xmlns:ins3="http://articles.datatype.tocinterface.cat.tecdoc.net" xmlns:ins4="http://carselection.datatype.tocinterface.cat.tecdoc.net"
       xmlns:ins5="http://datatype.cat.tecdoc.net" xmlns:ins6="http://axlesselection.datatype.tocinterface.cat.tecdoc.net"
       xmlns:ins7="http://motorselection.datatype.tocinterface.cat.tecdoc.net" xmlns:ins8="http://assemblygroupselection.datatype.tocinterface.cat.tecdoc.net"
-      xmlns:ins9="http://specialselection.datatype.tocinterface.cat.tecdoc.net"><env:Body><ins0:getAssignedArticlesByIds2Single><wsdl:in><wsdl:provider>330</wsdl:provider><wsdl:lang>en</wsdl:lang><wsdl:country>lv</wsdl:country><wsdl:linkingTargetType>U</wsdl:linkingTargetType><wsdl:articleId>2930257</wsdl:articleId><wsdl:info>true</wsdl:info></wsdl:in></ins0:getAssignedArticlesByIds2Single></env:Body></env:Envelope>
+      xmlns:ins9="http://specialselection.datatype.tocinterface.cat.tecdoc.net"><env:Body><ins0:getDirectArticlesByIds2><wsdl:in><wsdl:provider>330</wsdl:provider><wsdl:lang>en</wsdl:lang><wsdl:country>lv</wsdl:country><wsdl:info>true</wsdl:info><wsdl:articleId><wsdl:array><wsdl:ids>2930257</wsdl:ids></wsdl:array></wsdl:articleId></wsdl:in></ins0:getDirectArticlesByIds2></env:Body></env:Envelope>
     headers:
       soapaction:
-      - ! '"getAssignedArticlesByIds2Single"'
+      - ! '"getDirectArticlesByIds2"'
       content-type:
       - text/xml;charset=UTF-8
       content-length:
@@ -24,11 +24,11 @@
       message: OK
     headers:
       date:
-      - Thu, 19 Jan 2012 15:42:27 GMT
+      - Wed, 25 Jan 2012 11:48:17 GMT
       server:
       - Apache
       content-length:
-      - '2000'
+      - '2095'
       content-type:
       - text/xml;charset=utf-8
       x-cache:
@@ -38,16 +38,18 @@
       via:
       - 1.1 demo.makit.lv:8080 (squid/2.7.STABLE7)
     body: <?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-      xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><getAssignedArticlesByIds2SingleResponse
-      xmlns="http://webservicepilot.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"><getAssignedArticlesByIds2SingleReturn
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><getDirectArticlesByIds2Response
+      xmlns="http://webservicepilot.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"><getDirectArticlesByIds2Return
       xmlns=""><data><array><array><articleAttributes xsi:nil="true"/><articleDocuments
       xsi:nil="true"/><articleInfo><array><array><infoId>429879</infoId><infoText>for
       air conditioning</infoText><infoType>2</infoType><infoTypeName>General Information</infoTypeName></array></array><empty>false</empty></articleInfo><articlePrices
-      xsi:nil="true"/><assignedArticle><articleAddName xsi:nil="true"/><articleId>2930257</articleId><articleLinkId>0</articleLinkId><articleNo>31966</articleNo><articleState>1</articleState><articleStateName>Normal</articleStateName><hasAppendage>false</hasAppendage><hasAxleLink>false</hasAxleLink><hasCsGraphics>false</hasCsGraphics><hasDocuments>true</hasDocuments><hasLessDiscount>false</hasLessDiscount><hasMarkLink>false</hasMarkLink><hasMotorLink>false</hasMotorLink><hasOEN>true</hasOEN><hasPartList>false</hasPartList><hasPrices>false</hasPrices><hasSecurityInfo>false</hasSecurityInfo><hasUsage>false</hasUsage><hasVehicleLink>true</hasVehicleLink><packingUnit>1</packingUnit><quantityPerPackingUnit
-      xsi:nil="true"/></assignedArticle><directArticle xsi:nil="true"/><documentData
-      xsi:nil="true"/><eanNumber xsi:nil="true"/><immediateAttributs xsi:nil="true"/><immediateInfo
-      xsi:nil="true"/><mainArticle xsi:nil="true"/><normalAustauschPrice xsi:nil="true"/><oenNumbers
-      xsi:nil="true"/><replacedByNumber xsi:nil="true"/><replacedNumber xsi:nil="true"/><usageNumbers
-      xsi:nil="true"/></array></array><empty>false</empty></data><status>200</status><statusText
-      xsi:nil="true"/></getAssignedArticlesByIds2SingleReturn></getAssignedArticlesByIds2SingleResponse></soapenv:Body></soapenv:Envelope>
+      xsi:nil="true"/><assignedArticle xsi:nil="true"/><directArticle><articleAddName
+      xsi:nil="true"/><articleId>2930257</articleId><articleName>Control Unit, heating
+      / ventilation</articleName><articleNo>31966</articleNo><articleState>1</articleState><articleStateName>Normal</articleStateName><brandName>FEBI
+      BILSTEIN</brandName><brandNo>101</brandNo><genericArticleId>1385</genericArticleId><hasAppendage>false</hasAppendage><hasAxleLink>false</hasAxleLink><hasCsGraphics>false</hasCsGraphics><hasDocuments>true</hasDocuments><hasLessDiscount>false</hasLessDiscount><hasMarkLink>false</hasMarkLink><hasMotorLink>false</hasMotorLink><hasOEN>true</hasOEN><hasPartList>false</hasPartList><hasPrices>false</hasPrices><hasSecurityInfo>false</hasSecurityInfo><hasUsage>false</hasUsage><hasVehicleLink>true</hasVehicleLink><packingUnit>1</packingUnit><quantityPerPackingUnit
+      xsi:nil="true"/></directArticle><documentData xsi:nil="true"/><eanNumber xsi:nil="true"/><immediateAttributs
+      xsi:nil="true"/><immediateInfo xsi:nil="true"/><mainArticle xsi:nil="true"/><normalAustauschPrice
+      xsi:nil="true"/><oenNumbers xsi:nil="true"/><replacedByNumber xsi:nil="true"/><replacedNumber
+      xsi:nil="true"/><usageNumbers xsi:nil="true"/></array></array><empty>false</empty></data><status>200</status><statusText
+      xsi:nil="true"/></getDirectArticlesByIds2Return></getDirectArticlesByIds2Response></soapenv:Body></soapenv:Envelope>
     http_version: '1.0'

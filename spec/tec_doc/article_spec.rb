@@ -38,7 +38,7 @@ describe TecDoc::Article do
       
       it "should have information" do
         VCR.use_cassette("article_information") do
-          @article.send(:assigned_article_en)
+          @article.send(:direct_article_data_en)
         end
         @article.information[0][:info_text].should == "for air conditioning"
       end
@@ -100,16 +100,13 @@ describe TecDoc::Article do
         @articles = TecDoc::Article.all_with_details(:ids => [208662, 212551])
       end
 
-      @articles[0].instance_variable_get(:@trade_number).should == "07642101"
-      @articles[1].instance_variable_get(:@trade_number).should == "07642077"
-      @articles[0].instance_variable_get(:@attributes).to_a.empty?.should be_false
-      @articles[1].instance_variable_get(:@attributes).to_a.empty?.should be_false
-      @articles[0].id.should_not be_nil
-      @articles[1].id.should_not be_nil
-      @articles[0].number.should_not be_nil
-      @articles[1].number.should_not be_nil
-      @articles[0].brand_number.should_not be_nil
-      @articles[1].brand_number.should_not be_nil
+      @articles.each do |article|
+        ["07642101", "07642077"].include?(article.instance_variable_get(:@trade_number))
+        article.instance_variable_get(:@attributes).to_a.empty?.should be_false
+        article.id.should_not be_nil
+        article.number.should_not be_nil
+        article.brand_number.should_not be_nil
+      end
     end
   end
 

@@ -148,7 +148,7 @@ module TecDoc
     end
     
     def information
-      @information ||= assigned_article_en[:article_info]
+      @information ||= direct_article_data_en[:article_info]
     end
     
     def linked_manufacturers
@@ -231,14 +231,13 @@ module TecDoc
       })[0]
     end
     
-    # Article info is defined only for EN lang
-    def assigned_article_en
-      @assigned_article_en ||= TecDoc.client.request(:get_assigned_articles_by_ids2_single, {
+    # Direct article to get all detail info
+    def direct_article_data_en
+      @direct_article_data_en ||= TecDoc.client.request(:get_direct_articles_by_ids2, {
         :lang => "en",
-        :country => scope[:country],
-        :linking_target_type => "U",
-        :article_id => id,
-        :info => true
+        :country => TecDoc.client.country,
+        :info => true,
+        :article_id => { :array => { :ids => [id] } }
       })[0]
     end
   end
