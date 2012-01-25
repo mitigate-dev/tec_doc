@@ -218,6 +218,7 @@ module TecDoc
           vehicle.name = "#{details[:manu_name]} - #{details[:model_name]} - #{details[:type_name]}"
           vehicle.power_hp_from             = details[:power_hp].to_i
           vehicle.power_kw_from             = details[:power_kw].to_i
+          vehicle.cylinder_capacity         = details[:cylinder_capacity_ccm].to_i
           vehicle.date_of_construction_from = DateParser.new(details[:year_of_construction_from]).to_date
           vehicle.date_of_construction_to   = DateParser.new(details[:year_of_construction_to]).to_date
           vehicle
