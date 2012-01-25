@@ -1,3 +1,4 @@
+#encoding: utf-8
 require "spec_helper"
 
 describe TecDoc::Article do
@@ -43,18 +44,28 @@ describe TecDoc::Article do
         @article.information[0][:info_text].should == "for air conditioning"
       end
       
-      it "should have trade number" do
-        VCR.use_cassette('article_trade_number') do
-          @article = TecDoc::Article.search(
-            :article_number => "OC 47",
-            :number_type => 0,
-            :search_exact => true
-          )[0]
+      context "with state and trade number" do
+        before do
+          VCR.use_cassette('article_trade_number') do
+            @article = TecDoc::Article.search(
+              :article_number => "OC 47",
+              :number_type => 0,
+              :search_exact => true
+            )[0]
+          end
+          
+          VCR.use_cassette('article_assigned_article_for_trade_number') do
+            @article.send(:assigned_article)
+          end
         end
-        VCR.use_cassette('article_assigned_article_for_trade_number') do
-          @article.send(:assigned_article)
+      
+        it "should have state" do
+          @article.state.should == "Normāls"
         end
-        @article.trade_number.should == "07642101"
+
+        it "should have trade number" do
+          @article.trade_number.should == "07642101"
+        end
       end
 
       it "should have OE numbers" do

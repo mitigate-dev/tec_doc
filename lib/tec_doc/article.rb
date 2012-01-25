@@ -1,6 +1,7 @@
 module TecDoc
   class Article
-    attr_accessor :id, :name, :number, :search_number, :brand_name, :brand_number, :generic_article_id, :number_type
+    attr_accessor :id, :name, :number, :search_number, :brand_name, :brand_number,
+      :generic_article_id, :number_type, :state, :packing_unit
 
     attr_accessor :scope
 
@@ -88,6 +89,7 @@ module TecDoc
       @generic_article_id = article_data[:generic_article_id].to_i
       @number_type        = article_data[:number_type].to_i
       @search_number      = article_data[:article_search_no].to_s
+      @state              = article_data[:article_state_name]
       @scope              = scope
 
       @ean_number   = attributes[:ean_number].to_a.map(&:values).flatten.first
@@ -104,6 +106,14 @@ module TecDoc
           ArticleOENumber.new(attrs)
         end
       end
+    end
+    
+    def state
+      @state ||= (assigned_article[:assigned_article] || {})[:article_state_name]
+    end
+    
+    def packing_unit
+      @packing_unit ||= (assigned_article[:assigned_article] || {})[:packing_unit]
     end
 
     def brand
