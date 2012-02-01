@@ -16,6 +16,8 @@ module TecDoc
     # @option options [Integer] :sort_mode - 1: Brand name, 2: Article norm name (optional)
     # @return [Array<TecDoc::GenericArticle>] list of generic articles
     def self.all(options = {})
+      options[:result_mode] = 2
+      options[:sort_mode] = 2
       options = {
         :lang => I18n.locale.to_s,
         :country => TecDoc.client.country

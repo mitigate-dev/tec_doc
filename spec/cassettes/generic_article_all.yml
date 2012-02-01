@@ -10,21 +10,21 @@
       xmlns:ins3="http://articles.datatype.tocinterface.cat.tecdoc.net" xmlns:ins4="http://carselection.datatype.tocinterface.cat.tecdoc.net"
       xmlns:ins5="http://datatype.cat.tecdoc.net" xmlns:ins6="http://axlesselection.datatype.tocinterface.cat.tecdoc.net"
       xmlns:ins7="http://motorselection.datatype.tocinterface.cat.tecdoc.net" xmlns:ins8="http://assemblygroupselection.datatype.tocinterface.cat.tecdoc.net"
-      xmlns:ins9="http://specialselection.datatype.tocinterface.cat.tecdoc.net"><env:Body><ins0:getGenericArticlesByManufacturer6><wsdl:in><wsdl:provider>330</wsdl:provider><wsdl:lang>lv</wsdl:lang><wsdl:country>lv</wsdl:country><wsdl:linkingTargetType>C</wsdl:linkingTargetType><wsdl:linkingTargetId>10502</wsdl:linkingTargetId><wsdl:genericArticleId><wsdl:array><wsdl:id>7</wsdl:id></wsdl:array></wsdl:genericArticleId><wsdl:resultMode>2</wsdl:resultMode></wsdl:in></ins0:getGenericArticlesByManufacturer6></env:Body></env:Envelope>
+      xmlns:ins9="http://specialselection.datatype.tocinterface.cat.tecdoc.net"><env:Body><ins0:getGenericArticlesByManufacturer6><wsdl:in><wsdl:provider>330</wsdl:provider><wsdl:lang>lv</wsdl:lang><wsdl:country>lv</wsdl:country><wsdl:linkingTargetType>C</wsdl:linkingTargetType><wsdl:linkingTargetId>10502</wsdl:linkingTargetId><wsdl:genericArticleId><wsdl:array><wsdl:id>7</wsdl:id></wsdl:array></wsdl:genericArticleId><wsdl:resultMode>2</wsdl:resultMode><wsdl:sortMode>2</wsdl:sortMode></wsdl:in></ins0:getGenericArticlesByManufacturer6></env:Body></env:Envelope>
     headers:
       soapaction:
       - ! '"getGenericArticlesByManufacturer6"'
       content-type:
       - text/xml;charset=UTF-8
       content-length:
-      - '1436'
+      - '1468'
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
       message: OK
     headers:
       date:
-      - Thu, 19 Jan 2012 15:43:59 GMT
+      - Wed, 01 Feb 2012 13:06:58 GMT
       server:
       - Apache
       content-length:
@@ -36,7 +36,7 @@
       x-cache-lookup:
       - MISS from demo.makit.lv:8080
       via:
-      - 1.1 demo.makit.lv:8080 (squid/2.7.STABLE7)
+      - 1.1 demo.makit.lv:8080 (squid/2.7.STABLE9)
     body: <?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
       xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><getGenericArticlesByManufacturer6Response
       xmlns="http://webservicepilot.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"><getGenericArticlesByManufacturer6Return

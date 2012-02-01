@@ -8,7 +8,6 @@ describe TecDoc::GenericArticle do
         :linking_target_type => "C",
         :linking_target_id => 10502,
         :generic_article_id => { :array => { :id => [7] } },
-        :result_mode => 2
       })
     end
   end
