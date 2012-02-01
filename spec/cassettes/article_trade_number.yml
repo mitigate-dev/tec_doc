@@ -10,8 +10,7 @@
       xmlns:ins3="http://articles.datatype.tocinterface.cat.tecdoc.net" xmlns:ins4="http://carselection.datatype.tocinterface.cat.tecdoc.net"
       xmlns:ins5="http://datatype.cat.tecdoc.net" xmlns:ins6="http://axlesselection.datatype.tocinterface.cat.tecdoc.net"
       xmlns:ins7="http://motorselection.datatype.tocinterface.cat.tecdoc.net" xmlns:ins8="http://assemblygroupselection.datatype.tocinterface.cat.tecdoc.net"
-      xmlns:ins9="http://specialselection.datatype.tocinterface.cat.tecdoc.net"><env:Body><ins0:getArticleDirectSearchAllNumbers2><wsdl:in><wsdl:provider>330</wsdl:provider><wsdl:country>lv</wsdl:country><wsdl:lang>lv</wsdl:lang><wsdl:numberType>0</wsdl:numberType><wsdl:searchExact>true</wsdl:searchExact><wsdl:sortType>1</wsdl:sortType><wsdl:articleNumber>OC
-      47</wsdl:articleNumber></wsdl:in></ins0:getArticleDirectSearchAllNumbers2></env:Body></env:Envelope>
+      xmlns:ins9="http://specialselection.datatype.tocinterface.cat.tecdoc.net"><env:Body><ins0:getArticleDirectSearchAllNumbers2><wsdl:in><wsdl:provider>330</wsdl:provider><wsdl:country>lv</wsdl:country><wsdl:lang>lv</wsdl:lang><wsdl:numberType>0</wsdl:numberType><wsdl:searchExact>true</wsdl:searchExact><wsdl:sortType>1</wsdl:sortType><wsdl:articleNumber>4PK1217</wsdl:articleNumber></wsdl:in></ins0:getArticleDirectSearchAllNumbers2></env:Body></env:Envelope>
     headers:
       soapaction:
       - ! '"getArticleDirectSearchAllNumbers2"'
@@ -25,11 +24,11 @@
       message: OK
     headers:
       date:
-      - Thu, 19 Jan 2012 15:42:33 GMT
+      - Wed, 01 Feb 2012 12:22:56 GMT
       server:
       - Apache
       content-length:
-      - '1176'
+      - '909'
       content-type:
       - text/xml;charset=utf-8
       x-cache:
@@ -37,13 +36,11 @@
       x-cache-lookup:
       - MISS from demo.makit.lv:8080
       via:
-      - 1.1 demo.makit.lv:8080 (squid/2.7.STABLE7)
+      - 1.1 demo.makit.lv:8080 (squid/2.7.STABLE9)
     body: <?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
       xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><getArticleDirectSearchAllNumbers2Response
       xmlns="http://webservicepilot.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"><getArticleDirectSearchAllNumbers2Return
-      xmlns=""><data><array><array><articleId>208662</articleId><articleName>E&#x13C;&#x13C;as
-      filtrs</articleName><articleNo>OC 47</articleNo><articleSearchNo>OC 47</articleSearchNo><brandName>KNECHT</brandName><brandNo>34</brandNo><genericArticleId>7</genericArticleId><numberType>0</numberType></array><array><articleId>212551</articleId><articleName>E&#x13C;&#x13C;as
-      filtrs</articleName><articleNo>OC 47</articleNo><articleSearchNo>OC 47</articleSearchNo><brandName>MAHLE
-      ORIGINAL</brandName><brandNo>287</brandNo><genericArticleId>7</genericArticleId><numberType>0</numberType></array></array><empty>false</empty></data><status>200</status><statusText
+      xmlns=""><data><array><array><articleId>1539623</articleId><articleName>&#x136;&#x12B;&#x13C;rievu
+      siksna</articleName><articleNo>4PK1217</articleNo><articleSearchNo>4PK1217</articleSearchNo><brandName>CONTITECH</brandName><brandNo>31</brandNo><genericArticleId>305</genericArticleId><numberType>0</numberType></array></array><empty>false</empty></data><status>200</status><statusText
       xsi:nil="true"/></getArticleDirectSearchAllNumbers2Return></getArticleDirectSearchAllNumbers2Response></soapenv:Body></soapenv:Envelope>
     http_version: '1.0'

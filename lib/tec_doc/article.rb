@@ -153,8 +153,8 @@ module TecDoc
       end
     end
     
-    def trade_number
-      @trade_number ||= assigned_article[:usage_numbers].map(&:values).flatten.first
+    def trade_numbers
+      @trade_numbers ||= assigned_article[:usage_numbers].map(&:values).flatten.join(", ")
     end
     
     def information

@@ -48,7 +48,7 @@ describe TecDoc::Article do
         before do
           VCR.use_cassette('article_trade_number') do
             @article = TecDoc::Article.search(
-              :article_number => "OC 47",
+              :article_number => "4PK1217",
               :number_type => 0,
               :search_exact => true
             )[0]
@@ -64,7 +64,7 @@ describe TecDoc::Article do
         end
 
         it "should have trade number" do
-          @article.trade_number.should == "07642101"
+          @article.trade_numbers.should == "4 PK 1216, 4 PK 1217, 4 PK 1218, 4 PK 1219"
         end
       end
 
