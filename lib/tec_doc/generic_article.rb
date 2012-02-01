@@ -28,7 +28,7 @@ module TecDoc
     end
     
     def initialize(attributes = {}, scope = {})
-      @id    = (attributes[:id] || attributes[:generic_article_id])
+      @id    = (attributes[:id] || attributes[:generic_article_id]).to_i
       @name  = attributes[:article_norm_name]
       @scope = scope
     end
