@@ -24,11 +24,11 @@
       message: OK
     headers:
       date:
-      - Thu, 19 Jan 2012 15:42:16 GMT
+      - Thu, 02 Feb 2012 10:00:19 GMT
       server:
       - Apache
       content-length:
-      - '3865'
+      - '4454'
       content-type:
       - text/xml;charset=utf-8
       x-cache:
@@ -36,24 +36,27 @@
       x-cache-lookup:
       - MISS from demo.makit.lv:8080
       via:
-      - 1.1 demo.makit.lv:8080 (squid/2.7.STABLE7)
+      - 1.1 demo.makit.lv:8080 (squid/2.7.STABLE9)
     body: <?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
       xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><getArticleDirectSearchAllNumbers2Response
       xmlns="http://webservicepilot.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"><getArticleDirectSearchAllNumbers2Return
-      xmlns=""><data><array><array><articleId>2930257</articleId><articleName>Vad&#x12B;bas
+      xmlns=""><data><array><array><articleId>736476</articleId><articleName>Brem&#x17E;u
+      suports</articleName><articleNo>82-0966-000</articleNo><articleSearchNo>3196600000</articleSearchNo><brandName>ELSTOCK</brandName><brandNo>226</brandNo><genericArticleId>78</genericArticleId><numberType>3</numberType></array><array><articleId>2933773</articleId><articleName>Vad&#x12B;bas
       bloks, Apsilde/Ventil&#x101;cija</articleName><articleNo>31966</articleNo><articleSearchNo>31966</articleSearchNo><brandName>FEBI
-      BILSTEIN</brandName><brandNo>101</brandNo><genericArticleId>1385</genericArticleId><numberType>0</numberType></array><array><articleId>897953</articleId><articleName>Brem&#x17E;u
+      BILSTEIN</brandName><brandNo>101</brandNo><genericArticleId>1385</genericArticleId><numberType>0</numberType></array><array><articleId>894329</articleId><articleName>Brem&#x17E;u
       &#x161;&#x13C;&#x16B;tene</articleName><articleNo>470.56</articleNo><articleSearchNo>3196
-      622M1</articleSearchNo><brandName>FTE</brandName><brandNo>54</brandNo><genericArticleId>83</genericArticleId><numberType>1</numberType></array><array><articleId>2955890</articleId><articleName>Bl&#x12B;ve</articleName><articleNo>9GD
-      853 918-005</articleNo><articleSearchNo>31966300</articleSearchNo><brandName>HELLA</brandName><brandNo>2</brandNo><genericArticleId>1451</genericArticleId><numberType>3</numberType></array><array><articleId>2955891</articleId><articleName>Bl&#x12B;ve</articleName><articleNo>9GD
-      853 918-006</articleNo><articleSearchNo>31966300</articleSearchNo><brandName>HELLA</brandName><brandNo>2</brandNo><genericArticleId>1451</genericArticleId><numberType>3</numberType></array><array><articleId>2930282</articleId><articleName>Vad&#x12B;bas
+      622M1</articleSearchNo><brandName>FTE</brandName><brandNo>54</brandNo><genericArticleId>83</genericArticleId><numberType>1</numberType></array><array><articleId>2957918</articleId><articleName>Bl&#x12B;ve</articleName><articleNo>9GD
+      853 918-005</articleNo><articleSearchNo>31966300</articleSearchNo><brandName>HELLA</brandName><brandNo>2</brandNo><genericArticleId>1451</genericArticleId><numberType>3</numberType></array><array><articleId>2957919</articleId><articleName>Bl&#x12B;ve</articleName><articleNo>9GD
+      853 918-006</articleNo><articleSearchNo>31966300</articleSearchNo><brandName>HELLA</brandName><brandNo>2</brandNo><genericArticleId>1451</genericArticleId><numberType>3</numberType></array><array><articleId>2933850</articleId><articleName>Vad&#x12B;bas
       bloks, Apsilde/Ventil&#x101;cija</articleName><articleNo>75614261</articleNo><articleSearchNo>31966</articleSearchNo><brandName>HERTH+BUSS
-      ELPARTS</brandName><brandNo>72</brandNo><genericArticleId>1385</genericArticleId><numberType>3</numberType></array><array><articleId>2930405</articleId><articleName>Vad&#x12B;bas
-      bloks, Apsilde/Ventil&#x101;cija</articleName><articleNo>20 93 1966</articleNo><articleSearchNo>31966</articleSearchNo><brandName>SWAG</brandName><brandNo>151</brandNo><genericArticleId>1385</genericArticleId><numberType>3</numberType></array><array><articleId>3115130</articleId><articleName>Remkomplekts,
-      Stabilizatora atsaite</articleName><articleNo>V30-0779</articleNo><articleSearchNo>31966</articleSearchNo><brandName>VAICO</brandName><brandNo>162</brandNo><genericArticleId>2067</genericArticleId><numberType>3</numberType></array><array><articleId>1344036</articleId><articleName>Saj&#x16B;ga
-      disks</articleName><articleNo>806031</articleNo><articleSearchNo>319669</articleSearchNo><brandName>VALEO</brandName><brandNo>21</brandNo><genericArticleId>262</genericArticleId><numberType>2</numberType></array><array><articleId>2183916</articleId><articleName>Saj&#x16B;ga
-      komplekts</articleName><articleNo>805440</articleNo><articleSearchNo>319668</articleSearchNo><brandName>VALEO</brandName><brandNo>21</brandNo><genericArticleId>479</genericArticleId><numberType>2</numberType></array><array><articleId>2930369</articleId><articleName>Vad&#x12B;bas
-      bloks, Apsilde/Ventil&#x101;cija</articleName><articleNo>V20-79-0001</articleNo><articleSearchNo>31966</articleSearchNo><brandName>VEMO</brandName><brandNo>183</brandNo><genericArticleId>1385</genericArticleId><numberType>3</numberType></array><array><articleId>1737354</articleId><articleName>Savienot&#x101;jelements,
+      ELPARTS</brandName><brandNo>72</brandNo><genericArticleId>1385</genericArticleId><numberType>3</numberType></array><array><articleId>2737428</articleId><articleName>Remkomplekts,
+      Stabilizatora bukse</articleName><articleNo>31966</articleNo><articleSearchNo>31966</articleSearchNo><brandName>ORIGINAL
+      IMPERIUM</brandName><brandNo>331</brandNo><genericArticleId>1097</genericArticleId><numberType>0</numberType></array><array><articleId>2933988</articleId><articleName>Vad&#x12B;bas
+      bloks, Apsilde/Ventil&#x101;cija</articleName><articleNo>20 93 1966</articleNo><articleSearchNo>31966</articleSearchNo><brandName>SWAG</brandName><brandNo>151</brandNo><genericArticleId>1385</genericArticleId><numberType>3</numberType></array><array><articleId>3119013</articleId><articleName>Remkomplekts,
+      Stabilizatora atsaite</articleName><articleNo>V30-0779</articleNo><articleSearchNo>31966</articleSearchNo><brandName>VAICO</brandName><brandNo>162</brandNo><genericArticleId>2067</genericArticleId><numberType>3</numberType></array><array><articleId>1340837</articleId><articleName>Saj&#x16B;ga
+      disks</articleName><articleNo>806031</articleNo><articleSearchNo>319669</articleSearchNo><brandName>VALEO</brandName><brandNo>21</brandNo><genericArticleId>262</genericArticleId><numberType>2</numberType></array><array><articleId>2196229</articleId><articleName>Saj&#x16B;ga
+      komplekts</articleName><articleNo>805440</articleNo><articleSearchNo>319668</articleSearchNo><brandName>VALEO</brandName><brandNo>21</brandNo><genericArticleId>479</genericArticleId><numberType>2</numberType></array><array><articleId>2933936</articleId><articleName>Vad&#x12B;bas
+      bloks, Apsilde/Ventil&#x101;cija</articleName><articleNo>V20-79-0001</articleNo><articleSearchNo>31966</articleSearchNo><brandName>VEMO</brandName><brandNo>183</brandNo><genericArticleId>1385</genericArticleId><numberType>3</numberType></array><array><articleId>1734607</articleId><articleName>Savienot&#x101;jelements,
       Cauru&#x13C;vads</articleName><articleNo>893 103 840 4</articleNo><articleSearchNo>319661</articleSearchNo><brandName>WABCO</brandName><brandNo>22</brandNo><genericArticleId>373</genericArticleId><numberType>1</numberType></array></array><empty>false</empty></data><status>200</status><statusText
       xsi:nil="true"/></getArticleDirectSearchAllNumbers2Return></getArticleDirectSearchAllNumbers2Response></soapenv:Body></soapenv:Envelope>
     http_version: '1.0'

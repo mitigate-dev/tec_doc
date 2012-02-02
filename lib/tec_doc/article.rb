@@ -109,11 +109,11 @@ module TecDoc
     end
     
     def state
-      @state ||= (assigned_article[:assigned_article] || {})[:article_state_name]
+      @state ||= (article_details[:direct_article] || {})[:article_state_name]
     end
     
     def packing_unit
-      @packing_unit ||= (assigned_article[:assigned_article] || {})[:packing_unit]
+      @packing_unit ||= (article_details[:direct_article] || {})[:packing_unit]
     end
 
     def brand
@@ -138,23 +138,23 @@ module TecDoc
     end
 
     def attributes
-      @attributes ||= assigned_article[:article_attributes].map do |attrs|
+      @attributes ||= article_details[:article_attributes].map do |attrs|
         ArticleAttribute.new(attrs)
       end
     end
 
     def ean_number
-      @ean_number ||= assigned_article[:ean_number].map(&:values).flatten.first
+      @ean_number ||= article_details[:ean_number].map(&:values).flatten.first
     end
 
     def oe_numbers
-      @oe_numbers ||= assigned_article[:oen_numbers].map do |attrs|
+      @oe_numbers ||= article_details[:oen_numbers].map do |attrs|
         ArticleOENumber.new(attrs)
       end
     end
     
     def trade_numbers
-      @trade_numbers ||= assigned_article[:usage_numbers].map(&:values).flatten.join(", ")
+      @trade_numbers ||= article_details[:usage_numbers].map(&:values).flatten.join(", ")
     end
     
     def information
@@ -229,12 +229,11 @@ module TecDoc
 
     private
 
-    def assigned_article
-      @assigned_article ||= TecDoc.client.request(:get_assigned_articles_by_ids2_single, {
+    def article_details
+      @article_details ||= TecDoc.client.request(:get_direct_articles_by_ids2, {
         :lang => scope[:lang],
         :country => scope[:country],
-        :linking_target_type => "U",
-        :article_id => id,
+        :article_id => { :array => { :ids => [id] } },
         :attributs => true,
         :ean_numbers => true,
         :oe_numbers => true,

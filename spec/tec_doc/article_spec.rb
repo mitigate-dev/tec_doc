@@ -25,11 +25,11 @@ describe TecDoc::Article do
       end
     end
 
-    context "#assigned_article" do
+    context "#article_details" do
       before do
         @article = @articles.detect { |a| a.brand_name == "FEBI BILSTEIN" && a.number == "31966" }
-        VCR.use_cassette('article_assigned_article') do
-          @article.send(:assigned_article)
+        VCR.use_cassette('article_details') do
+          @article.send(:article_details)
         end
       end
 
@@ -54,8 +54,8 @@ describe TecDoc::Article do
             )[0]
           end
           
-          VCR.use_cassette('article_assigned_article_for_trade_number') do
-            @article.send(:assigned_article)
+          VCR.use_cassette('article_details_for_trade_number') do
+            @article.send(:article_details)
           end
         end
       
