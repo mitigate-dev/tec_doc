@@ -17,15 +17,17 @@ module TecDoc
       }.merge(options)
       response = TecDoc.client.request(:get_article_documents, options)
       response.map do |attributes|
-        document = new
-        document.id             = attributes[:doc_id].to_i
-        document.link_id        = attributes[:doc_link_id].to_i
-        document.file_name      = attributes[:doc_file_name].to_s
-        document.file_type_name = attributes[:doc_file_type_name].to_s
-        document.type_id        = attributes[:doc_type_id].to_i
-        document.type_name      = attributes[:doc_type_name].to_s
-        document
+        new attributes
       end
+    end
+
+    def initialize(attributes = {})
+      @id             = attributes[:doc_id].to_i
+      @link_id        = attributes[:doc_link_id].to_i
+      @file_name      = attributes[:doc_file_name].to_s
+      @file_type_name = attributes[:doc_file_type_name].to_s
+      @type_id        = attributes[:doc_type_id].to_i
+      @type_name      = attributes[:doc_type_name].to_s
     end
 
     def url
