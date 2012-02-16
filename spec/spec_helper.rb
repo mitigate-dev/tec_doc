@@ -19,6 +19,10 @@ RSpec.configure do |config|
   config.extend VCR::RSpec::Macros
   config.before(:all) do
     I18n.locale = "lv"
-    TecDoc.client = TecDoc::Client.new(:provider => 330, :country => "lv")
+    TecDoc.client = TecDoc::Client.new(
+      :provider => 330,
+      :country => "lv",
+      :mode => :test
+    )
   end
 end

@@ -7,10 +7,10 @@ module TecDoc
       self.country  = options[:country]
       self.connection = Savon::Client.new do |wsdl, http|
         wsdl.document = File.expand_path("../wsdl.xml", __FILE__)
-        wsdl.endpoint = "http://webservicepilot.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"
         proxy = options[:proxy] || ENV['http_proxy']
         http.proxy = proxy if proxy
       end
+      self.mode = options[:mode] || :live
     end
 
     def request(operation, options = {})
@@ -24,6 +24,18 @@ module TecDoc
         # response
       end
     end
+
+    def mode=(value)
+      if value == :test
+        connection.wsdl.endpoint = "http://webservicepilot.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"
+        @mode = :test
+      else
+        connection.wsdl.endpoint = "http://webservice-cs.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"
+        @mode = :live
+      end
+    end
+
+    attr_reader :mode
 
     # Sets the logger to use.
     attr_writer :logger
