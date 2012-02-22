@@ -150,7 +150,8 @@ describe TecDoc::Article do
       VCR.use_cassette('article_linked_vehicles') do
         @articles[0].linked_vehicles
       end
-      @articles[0].linked_vehicles.count.should == 16
+      @articles[0].linked_vehicles.count.should == 30
+      @articles[0].linked_vehicles.map(&:motor_codes).flatten.uniq.include?("A 18 XER").should be_true
       @articles[0].linked_vehicles.first.class.should == TecDoc::Vehicle
     end
   end

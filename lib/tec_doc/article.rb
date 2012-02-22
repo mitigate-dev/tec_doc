@@ -221,6 +221,7 @@ module TecDoc
           vehicle.cylinder_capacity         = details[:cylinder_capacity_ccm].to_i
           vehicle.date_of_construction_from = DateParser.new(details[:year_of_construction_from]).to_date
           vehicle.date_of_construction_to   = DateParser.new(details[:year_of_construction_to]).to_date
+          vehicle.motor_codes               = attrs[:motor_codes].map { |mc| mc[:motor_code] }
           vehicle
         end
       end
