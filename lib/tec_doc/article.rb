@@ -200,7 +200,7 @@ module TecDoc
             :country => scope[:country],
             :country_user_setting => scope[:country],
             :countries_car_selection => scope[:country],
-            :motor_codes => false,
+            :motor_codes => true,
             :axles => false,
             :cabs => false,
             :secondary_types => false,
