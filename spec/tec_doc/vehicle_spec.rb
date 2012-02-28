@@ -64,4 +64,15 @@ describe TecDoc::Vehicle do
       end
     end
   end
+  
+  context "#find" do
+    it "should return tec doc vehicle with correct data" do
+      VCR.use_cassette('vehicle_find_by_id') do
+        @vehicle = TecDoc::Vehicle.find :id => 1871
+      end
+      @vehicle.manu_id.should == 121
+      @vehicle.mod_id.should == 505
+      @vehicle.name.should == "1.8"
+    end
+  end
 end

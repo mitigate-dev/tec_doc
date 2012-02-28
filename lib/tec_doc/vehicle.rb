@@ -12,10 +12,12 @@ module TecDoc
       :power_kw_to,
       :date_of_construction_from,
       :date_of_construction_to,
-      :motor_codes
+      :motor_codes,
+      :manu_id,
+      :mod_id
 
     # Find vehicles for simplified selection with motor codes
-    # 
+    #
     # @option options [Integer] :car_type vehicle type (1: Passenger car, 2: Commercial vehicle, 3: Light commercial)
     # @option options [String] :countries_car_selection country code according to ISO 3166
     # @option options [TrueClass, FalseClass] :country_group_flag country group selection
@@ -54,6 +56,44 @@ module TecDoc
         end
         vehicle.motor_codes = attributes[:motor_codes].map { |mc| mc[:motor_code] }
         vehicle
+      end
+    end
+    
+    def self.find(options = {})
+      id = options.delete(:id)
+      options = {
+        :car_ids => { :array => { :ids => [id] } },
+        :countries_car_selection => TecDoc.client.country,
+        :country_user_setting => TecDoc.client.country,
+        :country => TecDoc.client.country,
+        :lang => TecDoc.client.country,
+        :axles => false,
+        :cabs => false,
+        :country_group_flag => false,
+        :motor_codes => true,
+        :vehicle_details_2 => false,
+        :vehicle_terms => true
+      }.merge(options)
+      response = TecDoc.client.request(:get_vehicle_by_ids_2, options)
+      if attrs = response.first
+        details  = attrs[:vehicle_details]  || {}
+        terms    = attrs[:vehicle_terms]    || {}
+        vehicle  = new
+        vehicle.id                        = attrs[:car_id].to_i
+        vehicle.name                      = terms[:car_type].to_s
+        vehicle.cylinder_capacity         = details[:ccm_tech].to_i
+        vehicle.power_hp_from             = details[:power_hp_from].to_i
+        vehicle.power_hp_to               = details[:power_hp_to].to_i
+        vehicle.power_kw_from             = details[:power_kw_from].to_i
+        vehicle.power_kw_to               = details[:power_kw_to].to_i
+        vehicle.date_of_construction_from = DateParser.new(details[:year_of_constr_from]).to_date
+        vehicle.date_of_construction_to   = DateParser.new(details[:year_of_constr_to]).to_date
+        vehicle.manu_id                   = details[:manu_id].to_i
+        vehicle.mod_id                    = details[:mod_id].to_i
+        vehicle.motor_codes = attrs[:motor_codes].map { |mc| mc[:motor_code] }
+        vehicle
+      else
+        nil
       end
     end
     
