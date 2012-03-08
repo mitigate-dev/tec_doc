@@ -6,6 +6,14 @@ module TecDoc
       attributes.each do |name, value|
         send("#{name.to_s.gsub(/^attr_/, '')}=", value)
       end
+
+      if @id
+        @id = @id.to_i
+      end
+
+      if @type == "D"
+        @value = DateParser.new(@value).to_date
+      end
     end
   end
 end

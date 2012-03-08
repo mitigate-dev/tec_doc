@@ -101,6 +101,10 @@ module TecDoc
     def attributes
       @attributes || []
     end
+
+    def attributes=(attrs)
+      @attributes = attrs.map{ |attr| ArticleAttribute.new(attr) }
+    end
     
     # Vehicle linked assembly parent groups
     def assembly_groups(options = {})

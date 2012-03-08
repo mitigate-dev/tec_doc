@@ -164,9 +164,8 @@ describe TecDoc::Article do
       vehicle.attributes.length.should == 3
 
       attribute = vehicle.attributes[0]
-      puts "\n\n\n", vehicle.attributes.inspect
-      attribute[:attr_name].should == "Sākot ar izlaiduma gadu"
-      attribute[:attr_value].should == "199207"
+      attribute.name.should == "Sākot ar izlaiduma gadu"
+      attribute.value.should == TecDoc::DateParser.new("199207").to_date
     end
   end
 end
