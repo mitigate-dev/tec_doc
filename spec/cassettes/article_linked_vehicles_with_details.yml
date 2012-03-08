@@ -1,0 +1,430 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :post
+    uri: http://webservicepilot.tecdoc.net:80/pegasus-2-0/services/TecdocToCatWL
+    body: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://webservicepilot.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="http://webservicepilot.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"
+      xmlns:ins1="http://options.datatype.tocinterface.cat.tecdoc.net" xmlns:ins2="http://controlpanel.datatype.tocinterface.cat.tecdoc.net"
+      xmlns:ins3="http://articles.datatype.tocinterface.cat.tecdoc.net" xmlns:ins4="http://carselection.datatype.tocinterface.cat.tecdoc.net"
+      xmlns:ins5="http://datatype.cat.tecdoc.net" xmlns:ins6="http://axlesselection.datatype.tocinterface.cat.tecdoc.net"
+      xmlns:ins7="http://motorselection.datatype.tocinterface.cat.tecdoc.net" xmlns:ins8="http://assemblygroupselection.datatype.tocinterface.cat.tecdoc.net"
+      xmlns:ins9="http://specialselection.datatype.tocinterface.cat.tecdoc.net"><env:Body><ins0:getArticleLinkedAllLinkingTarget2><wsdl:in><wsdl:provider>330</wsdl:provider><wsdl:lang>lv</wsdl:lang><wsdl:country>lv</wsdl:country><wsdl:linkingTargetType>C</wsdl:linkingTargetType><wsdl:linkingTargetId>-1</wsdl:linkingTargetId><wsdl:articleId>1540027</wsdl:articleId></wsdl:in></ins0:getArticleLinkedAllLinkingTarget2></env:Body></env:Envelope>
+    headers:
+      soapaction:
+      - ! '"getArticleLinkedAllLinkingTarget2"'
+      content-type:
+      - text/xml;charset=UTF-8
+      content-length:
+      - '1365'
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Thu, 08 Mar 2012 12:52:57 GMT
+      server:
+      - Apache
+      content-length:
+      - '4619'
+      content-type:
+      - text/xml;charset=utf-8
+      x-cache:
+      - MISS from demo.makit.lv
+      x-cache-lookup:
+      - MISS from demo.makit.lv:8080
+      via:
+      - 1.1 demo.makit.lv:8080 (squid/2.7.STABLE9)
+    body: <?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><getArticleLinkedAllLinkingTarget2Response
+      xmlns="http://webservicepilot.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"><getArticleLinkedAllLinkingTarget2Return
+      xmlns=""><data><array><array><articleLinkId>11037975</articleLinkId><linkingTargetId>28619</linkingTargetId><linkingTargetType>C</linkingTargetType></array><array><articleLinkId>11037973</articleLinkId><linkingTargetId>26604</linkingTargetId><linkingTargetType>C</linkingTargetType></array><array><articleLinkId>11037986</articleLinkId><linkingTargetId>10443</linkingTargetId><linkingTargetType>C</linkingTargetType></array><array><articleLinkId>11037974</articleLinkId><linkingTargetId>10035</linkingTargetId><linkingTargetType>C</linkingTargetType></array><array><articleLinkId>11038012</articleLinkId><linkingTargetId>9587</linkingTargetId><linkingTargetType>C</linkingTargetType></array><array><articleLinkId>11038008</articleLinkId><linkingTargetId>31469</linkingTargetId><linkingTargetType>C</linkingTargetType></array><array><articleLinkId>11038011</articleLinkId><linkingTargetId>8711</linkingTargetId><linkingTargetType>C</linkingTargetType></array><array><articleLinkId>11038009</articleLinkId><linkingTargetId>31470</linkingTargetId><linkingTargetType>C</linkingTargetType></array><array><articleLinkId>11037985</articleLinkId><linkingTargetId>10352</linkingTargetId><linkingTargetType>C</linkingTargetType></array><array><articleLinkId>11037982</articleLinkId><linkingTargetId>10351</linkingTargetId><linkingTargetType>C</linkingTargetType></array><array><articleLinkId>11037989</articleLinkId><linkingTargetId>4556</linkingTargetId><linkingTargetType>C</linkingTargetType></array><array><articleLinkId>11037990</articleLinkId><linkingTargetId>4557</linkingTargetId><linkingTargetType>C</linkingTargetType></array><array><articleLinkId>11037978</articleLinkId><linkingTargetId>3436</linkingTargetId><linkingTargetType>C</linkingTargetType></array><array><articleLinkId>11037977</articleLinkId><linkingTargetId>3430</linkingTargetId><linkingTargetType>C</linkingTargetType></array><array><articleLinkId>11037979</articleLinkId><linkingTargetId>3442</linkingTargetId><linkingTargetType>C</linkingTargetType></array><array><articleLinkId>11037980</articleLinkId><linkingTargetId>4815</linkingTargetId><linkingTargetType>C</linkingTargetType></array><array><articleLinkId>11037976</articleLinkId><linkingTargetId>3423</linkingTargetId><linkingTargetType>C</linkingTargetType></array><array><articleLinkId>11037983</articleLinkId><linkingTargetId>7298</linkingTargetId><linkingTargetType>C</linkingTargetType></array><array><articleLinkId>11038010</articleLinkId><linkingTargetId>853</linkingTargetId><linkingTargetType>C</linkingTargetType></array><array><articleLinkId>11037992</articleLinkId><linkingTargetId>28214</linkingTargetId><linkingTargetType>C</linkingTargetType></array><array><articleLinkId>11038007</articleLinkId><linkingTargetId>31120</linkingTargetId><linkingTargetType>C</linkingTargetType></array><array><articleLinkId>11037993</articleLinkId><linkingTargetId>28215</linkingTargetId><linkingTargetType>C</linkingTargetType></array><array><articleLinkId>11037994</articleLinkId><linkingTargetId>28221</linkingTargetId><linkingTargetType>C</linkingTargetType></array><array><articleLinkId>11038002</articleLinkId><linkingTargetId>30962</linkingTargetId><linkingTargetType>C</linkingTargetType></array><array><articleLinkId>11037995</articleLinkId><linkingTargetId>28222</linkingTargetId><linkingTargetType>C</linkingTargetType></array><array><articleLinkId>11037998</articleLinkId><linkingTargetId>29923</linkingTargetId><linkingTargetType>C</linkingTargetType></array><array><articleLinkId>11038003</articleLinkId><linkingTargetId>30963</linkingTargetId><linkingTargetType>C</linkingTargetType></array><array><articleLinkId>11037999</articleLinkId><linkingTargetId>29924</linkingTargetId><linkingTargetType>C</linkingTargetType></array><array><articleLinkId>11037981</articleLinkId><linkingTargetId>5637</linkingTargetId><linkingTargetType>C</linkingTargetType></array><array><articleLinkId>11037984</articleLinkId><linkingTargetId>7885</linkingTargetId><linkingTargetType>C</linkingTargetType></array></array><empty>false</empty></data><status>200</status><statusText
+      xsi:nil="true"/></getArticleLinkedAllLinkingTarget2Return></getArticleLinkedAllLinkingTarget2Response></soapenv:Body></soapenv:Envelope>
+    http_version: '1.0'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :post
+    uri: http://webservicepilot.tecdoc.net:80/pegasus-2-0/services/TecdocToCatWL
+    body: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://webservicepilot.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="http://webservicepilot.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"
+      xmlns:ins1="http://options.datatype.tocinterface.cat.tecdoc.net" xmlns:ins2="http://controlpanel.datatype.tocinterface.cat.tecdoc.net"
+      xmlns:ins3="http://articles.datatype.tocinterface.cat.tecdoc.net" xmlns:ins4="http://carselection.datatype.tocinterface.cat.tecdoc.net"
+      xmlns:ins5="http://datatype.cat.tecdoc.net" xmlns:ins6="http://axlesselection.datatype.tocinterface.cat.tecdoc.net"
+      xmlns:ins7="http://motorselection.datatype.tocinterface.cat.tecdoc.net" xmlns:ins8="http://assemblygroupselection.datatype.tocinterface.cat.tecdoc.net"
+      xmlns:ins9="http://specialselection.datatype.tocinterface.cat.tecdoc.net"><env:Body><ins0:getArticleLinkedAllLinkingTargetsByIds2><wsdl:in><wsdl:provider>330</wsdl:provider><wsdl:linkedArticlePairs><wsdl:array><wsdl:pairs><wsdl:articleLinkId>11037975</wsdl:articleLinkId><wsdl:linkingTargetId>28619</wsdl:linkingTargetId></wsdl:pairs><wsdl:pairs><wsdl:articleLinkId>11037973</wsdl:articleLinkId><wsdl:linkingTargetId>26604</wsdl:linkingTargetId></wsdl:pairs><wsdl:pairs><wsdl:articleLinkId>11037986</wsdl:articleLinkId><wsdl:linkingTargetId>10443</wsdl:linkingTargetId></wsdl:pairs><wsdl:pairs><wsdl:articleLinkId>11037974</wsdl:articleLinkId><wsdl:linkingTargetId>10035</wsdl:linkingTargetId></wsdl:pairs><wsdl:pairs><wsdl:articleLinkId>11038012</wsdl:articleLinkId><wsdl:linkingTargetId>9587</wsdl:linkingTargetId></wsdl:pairs><wsdl:pairs><wsdl:articleLinkId>11038008</wsdl:articleLinkId><wsdl:linkingTargetId>31469</wsdl:linkingTargetId></wsdl:pairs><wsdl:pairs><wsdl:articleLinkId>11038011</wsdl:articleLinkId><wsdl:linkingTargetId>8711</wsdl:linkingTargetId></wsdl:pairs><wsdl:pairs><wsdl:articleLinkId>11038009</wsdl:articleLinkId><wsdl:linkingTargetId>31470</wsdl:linkingTargetId></wsdl:pairs><wsdl:pairs><wsdl:articleLinkId>11037985</wsdl:articleLinkId><wsdl:linkingTargetId>10352</wsdl:linkingTargetId></wsdl:pairs><wsdl:pairs><wsdl:articleLinkId>11037982</wsdl:articleLinkId><wsdl:linkingTargetId>10351</wsdl:linkingTargetId></wsdl:pairs><wsdl:pairs><wsdl:articleLinkId>11037989</wsdl:articleLinkId><wsdl:linkingTargetId>4556</wsdl:linkingTargetId></wsdl:pairs><wsdl:pairs><wsdl:articleLinkId>11037990</wsdl:articleLinkId><wsdl:linkingTargetId>4557</wsdl:linkingTargetId></wsdl:pairs><wsdl:pairs><wsdl:articleLinkId>11037978</wsdl:articleLinkId><wsdl:linkingTargetId>3436</wsdl:linkingTargetId></wsdl:pairs><wsdl:pairs><wsdl:articleLinkId>11037977</wsdl:articleLinkId><wsdl:linkingTargetId>3430</wsdl:linkingTargetId></wsdl:pairs><wsdl:pairs><wsdl:articleLinkId>11037979</wsdl:articleLinkId><wsdl:linkingTargetId>3442</wsdl:linkingTargetId></wsdl:pairs><wsdl:pairs><wsdl:articleLinkId>11037980</wsdl:articleLinkId><wsdl:linkingTargetId>4815</wsdl:linkingTargetId></wsdl:pairs><wsdl:pairs><wsdl:articleLinkId>11037976</wsdl:articleLinkId><wsdl:linkingTargetId>3423</wsdl:linkingTargetId></wsdl:pairs><wsdl:pairs><wsdl:articleLinkId>11037983</wsdl:articleLinkId><wsdl:linkingTargetId>7298</wsdl:linkingTargetId></wsdl:pairs><wsdl:pairs><wsdl:articleLinkId>11038010</wsdl:articleLinkId><wsdl:linkingTargetId>853</wsdl:linkingTargetId></wsdl:pairs><wsdl:pairs><wsdl:articleLinkId>11037992</wsdl:articleLinkId><wsdl:linkingTargetId>28214</wsdl:linkingTargetId></wsdl:pairs><wsdl:pairs><wsdl:articleLinkId>11038007</wsdl:articleLinkId><wsdl:linkingTargetId>31120</wsdl:linkingTargetId></wsdl:pairs><wsdl:pairs><wsdl:articleLinkId>11037993</wsdl:articleLinkId><wsdl:linkingTargetId>28215</wsdl:linkingTargetId></wsdl:pairs><wsdl:pairs><wsdl:articleLinkId>11037994</wsdl:articleLinkId><wsdl:linkingTargetId>28221</wsdl:linkingTargetId></wsdl:pairs><wsdl:pairs><wsdl:articleLinkId>11038002</wsdl:articleLinkId><wsdl:linkingTargetId>30962</wsdl:linkingTargetId></wsdl:pairs><wsdl:pairs><wsdl:articleLinkId>11037995</wsdl:articleLinkId><wsdl:linkingTargetId>28222</wsdl:linkingTargetId></wsdl:pairs></wsdl:array></wsdl:linkedArticlePairs><wsdl:lang>lv</wsdl:lang><wsdl:country>lv</wsdl:country><wsdl:linkingTargetType>C</wsdl:linkingTargetType><wsdl:immediateAttributs>true</wsdl:immediateAttributs><wsdl:articleId>1540027</wsdl:articleId></wsdl:in></ins0:getArticleLinkedAllLinkingTargetsByIds2></env:Body></env:Envelope>
+    headers:
+      soapaction:
+      - ! '"getArticleLinkedAllLinkingTargetsByIds2"'
+      content-type:
+      - text/xml;charset=UTF-8
+      content-length:
+      - '1365'
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Thu, 08 Mar 2012 12:52:57 GMT
+      server:
+      - Apache
+      content-type:
+      - text/xml;charset=utf-8
+      x-cache:
+      - MISS from demo.makit.lv
+      x-cache-lookup:
+      - MISS from demo.makit.lv:8080
+      via:
+      - 1.1 demo.makit.lv:8080 (squid/2.7.STABLE9)
+    body: ! '<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><getArticleLinkedAllLinkingTargetsByIds2Response
+      xmlns="http://webservicepilot.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"><getArticleLinkedAllLinkingTargetsByIds2Return
+      xmlns=""><data><array><array><articleLinkId>11037975</articleLinkId><linkedArticleImmediateAttributs><array><array><attrBlockNo>0</attrBlockNo><attrId>20</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>true</attrIsInterval><attrName>S&#x101;kot
+      ar izlaiduma gadu</attrName><attrShortName>s&#x101;kot ar izlaiduma gadu</attrShortName><attrSuccessorId>21</attrSuccessorId><attrType>D</attrType><attrUnit
+      xsi:nil="true"/><attrValue>200804</attrValue></array><array><attrBlockNo>0</attrBlockNo><attrId>105</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>false</attrIsInterval><attrName>Vad&#x101;mais
+      agreg&#x101;ts</attrName><attrShortName xsi:nil="true"/><attrSuccessorId xsi:nil="true"/><attrType>K</attrType><attrUnit
+      xsi:nil="true"/><attrValue>Piedz. agreg&#x101;ts: Hidropastiprin&#x101;t&#x101;ja
+      s&#x16B;knis</attrValue></array></array><empty>false</empty></linkedArticleImmediateAttributs><linkedAxles
+      xsi:nil="true"/><linkedMarks xsi:nil="true"/><linkedMotors xsi:nil="true"/><linkedVehicles><array><array><assembledFrom>200804</assembledFrom><assembledTo
+      xsi:nil="true"/><axisConfiguration xsi:nil="true"/><carDesc>1.4</carDesc><carId>28619</carId><constructionType>Sedans</constructionType><cylinderCapacity>1399</cylinderCapacity><manuDesc>CHEVR</manuDesc><manuId>138</manuId><modelDesc>AVEO
+      Sedans (T200, T250)</modelDesc><modelId>5556</modelId><powerHpFrom>101</powerHpFrom><powerHpTo>101</powerHpTo><powerKwFrom>74</powerKwFrom><powerKwTo>74</powerKwTo><tonnage
+      xsi:nil="true"/><yearOfConstructionFrom>200801</yearOfConstructionFrom><yearOfConstructionTo
+      xsi:nil="true"/></array></array><empty>false</empty></linkedVehicles><linkingTargetId>28619</linkingTargetId></array><array><articleLinkId>11037973</articleLinkId><linkedArticleImmediateAttributs><array><array><attrBlockNo>0</attrBlockNo><attrId>105</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>false</attrIsInterval><attrName>Vad&#x101;mais
+      agreg&#x101;ts</attrName><attrShortName xsi:nil="true"/><attrSuccessorId xsi:nil="true"/><attrType>K</attrType><attrUnit
+      xsi:nil="true"/><attrValue>Piedz. agreg&#x101;ts: Hidropastiprin&#x101;t&#x101;ja
+      s&#x16B;knis</attrValue></array></array><empty>false</empty></linkedArticleImmediateAttributs><linkedAxles
+      xsi:nil="true"/><linkedMarks xsi:nil="true"/><linkedMotors xsi:nil="true"/><linkedVehicles><array><array><assembledFrom
+      xsi:nil="true"/><assembledTo xsi:nil="true"/><axisConfiguration xsi:nil="true"/><carDesc>1.4</carDesc><carId>26604</carId><constructionType>He&#x10D;beka
+      virsb&#x16B;ve</constructionType><cylinderCapacity>1399</cylinderCapacity><manuDesc>CHEVR</manuDesc><manuId>138</manuId><modelDesc>AVEO
+      He&#x10D;beka virsb&#x16B;ve (T200, T250)</modelDesc><modelId>7372</modelId><powerHpFrom>101</powerHpFrom><powerHpTo>101</powerHpTo><powerKwFrom>74</powerKwFrom><powerKwTo>74</powerKwTo><tonnage
+      xsi:nil="true"/><yearOfConstructionFrom>200804</yearOfConstructionFrom><yearOfConstructionTo
+      xsi:nil="true"/></array></array><empty>false</empty></linkedVehicles><linkingTargetId>26604</linkingTargetId></array><array><articleLinkId>11037986</articleLinkId><linkedArticleImmediateAttributs><array><array><attrBlockNo>0</attrBlockNo><attrId>20</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>true</attrIsInterval><attrName>S&#x101;kot
+      ar izlaiduma gadu</attrName><attrShortName>s&#x101;kot ar izlaiduma gadu</attrShortName><attrSuccessorId>21</attrSuccessorId><attrType>D</attrType><attrUnit
+      xsi:nil="true"/><attrValue>201106</attrValue></array><array><attrBlockNo>0</attrBlockNo><attrId>105</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>false</attrIsInterval><attrName>Vad&#x101;mais
+      agreg&#x101;ts</attrName><attrShortName xsi:nil="true"/><attrSuccessorId xsi:nil="true"/><attrType>K</attrType><attrUnit
+      xsi:nil="true"/><attrValue>Piedz. agreg&#x101;ts: Hidropastiprin&#x101;t&#x101;ja
+      s&#x16B;knis</attrValue></array></array><empty>false</empty></linkedArticleImmediateAttributs><linkedAxles
+      xsi:nil="true"/><linkedMarks xsi:nil="true"/><linkedMotors xsi:nil="true"/><linkedVehicles><array><array><assembledFrom>201106</assembledFrom><assembledTo
+      xsi:nil="true"/><axisConfiguration xsi:nil="true"/><carDesc>1.6</carDesc><carId>10443</carId><constructionType>Sedans</constructionType><cylinderCapacity>1598</cylinderCapacity><manuDesc>CHEVR</manuDesc><manuId>138</manuId><modelDesc>AVEO
+      Sedans (T300)</modelDesc><modelId>9592</modelId><powerHpFrom>116</powerHpFrom><powerHpTo>116</powerHpTo><powerKwFrom>85</powerKwFrom><powerKwTo>85</powerKwTo><tonnage
+      xsi:nil="true"/><yearOfConstructionFrom>201103</yearOfConstructionFrom><yearOfConstructionTo
+      xsi:nil="true"/></array></array><empty>false</empty></linkedVehicles><linkingTargetId>10443</linkingTargetId></array><array><articleLinkId>11037974</articleLinkId><linkedArticleImmediateAttributs><array><array><attrBlockNo>0</attrBlockNo><attrId>20</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>true</attrIsInterval><attrName>S&#x101;kot
+      ar izlaiduma gadu</attrName><attrShortName>s&#x101;kot ar izlaiduma gadu</attrShortName><attrSuccessorId>21</attrSuccessorId><attrType>D</attrType><attrUnit
+      xsi:nil="true"/><attrValue>201106</attrValue></array><array><attrBlockNo>0</attrBlockNo><attrId>105</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>false</attrIsInterval><attrName>Vad&#x101;mais
+      agreg&#x101;ts</attrName><attrShortName xsi:nil="true"/><attrSuccessorId xsi:nil="true"/><attrType>K</attrType><attrUnit
+      xsi:nil="true"/><attrValue>Piedz. agreg&#x101;ts: Hidropastiprin&#x101;t&#x101;ja
+      s&#x16B;knis</attrValue></array></array><empty>false</empty></linkedArticleImmediateAttributs><linkedAxles
+      xsi:nil="true"/><linkedMarks xsi:nil="true"/><linkedMotors xsi:nil="true"/><linkedVehicles><array><array><assembledFrom>201106</assembledFrom><assembledTo
+      xsi:nil="true"/><axisConfiguration xsi:nil="true"/><carDesc>1.6</carDesc><carId>10035</carId><constructionType>He&#x10D;beka
+      virsb&#x16B;ve</constructionType><cylinderCapacity>1598</cylinderCapacity><manuDesc>CHEVR</manuDesc><manuId>138</manuId><modelDesc>AVEO
+      He&#x10D;beka virsb&#x16B;ve (T300)</modelDesc><modelId>9591</modelId><powerHpFrom>116</powerHpFrom><powerHpTo>116</powerHpTo><powerKwFrom>85</powerKwFrom><powerKwTo>85</powerKwTo><tonnage
+      xsi:nil="true"/><yearOfConstructionFrom>201103</yearOfConstructionFrom><yearOfConstructionTo
+      xsi:nil="true"/></array></array><empty>false</empty></linkedVehicles><linkingTargetId>10035</linkingTargetId></array><array><articleLinkId>11038012</articleLinkId><linkedArticleImmediateAttributs><array><array><attrBlockNo>0</attrBlockNo><attrId>33</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>false</attrIsInterval><attrName>Dzin&#x113;ja
+      kods</attrName><attrShortName>Dzin&#x113;ja kods</attrShortName><attrSuccessorId
+      xsi:nil="true"/><attrType>A</attrType><attrUnit xsi:nil="true"/><attrValue>F16D4&lt;Euro
+      5&gt;</attrValue></array><array><attrBlockNo>0</attrBlockNo><attrId>20</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>true</attrIsInterval><attrName>S&#x101;kot
+      ar izlaiduma gadu</attrName><attrShortName>s&#x101;kot ar izlaiduma gadu</attrShortName><attrSuccessorId>21</attrSuccessorId><attrType>D</attrType><attrUnit
+      xsi:nil="true"/><attrValue>201010</attrValue></array><array><attrBlockNo>0</attrBlockNo><attrId>105</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>false</attrIsInterval><attrName>Vad&#x101;mais
+      agreg&#x101;ts</attrName><attrShortName xsi:nil="true"/><attrSuccessorId xsi:nil="true"/><attrType>K</attrType><attrUnit
+      xsi:nil="true"/><attrValue>Piedz. agreg&#x101;ts: Hidropastiprin&#x101;t&#x101;ja
+      s&#x16B;knis</attrValue></array></array><empty>false</empty></linkedArticleImmediateAttributs><linkedAxles
+      xsi:nil="true"/><linkedMarks xsi:nil="true"/><linkedMotors xsi:nil="true"/><linkedVehicles><array><array><assembledFrom>201010</assembledFrom><assembledTo
+      xsi:nil="true"/><axisConfiguration xsi:nil="true"/><carDesc>1.6</carDesc><carId>9587</carId><constructionType>He&#x10D;beka
+      virsb&#x16B;ve</constructionType><cylinderCapacity>1598</cylinderCapacity><manuDesc>CHEVR</manuDesc><manuId>138</manuId><modelDesc>CRUZE</modelDesc><modelId>5973</modelId><powerHpFrom>124</powerHpFrom><powerHpTo>124</powerHpTo><powerKwFrom>91</powerKwFrom><powerKwTo>91</powerKwTo><tonnage
+      xsi:nil="true"/><yearOfConstructionFrom>200905</yearOfConstructionFrom><yearOfConstructionTo
+      xsi:nil="true"/></array></array><empty>false</empty></linkedVehicles><linkingTargetId>9587</linkingTargetId></array><array><articleLinkId>11038008</articleLinkId><linkedArticleImmediateAttributs><array><array><attrBlockNo>0</attrBlockNo><attrId>21</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>true</attrIsInterval><attrName>l&#x12B;dz
+      izlaiduma gadam</attrName><attrShortName>l&#x12B;dz izl. gadam</attrShortName><attrSuccessorId
+      xsi:nil="true"/><attrType>D</attrType><attrUnit xsi:nil="true"/><attrValue>201012</attrValue></array><array><attrBlockNo>0</attrBlockNo><attrId>105</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>false</attrIsInterval><attrName>Vad&#x101;mais
+      agreg&#x101;ts</attrName><attrShortName xsi:nil="true"/><attrSuccessorId xsi:nil="true"/><attrType>K</attrType><attrUnit
+      xsi:nil="true"/><attrValue>Piedz. agreg&#x101;ts: Hidropastiprin&#x101;t&#x101;ja
+      s&#x16B;knis</attrValue></array></array><empty>false</empty></linkedArticleImmediateAttributs><linkedAxles
+      xsi:nil="true"/><linkedMarks xsi:nil="true"/><linkedMotors xsi:nil="true"/><linkedVehicles><array><array><assembledFrom
+      xsi:nil="true"/><assembledTo>201012</assembledTo><axisConfiguration xsi:nil="true"/><carDesc>1.6</carDesc><carId>31469</carId><constructionType>Sedans</constructionType><cylinderCapacity>1598</cylinderCapacity><manuDesc>CHEVR</manuDesc><manuId>138</manuId><modelDesc>CRUZE
+      (J300)</modelDesc><modelId>8127</modelId><powerHpFrom>113</powerHpFrom><powerHpTo>113</powerHpTo><powerKwFrom>83</powerKwFrom><powerKwTo>83</powerKwTo><tonnage
+      xsi:nil="true"/><yearOfConstructionFrom>200905</yearOfConstructionFrom><yearOfConstructionTo
+      xsi:nil="true"/></array></array><empty>false</empty></linkedVehicles><linkingTargetId>31469</linkingTargetId></array><array><articleLinkId>11038011</articleLinkId><linkedArticleImmediateAttributs><array><array><attrBlockNo>0</attrBlockNo><attrId>33</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>false</attrIsInterval><attrName>Dzin&#x113;ja
+      kods</attrName><attrShortName>Dzin&#x113;ja kods</attrShortName><attrSuccessorId
+      xsi:nil="true"/><attrType>A</attrType><attrUnit xsi:nil="true"/><attrValue>F16D4&lt;Euro
+      5&gt;</attrValue></array><array><attrBlockNo>0</attrBlockNo><attrId>20</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>true</attrIsInterval><attrName>S&#x101;kot
+      ar izlaiduma gadu</attrName><attrShortName>s&#x101;kot ar izlaiduma gadu</attrShortName><attrSuccessorId>21</attrSuccessorId><attrType>D</attrType><attrUnit
+      xsi:nil="true"/><attrValue>201010</attrValue></array><array><attrBlockNo>0</attrBlockNo><attrId>105</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>false</attrIsInterval><attrName>Vad&#x101;mais
+      agreg&#x101;ts</attrName><attrShortName xsi:nil="true"/><attrSuccessorId xsi:nil="true"/><attrType>K</attrType><attrUnit
+      xsi:nil="true"/><attrValue>Piedz. agreg&#x101;ts: Hidropastiprin&#x101;t&#x101;ja
+      s&#x16B;knis</attrValue></array></array><empty>false</empty></linkedArticleImmediateAttributs><linkedAxles
+      xsi:nil="true"/><linkedMarks xsi:nil="true"/><linkedMotors xsi:nil="true"/><linkedVehicles><array><array><assembledFrom>201010</assembledFrom><assembledTo
+      xsi:nil="true"/><axisConfiguration xsi:nil="true"/><carDesc>1.6</carDesc><carId>8711</carId><constructionType>Sedans</constructionType><cylinderCapacity>1598</cylinderCapacity><manuDesc>CHEVR</manuDesc><manuId>138</manuId><modelDesc>CRUZE
+      (J300)</modelDesc><modelId>8127</modelId><powerHpFrom>124</powerHpFrom><powerHpTo>124</powerHpTo><powerKwFrom>91</powerKwFrom><powerKwTo>91</powerKwTo><tonnage
+      xsi:nil="true"/><yearOfConstructionFrom>200905</yearOfConstructionFrom><yearOfConstructionTo
+      xsi:nil="true"/></array></array><empty>false</empty></linkedVehicles><linkingTargetId>8711</linkingTargetId></array><array><articleLinkId>11038009</articleLinkId><linkedArticleImmediateAttributs><array><array><attrBlockNo>0</attrBlockNo><attrId>105</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>false</attrIsInterval><attrName>Vad&#x101;mais
+      agreg&#x101;ts</attrName><attrShortName xsi:nil="true"/><attrSuccessorId xsi:nil="true"/><attrType>K</attrType><attrUnit
+      xsi:nil="true"/><attrValue>Piedz. agreg&#x101;ts: Hidropastiprin&#x101;t&#x101;ja
+      s&#x16B;knis</attrValue></array></array><empty>false</empty></linkedArticleImmediateAttributs><linkedAxles
+      xsi:nil="true"/><linkedMarks xsi:nil="true"/><linkedMotors xsi:nil="true"/><linkedVehicles><array><array><assembledFrom
+      xsi:nil="true"/><assembledTo xsi:nil="true"/><axisConfiguration xsi:nil="true"/><carDesc>1.8</carDesc><carId>31470</carId><constructionType>Sedans</constructionType><cylinderCapacity>1796</cylinderCapacity><manuDesc>CHEVR</manuDesc><manuId>138</manuId><modelDesc>CRUZE
+      (J300)</modelDesc><modelId>8127</modelId><powerHpFrom>141</powerHpFrom><powerHpTo>141</powerHpTo><powerKwFrom>104</powerKwFrom><powerKwTo>104</powerKwTo><tonnage
+      xsi:nil="true"/><yearOfConstructionFrom>200905</yearOfConstructionFrom><yearOfConstructionTo
+      xsi:nil="true"/></array></array><empty>false</empty></linkedVehicles><linkingTargetId>31470</linkingTargetId></array><array><articleLinkId>11037985</articleLinkId><linkedArticleImmediateAttributs><array><array><attrBlockNo>0</attrBlockNo><attrId>20</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>true</attrIsInterval><attrName>S&#x101;kot
+      ar izlaiduma gadu</attrName><attrShortName>s&#x101;kot ar izlaiduma gadu</attrShortName><attrSuccessorId>21</attrSuccessorId><attrType>D</attrType><attrUnit
+      xsi:nil="true"/><attrValue>201107</attrValue></array><array><attrBlockNo>0</attrBlockNo><attrId>105</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>false</attrIsInterval><attrName>Vad&#x101;mais
+      agreg&#x101;ts</attrName><attrShortName xsi:nil="true"/><attrSuccessorId xsi:nil="true"/><attrType>K</attrType><attrUnit
+      xsi:nil="true"/><attrValue>Piedz. agreg&#x101;ts: Hidropastiprin&#x101;t&#x101;ja
+      s&#x16B;knis</attrValue></array></array><empty>false</empty></linkedArticleImmediateAttributs><linkedAxles
+      xsi:nil="true"/><linkedMarks xsi:nil="true"/><linkedMotors xsi:nil="true"/><linkedVehicles><array><array><assembledFrom>201107</assembledFrom><assembledTo
+      xsi:nil="true"/><axisConfiguration xsi:nil="true"/><carDesc>1.6</carDesc><carId>10352</carId><constructionType>He&#x10D;beka
+      virsb&#x16B;ve</constructionType><cylinderCapacity>1598</cylinderCapacity><manuDesc>CHEVR</manuDesc><manuId>138</manuId><modelDesc>CRUZE
+      He&#x10D;beka virsb&#x16B;ve</modelDesc><modelId>9625</modelId><powerHpFrom>124</powerHpFrom><powerHpTo>124</powerHpTo><powerKwFrom>91</powerKwFrom><powerKwTo>91</powerKwTo><tonnage
+      xsi:nil="true"/><yearOfConstructionFrom>201106</yearOfConstructionFrom><yearOfConstructionTo
+      xsi:nil="true"/></array></array><empty>false</empty></linkedVehicles><linkingTargetId>10352</linkingTargetId></array><array><articleLinkId>11037982</articleLinkId><linkedArticleImmediateAttributs><array><array><attrBlockNo>0</attrBlockNo><attrId>20</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>true</attrIsInterval><attrName>S&#x101;kot
+      ar izlaiduma gadu</attrName><attrShortName>s&#x101;kot ar izlaiduma gadu</attrShortName><attrSuccessorId>21</attrSuccessorId><attrType>D</attrType><attrUnit
+      xsi:nil="true"/><attrValue>201107</attrValue></array><array><attrBlockNo>0</attrBlockNo><attrId>105</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>false</attrIsInterval><attrName>Vad&#x101;mais
+      agreg&#x101;ts</attrName><attrShortName xsi:nil="true"/><attrSuccessorId xsi:nil="true"/><attrType>K</attrType><attrUnit
+      xsi:nil="true"/><attrValue>Piedz. agreg&#x101;ts: Hidropastiprin&#x101;t&#x101;ja
+      s&#x16B;knis</attrValue></array></array><empty>false</empty></linkedArticleImmediateAttributs><linkedAxles
+      xsi:nil="true"/><linkedMarks xsi:nil="true"/><linkedMotors xsi:nil="true"/><linkedVehicles><array><array><assembledFrom>201107</assembledFrom><assembledTo
+      xsi:nil="true"/><axisConfiguration xsi:nil="true"/><carDesc>1.8</carDesc><carId>10351</carId><constructionType>He&#x10D;beka
+      virsb&#x16B;ve</constructionType><cylinderCapacity>1796</cylinderCapacity><manuDesc>CHEVR</manuDesc><manuId>138</manuId><modelDesc>CRUZE
+      He&#x10D;beka virsb&#x16B;ve</modelDesc><modelId>9625</modelId><powerHpFrom>141</powerHpFrom><powerHpTo>141</powerHpTo><powerKwFrom>104</powerKwFrom><powerKwTo>104</powerKwTo><tonnage
+      xsi:nil="true"/><yearOfConstructionFrom>201106</yearOfConstructionFrom><yearOfConstructionTo
+      xsi:nil="true"/></array></array><empty>false</empty></linkedVehicles><linkingTargetId>10351</linkingTargetId></array><array><articleLinkId>11037989</articleLinkId><linkedArticleImmediateAttributs><array><array><attrBlockNo>0</attrBlockNo><attrId>20</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>true</attrIsInterval><attrName>S&#x101;kot
+      ar izlaiduma gadu</attrName><attrShortName>s&#x101;kot ar izlaiduma gadu</attrShortName><attrSuccessorId>21</attrSuccessorId><attrType>D</attrType><attrUnit
+      xsi:nil="true"/><attrValue>199207</attrValue></array><array><attrBlockNo>0</attrBlockNo><attrId>21</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>true</attrIsInterval><attrName>l&#x12B;dz
+      izlaiduma gadam</attrName><attrShortName>l&#x12B;dz izl. gadam</attrShortName><attrSuccessorId
+      xsi:nil="true"/><attrType>D</attrType><attrUnit xsi:nil="true"/><attrValue>199504</attrValue></array><array><attrBlockNo>0</attrBlockNo><attrId>105</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>false</attrIsInterval><attrName>Vad&#x101;mais
+      agreg&#x101;ts</attrName><attrShortName xsi:nil="true"/><attrSuccessorId xsi:nil="true"/><attrType>K</attrType><attrUnit
+      xsi:nil="true"/><attrValue>Piedz. agreg&#x101;ts: Hidropastiprin&#x101;t&#x101;ja
+      s&#x16B;knis</attrValue></array></array><empty>false</empty></linkedArticleImmediateAttributs><linkedAxles
+      xsi:nil="true"/><linkedMarks xsi:nil="true"/><linkedMotors xsi:nil="true"/><linkedVehicles><array><array><assembledFrom>199207</assembledFrom><assembledTo>199504</assembledTo><axisConfiguration
+      xsi:nil="true"/><carDesc>1.5 i</carDesc><carId>4556</carId><constructionType>Coupe</constructionType><cylinderCapacity>1495</cylinderCapacity><manuDesc>HYUNDAI</manuDesc><manuId>183</manuId><modelDesc>S
+      COUPE (SLC)</modelDesc><modelId>1298</modelId><powerHpFrom>88</powerHpFrom><powerHpTo>88</powerHpTo><powerKwFrom>65</powerKwFrom><powerKwTo>65</powerKwTo><tonnage
+      xsi:nil="true"/><yearOfConstructionFrom>199204</yearOfConstructionFrom><yearOfConstructionTo>199605</yearOfConstructionTo></array></array><empty>false</empty></linkedVehicles><linkingTargetId>4556</linkingTargetId></array><array><articleLinkId>11037990</articleLinkId><linkedArticleImmediateAttributs><array><array><attrBlockNo>0</attrBlockNo><attrId>20</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>true</attrIsInterval><attrName>S&#x101;kot
+      ar izlaiduma gadu</attrName><attrShortName>s&#x101;kot ar izlaiduma gadu</attrShortName><attrSuccessorId>21</attrSuccessorId><attrType>D</attrType><attrUnit
+      xsi:nil="true"/><attrValue>199207</attrValue></array><array><attrBlockNo>0</attrBlockNo><attrId>21</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>true</attrIsInterval><attrName>l&#x12B;dz
+      izlaiduma gadam</attrName><attrShortName>l&#x12B;dz izl. gadam</attrShortName><attrSuccessorId
+      xsi:nil="true"/><attrType>D</attrType><attrUnit xsi:nil="true"/><attrValue>199504</attrValue></array><array><attrBlockNo>0</attrBlockNo><attrId>105</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>false</attrIsInterval><attrName>Vad&#x101;mais
+      agreg&#x101;ts</attrName><attrShortName xsi:nil="true"/><attrSuccessorId xsi:nil="true"/><attrType>K</attrType><attrUnit
+      xsi:nil="true"/><attrValue>Piedz. agreg&#x101;ts: Hidropastiprin&#x101;t&#x101;ja
+      s&#x16B;knis</attrValue></array></array><empty>false</empty></linkedArticleImmediateAttributs><linkedAxles
+      xsi:nil="true"/><linkedMarks xsi:nil="true"/><linkedMotors xsi:nil="true"/><linkedVehicles><array><array><assembledFrom>199207</assembledFrom><assembledTo>199504</assembledTo><axisConfiguration
+      xsi:nil="true"/><carDesc>1.5 i Turbo</carDesc><carId>4557</carId><constructionType>Coupe</constructionType><cylinderCapacity>1495</cylinderCapacity><manuDesc>HYUNDAI</manuDesc><manuId>183</manuId><modelDesc>S
+      COUPE (SLC)</modelDesc><modelId>1298</modelId><powerHpFrom>116</powerHpFrom><powerHpTo>116</powerHpTo><powerKwFrom>85</powerKwFrom><powerKwTo>85</powerKwTo><tonnage
+      xsi:nil="true"/><yearOfConstructionFrom>199104</yearOfConstructionFrom><yearOfConstructionTo>199605</yearOfConstructionTo></array></array><empty>false</empty></linkedVehicles><linkingTargetId>4557</linkingTargetId></array><array><articleLinkId>11037978</articleLinkId><linkedArticleImmediateAttributs><array><array><attrBlockNo>0</attrBlockNo><attrId>105</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>false</attrIsInterval><attrName>Vad&#x101;mais
+      agreg&#x101;ts</attrName><attrShortName xsi:nil="true"/><attrSuccessorId xsi:nil="true"/><attrType>K</attrType><attrUnit
+      xsi:nil="true"/><attrValue>Piedz. agreg&#x101;ts: Hidropastiprin&#x101;t&#x101;ja
+      s&#x16B;knis</attrValue></array></array><empty>false</empty></linkedArticleImmediateAttributs><linkedAxles
+      xsi:nil="true"/><linkedMarks xsi:nil="true"/><linkedMotors xsi:nil="true"/><linkedVehicles><array><array><assembledFrom
+      xsi:nil="true"/><assembledTo xsi:nil="true"/><axisConfiguration xsi:nil="true"/><carDesc>2.0
+      GLSTD (E57A)</carDesc><carId>3436</carId><constructionType>He&#x10D;beka virsb&#x16B;ve</constructionType><cylinderCapacity>1998</cylinderCapacity><manuDesc>MITSU</manuDesc><manuId>77</manuId><modelDesc>GALANT
+      V (E5_A, E7_A, E8_A)</modelDesc><modelId>475</modelId><powerHpFrom>90</powerHpFrom><powerHpTo>90</powerHpTo><powerKwFrom>66</powerKwFrom><powerKwTo>66</powerKwTo><tonnage
+      xsi:nil="true"/><yearOfConstructionFrom>199211</yearOfConstructionFrom><yearOfConstructionTo>199608</yearOfConstructionTo></array></array><empty>false</empty></linkedVehicles><linkingTargetId>3436</linkingTargetId></array><array><articleLinkId>11037977</articleLinkId><linkedArticleImmediateAttributs><array><array><attrBlockNo>0</attrBlockNo><attrId>105</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>false</attrIsInterval><attrName>Vad&#x101;mais
+      agreg&#x101;ts</attrName><attrShortName xsi:nil="true"/><attrSuccessorId xsi:nil="true"/><attrType>K</attrType><attrUnit
+      xsi:nil="true"/><attrValue>Piedz. agreg&#x101;ts: Hidropastiprin&#x101;t&#x101;ja
+      s&#x16B;knis</attrValue></array></array><empty>false</empty></linkedArticleImmediateAttributs><linkedAxles
+      xsi:nil="true"/><linkedMarks xsi:nil="true"/><linkedMotors xsi:nil="true"/><linkedVehicles><array><array><assembledFrom
+      xsi:nil="true"/><assembledTo xsi:nil="true"/><axisConfiguration xsi:nil="true"/><carDesc>2.0
+      GLSTD (E57A)</carDesc><carId>3430</carId><constructionType>Sedans</constructionType><cylinderCapacity>1998</cylinderCapacity><manuDesc>MITSU</manuDesc><manuId>77</manuId><modelDesc>GALANT
+      V Sedans (E5_A, E7_A, E8_A)</modelDesc><modelId>478</modelId><powerHpFrom>90</powerHpFrom><powerHpTo>90</powerHpTo><powerKwFrom>66</powerKwFrom><powerKwTo>66</powerKwTo><tonnage
+      xsi:nil="true"/><yearOfConstructionFrom>199211</yearOfConstructionFrom><yearOfConstructionTo>199608</yearOfConstructionTo></array></array><empty>false</empty></linkedVehicles><linkingTargetId>3430</linkingTargetId></array><array><articleLinkId>11037979</articleLinkId><linkedArticleImmediateAttributs><array><array><attrBlockNo>0</attrBlockNo><attrId>21</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>true</attrIsInterval><attrName>l&#x12B;dz
+      izlaiduma gadam</attrName><attrShortName>l&#x12B;dz izl. gadam</attrShortName><attrSuccessorId
+      xsi:nil="true"/><attrType>D</attrType><attrUnit xsi:nil="true"/><attrValue>199612</attrValue></array><array><attrBlockNo>0</attrBlockNo><attrId>105</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>false</attrIsInterval><attrName>Vad&#x101;mais
+      agreg&#x101;ts</attrName><attrShortName xsi:nil="true"/><attrSuccessorId xsi:nil="true"/><attrType>K</attrType><attrUnit
+      xsi:nil="true"/><attrValue>Piedz. agreg&#x101;ts: Hidropastiprin&#x101;t&#x101;ja
+      s&#x16B;knis</attrValue></array></array><empty>false</empty></linkedArticleImmediateAttributs><linkedAxles
+      xsi:nil="true"/><linkedMarks xsi:nil="true"/><linkedMotors xsi:nil="true"/><linkedVehicles><array><array><assembledFrom
+      xsi:nil="true"/><assembledTo>199612</assembledTo><axisConfiguration xsi:nil="true"/><carDesc>2.0
+      Diesel (CB8A)</carDesc><carId>3442</carId><constructionType>Sedans</constructionType><cylinderCapacity>1998</cylinderCapacity><manuDesc>MITSU</manuDesc><manuId>77</manuId><modelDesc>LANCER
+      V (CB/D_A)</modelDesc><modelId>185</modelId><powerHpFrom>68</powerHpFrom><powerHpTo>68</powerHpTo><powerKwFrom>50</powerKwFrom><powerKwTo>50</powerKwTo><tonnage
+      xsi:nil="true"/><yearOfConstructionFrom>199206</yearOfConstructionFrom><yearOfConstructionTo
+      xsi:nil="true"/></array></array><empty>false</empty></linkedVehicles><linkingTargetId>3442</linkingTargetId></array><array><articleLinkId>11037980</articleLinkId><linkedArticleImmediateAttributs><array><array><attrBlockNo>0</attrBlockNo><attrId>21</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>true</attrIsInterval><attrName>l&#x12B;dz
+      izlaiduma gadam</attrName><attrShortName>l&#x12B;dz izl. gadam</attrShortName><attrSuccessorId
+      xsi:nil="true"/><attrType>D</attrType><attrUnit xsi:nil="true"/><attrValue>199605</attrValue></array><array><attrBlockNo>0</attrBlockNo><attrId>105</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>false</attrIsInterval><attrName>Vad&#x101;mais
+      agreg&#x101;ts</attrName><attrShortName xsi:nil="true"/><attrSuccessorId xsi:nil="true"/><attrType>K</attrType><attrUnit
+      xsi:nil="true"/><attrValue>Piedz. agreg&#x101;ts: Hidropastiprin&#x101;t&#x101;ja
+      s&#x16B;knis</attrValue></array></array><empty>false</empty></linkedArticleImmediateAttributs><linkedAxles
+      xsi:nil="true"/><linkedMarks xsi:nil="true"/><linkedMotors xsi:nil="true"/><linkedVehicles><array><array><assembledFrom
+      xsi:nil="true"/><assembledTo>199605</assembledTo><axisConfiguration xsi:nil="true"/><carDesc>2.0
+      D (CB8W)</carDesc><carId>4815</carId><constructionType>Univers&#x101;lis</constructionType><cylinderCapacity>1998</cylinderCapacity><manuDesc>MITSU</manuDesc><manuId>77</manuId><modelDesc>LANCER
+      V Station Wagon (CB_W, CD_W)</modelDesc><modelId>1328</modelId><powerHpFrom>68</powerHpFrom><powerHpTo>68</powerHpTo><powerKwFrom>50</powerKwFrom><powerKwTo>50</powerKwTo><tonnage
+      xsi:nil="true"/><yearOfConstructionFrom>199212</yearOfConstructionFrom><yearOfConstructionTo>200310</yearOfConstructionTo></array></array><empty>false</empty></linkedVehicles><linkingTargetId>4815</linkingTargetId></array><array><articleLinkId>11037976</articleLinkId><linkedArticleImmediateAttributs><array><array><attrBlockNo>0</attrBlockNo><attrId>105</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>false</attrIsInterval><attrName>Vad&#x101;mais
+      agreg&#x101;ts</attrName><attrShortName xsi:nil="true"/><attrSuccessorId xsi:nil="true"/><attrType>K</attrType><attrUnit
+      xsi:nil="true"/><attrValue>Piedz. agreg&#x101;ts: Hidropastiprin&#x101;t&#x101;ja
+      s&#x16B;knis</attrValue></array></array><empty>false</empty></linkedArticleImmediateAttributs><linkedAxles
+      xsi:nil="true"/><linkedMarks xsi:nil="true"/><linkedMotors xsi:nil="true"/><linkedVehicles><array><array><assembledFrom
+      xsi:nil="true"/><assembledTo xsi:nil="true"/><axisConfiguration xsi:nil="true"/><carDesc>2.0
+      TD (N38W)</carDesc><carId>3423</carId><constructionType>Lielas ietilp&#x12B;bas
+      automobilis</constructionType><cylinderCapacity>1998</cylinderCapacity><manuDesc>MITSU</manuDesc><manuId>77</manuId><modelDesc>SPACE
+      WAGON (N3_W, N4_W)</modelDesc><modelId>285</modelId><powerHpFrom>82</powerHpFrom><powerHpTo>82</powerHpTo><powerKwFrom>60</powerKwFrom><powerKwTo>60</powerKwTo><tonnage
+      xsi:nil="true"/><yearOfConstructionFrom>199210</yearOfConstructionFrom><yearOfConstructionTo>199810</yearOfConstructionTo></array></array><empty>false</empty></linkedVehicles><linkingTargetId>3423</linkingTargetId></array><array><articleLinkId>11037983</articleLinkId><linkedArticleImmediateAttributs><array><array><attrBlockNo>0</attrBlockNo><attrId>21</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>true</attrIsInterval><attrName>l&#x12B;dz
+      izlaiduma gadam</attrName><attrShortName>l&#x12B;dz izl. gadam</attrShortName><attrSuccessorId
+      xsi:nil="true"/><attrType>D</attrType><attrUnit xsi:nil="true"/><attrValue>199905</attrValue></array><array><attrBlockNo>0</attrBlockNo><attrId>105</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>false</attrIsInterval><attrName>Vad&#x101;mais
+      agreg&#x101;ts</attrName><attrShortName xsi:nil="true"/><attrSuccessorId xsi:nil="true"/><attrType>K</attrType><attrUnit
+      xsi:nil="true"/><attrValue>Piedz. agreg&#x101;ts: Hidropastiprin&#x101;t&#x101;ja
+      s&#x16B;knis</attrValue></array></array><empty>false</empty></linkedArticleImmediateAttributs><linkedAxles
+      xsi:nil="true"/><linkedMarks xsi:nil="true"/><linkedMotors xsi:nil="true"/><linkedVehicles><array><array><assembledFrom
+      xsi:nil="true"/><assembledTo>199905</assembledTo><axisConfiguration xsi:nil="true"/><carDesc>2.0
+      TD (N18W)</carDesc><carId>7298</carId><constructionType>Lielas ietilp&#x12B;bas
+      automobilis</constructionType><cylinderCapacity>1998</cylinderCapacity><manuDesc>MITSU</manuDesc><manuId>77</manuId><modelDesc>SPACE
+      RUNNER (N1_W, N2_W)</modelDesc><modelId>3971</modelId><powerHpFrom>82</powerHpFrom><powerHpTo>82</powerHpTo><powerKwFrom>60</powerKwFrom><powerKwTo>60</powerKwTo><tonnage
+      xsi:nil="true"/><yearOfConstructionFrom>199210</yearOfConstructionFrom><yearOfConstructionTo>199908</yearOfConstructionTo></array></array><empty>false</empty></linkedVehicles><linkingTargetId>7298</linkingTargetId></array><array><articleLinkId>11038010</articleLinkId><linkedArticleImmediateAttributs><array><array><attrBlockNo>0</attrBlockNo><attrId>105</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>false</attrIsInterval><attrName>Vad&#x101;mais
+      agreg&#x101;ts</attrName><attrShortName xsi:nil="true"/><attrSuccessorId xsi:nil="true"/><attrType>K</attrType><attrUnit
+      xsi:nil="true"/><attrValue>Piedz. agreg&#x101;ts: Hidropastiprin&#x101;t&#x101;ja
+      s&#x16B;knis</attrValue></array></array><empty>false</empty></linkedArticleImmediateAttributs><linkedAxles
+      xsi:nil="true"/><linkedMarks xsi:nil="true"/><linkedMotors xsi:nil="true"/><linkedVehicles><array><array><assembledFrom
+      xsi:nil="true"/><assembledTo xsi:nil="true"/><axisConfiguration xsi:nil="true"/><carDesc>1.6</carDesc><carId>853</carId><constructionType>Univers&#x101;lis</constructionType><cylinderCapacity>1598</cylinderCapacity><manuDesc>OPEL</manuDesc><manuId>84</manuId><modelDesc>ASTRA
+      Sports Tourer (J)</modelDesc><modelId>9017</modelId><powerHpFrom>116</powerHpFrom><powerHpTo>116</powerHpTo><powerKwFrom>85</powerKwFrom><powerKwTo>85</powerKwTo><tonnage
+      xsi:nil="true"/><yearOfConstructionFrom>201010</yearOfConstructionFrom><yearOfConstructionTo
+      xsi:nil="true"/></array></array><empty>false</empty></linkedVehicles><linkingTargetId>853</linkingTargetId></array><array><articleLinkId>11037992</articleLinkId><linkedArticleImmediateAttributs><array><array><attrBlockNo>0</attrBlockNo><attrId>20</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>true</attrIsInterval><attrName>S&#x101;kot
+      ar izlaiduma gadu</attrName><attrShortName>s&#x101;kot ar izlaiduma gadu</attrShortName><attrSuccessorId>21</attrSuccessorId><attrType>D</attrType><attrUnit
+      xsi:nil="true"/><attrValue>200809</attrValue></array><array><attrBlockNo>0</attrBlockNo><attrId>105</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>false</attrIsInterval><attrName>Vad&#x101;mais
+      agreg&#x101;ts</attrName><attrShortName xsi:nil="true"/><attrSuccessorId xsi:nil="true"/><attrType>K</attrType><attrUnit
+      xsi:nil="true"/><attrValue>Piedz. agreg&#x101;ts: Hidropastiprin&#x101;t&#x101;ja
+      s&#x16B;knis</attrValue></array></array><empty>false</empty></linkedArticleImmediateAttributs><linkedAxles
+      xsi:nil="true"/><linkedMarks xsi:nil="true"/><linkedMotors xsi:nil="true"/><linkedVehicles><array><array><assembledFrom>200809</assembledFrom><assembledTo
+      xsi:nil="true"/><axisConfiguration xsi:nil="true"/><carDesc>1.6</carDesc><carId>28214</carId><constructionType>He&#x10D;beka
+      virsb&#x16B;ve</constructionType><cylinderCapacity>1598</cylinderCapacity><manuDesc>OPEL</manuDesc><manuId>84</manuId><modelDesc>INSIGNIA</modelDesc><modelId>7581</modelId><powerHpFrom>116</powerHpFrom><powerHpTo>116</powerHpTo><powerKwFrom>85</powerKwFrom><powerKwTo>85</powerKwTo><tonnage
+      xsi:nil="true"/><yearOfConstructionFrom>200807</yearOfConstructionFrom><yearOfConstructionTo
+      xsi:nil="true"/></array></array><empty>false</empty></linkedVehicles><linkingTargetId>28214</linkingTargetId></array><array><articleLinkId>11038007</articleLinkId><linkedArticleImmediateAttributs><array><array><attrBlockNo>0</attrBlockNo><attrId>20</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>true</attrIsInterval><attrName>S&#x101;kot
+      ar izlaiduma gadu</attrName><attrShortName>s&#x101;kot ar izlaiduma gadu</attrShortName><attrSuccessorId>21</attrSuccessorId><attrType>D</attrType><attrUnit
+      xsi:nil="true"/><attrValue>200809</attrValue></array><array><attrBlockNo>0</attrBlockNo><attrId>105</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>false</attrIsInterval><attrName>Vad&#x101;mais
+      agreg&#x101;ts</attrName><attrShortName xsi:nil="true"/><attrSuccessorId xsi:nil="true"/><attrType>K</attrType><attrUnit
+      xsi:nil="true"/><attrValue>Piedz. agreg&#x101;ts: Hidropastiprin&#x101;t&#x101;ja
+      s&#x16B;knis</attrValue></array></array><empty>false</empty></linkedArticleImmediateAttributs><linkedAxles
+      xsi:nil="true"/><linkedMarks xsi:nil="true"/><linkedMotors xsi:nil="true"/><linkedVehicles><array><array><assembledFrom>200809</assembledFrom><assembledTo
+      xsi:nil="true"/><axisConfiguration xsi:nil="true"/><carDesc>1.6 Turbo</carDesc><carId>31120</carId><constructionType>He&#x10D;beka
+      virsb&#x16B;ve</constructionType><cylinderCapacity>1598</cylinderCapacity><manuDesc>OPEL</manuDesc><manuId>84</manuId><modelDesc>INSIGNIA</modelDesc><modelId>7581</modelId><powerHpFrom>180</powerHpFrom><powerHpTo>180</powerHpTo><powerKwFrom>132</powerKwFrom><powerKwTo>132</powerKwTo><tonnage
+      xsi:nil="true"/><yearOfConstructionFrom>200807</yearOfConstructionFrom><yearOfConstructionTo
+      xsi:nil="true"/></array></array><empty>false</empty></linkedVehicles><linkingTargetId>31120</linkingTargetId></array><array><articleLinkId>11037993</articleLinkId><linkedArticleImmediateAttributs><array><array><attrBlockNo>0</attrBlockNo><attrId>20</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>true</attrIsInterval><attrName>S&#x101;kot
+      ar izlaiduma gadu</attrName><attrShortName>s&#x101;kot ar izlaiduma gadu</attrShortName><attrSuccessorId>21</attrSuccessorId><attrType>D</attrType><attrUnit
+      xsi:nil="true"/><attrValue>200809</attrValue></array><array><attrBlockNo>0</attrBlockNo><attrId>105</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>false</attrIsInterval><attrName>Vad&#x101;mais
+      agreg&#x101;ts</attrName><attrShortName xsi:nil="true"/><attrSuccessorId xsi:nil="true"/><attrType>K</attrType><attrUnit
+      xsi:nil="true"/><attrValue>Piedz. agreg&#x101;ts: Hidropastiprin&#x101;t&#x101;ja
+      s&#x16B;knis</attrValue></array></array><empty>false</empty></linkedArticleImmediateAttributs><linkedAxles
+      xsi:nil="true"/><linkedMarks xsi:nil="true"/><linkedMotors xsi:nil="true"/><linkedVehicles><array><array><assembledFrom>200809</assembledFrom><assembledTo
+      xsi:nil="true"/><axisConfiguration xsi:nil="true"/><carDesc>1.8</carDesc><carId>28215</carId><constructionType>He&#x10D;beka
+      virsb&#x16B;ve</constructionType><cylinderCapacity>1796</cylinderCapacity><manuDesc>OPEL</manuDesc><manuId>84</manuId><modelDesc>INSIGNIA</modelDesc><modelId>7581</modelId><powerHpFrom>140</powerHpFrom><powerHpTo>140</powerHpTo><powerKwFrom>103</powerKwFrom><powerKwTo>103</powerKwTo><tonnage
+      xsi:nil="true"/><yearOfConstructionFrom>200807</yearOfConstructionFrom><yearOfConstructionTo
+      xsi:nil="true"/></array></array><empty>false</empty></linkedVehicles><linkingTargetId>28215</linkingTargetId></array><array><articleLinkId>11037994</articleLinkId><linkedArticleImmediateAttributs><array><array><attrBlockNo>0</attrBlockNo><attrId>20</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>true</attrIsInterval><attrName>S&#x101;kot
+      ar izlaiduma gadu</attrName><attrShortName>s&#x101;kot ar izlaiduma gadu</attrShortName><attrSuccessorId>21</attrSuccessorId><attrType>D</attrType><attrUnit
+      xsi:nil="true"/><attrValue>200809</attrValue></array><array><attrBlockNo>0</attrBlockNo><attrId>105</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>false</attrIsInterval><attrName>Vad&#x101;mais
+      agreg&#x101;ts</attrName><attrShortName xsi:nil="true"/><attrSuccessorId xsi:nil="true"/><attrType>K</attrType><attrUnit
+      xsi:nil="true"/><attrValue>Piedz. agreg&#x101;ts: Hidropastiprin&#x101;t&#x101;ja
+      s&#x16B;knis</attrValue></array></array><empty>false</empty></linkedArticleImmediateAttributs><linkedAxles
+      xsi:nil="true"/><linkedMarks xsi:nil="true"/><linkedMotors xsi:nil="true"/><linkedVehicles><array><array><assembledFrom>200809</assembledFrom><assembledTo
+      xsi:nil="true"/><axisConfiguration xsi:nil="true"/><carDesc>1.6</carDesc><carId>28221</carId><constructionType>Sedans</constructionType><cylinderCapacity>1598</cylinderCapacity><manuDesc>OPEL</manuDesc><manuId>84</manuId><modelDesc>INSIGNIA
+      Sedans</modelDesc><modelId>7582</modelId><powerHpFrom>116</powerHpFrom><powerHpTo>116</powerHpTo><powerKwFrom>85</powerKwFrom><powerKwTo>85</powerKwTo><tonnage
+      xsi:nil="true"/><yearOfConstructionFrom>200807</yearOfConstructionFrom><yearOfConstructionTo
+      xsi:nil="true"/></array></array><empty>false</empty></linkedVehicles><linkingTargetId>28221</linkingTargetId></array><array><articleLinkId>11038002</articleLinkId><linkedArticleImmediateAttributs><array><array><attrBlockNo>0</attrBlockNo><attrId>105</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>false</attrIsInterval><attrName>Vad&#x101;mais
+      agreg&#x101;ts</attrName><attrShortName xsi:nil="true"/><attrSuccessorId xsi:nil="true"/><attrType>K</attrType><attrUnit
+      xsi:nil="true"/><attrValue>Piedz. agreg&#x101;ts: Hidropastiprin&#x101;t&#x101;ja
+      s&#x16B;knis</attrValue></array></array><empty>false</empty></linkedArticleImmediateAttributs><linkedAxles
+      xsi:nil="true"/><linkedMarks xsi:nil="true"/><linkedMotors xsi:nil="true"/><linkedVehicles><array><array><assembledFrom
+      xsi:nil="true"/><assembledTo xsi:nil="true"/><axisConfiguration xsi:nil="true"/><carDesc>1.6
+      Turbo</carDesc><carId>30962</carId><constructionType>Sedans</constructionType><cylinderCapacity>1598</cylinderCapacity><manuDesc>OPEL</manuDesc><manuId>84</manuId><modelDesc>INSIGNIA
+      Sedans</modelDesc><modelId>7582</modelId><powerHpFrom>180</powerHpFrom><powerHpTo>180</powerHpTo><powerKwFrom>132</powerKwFrom><powerKwTo>132</powerKwTo><tonnage
+      xsi:nil="true"/><yearOfConstructionFrom>200901</yearOfConstructionFrom><yearOfConstructionTo
+      xsi:nil="true"/></array></array><empty>false</empty></linkedVehicles><linkingTargetId>30962</linkingTargetId></array><array><articleLinkId>11037995</articleLinkId><linkedArticleImmediateAttributs><array><array><attrBlockNo>0</attrBlockNo><attrId>20</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>true</attrIsInterval><attrName>S&#x101;kot
+      ar izlaiduma gadu</attrName><attrShortName>s&#x101;kot ar izlaiduma gadu</attrShortName><attrSuccessorId>21</attrSuccessorId><attrType>D</attrType><attrUnit
+      xsi:nil="true"/><attrValue>200809</attrValue></array><array><attrBlockNo>0</attrBlockNo><attrId>105</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>false</attrIsInterval><attrName>Vad&#x101;mais
+      agreg&#x101;ts</attrName><attrShortName xsi:nil="true"/><attrSuccessorId xsi:nil="true"/><attrType>K</attrType><attrUnit
+      xsi:nil="true"/><attrValue>Piedz. agreg&#x101;ts: Hidropastiprin&#x101;t&#x101;ja
+      s&#x16B;knis</attrValue></array></array><empty>false</empty></linkedArticleImmediateAttributs><linkedAxles
+      xsi:nil="true"/><linkedMarks xsi:nil="true"/><linkedMotors xsi:nil="true"/><linkedVehicles><array><array><assembledFrom>200809</assembledFrom><assembledTo
+      xsi:nil="true"/><axisConfiguration xsi:nil="true"/><carDesc>1.8</carDesc><carId>28222</carId><constructionType>Sedans</constructionType><cylinderCapacity>1796</cylinderCapacity><manuDesc>OPEL</manuDesc><manuId>84</manuId><modelDesc>INSIGNIA
+      Sedans</modelDesc><modelId>7582</modelId><powerHpFrom>140</powerHpFrom><powerHpTo>140</powerHpTo><powerKwFrom>103</powerKwFrom><powerKwTo>103</powerKwTo><tonnage
+      xsi:nil="true"/><yearOfConstructionFrom>200807</yearOfConstructionFrom><yearOfConstructionTo
+      xsi:nil="true"/></array></array><empty>false</empty></linkedVehicles><linkingTargetId>28222</linkingTargetId></array></array><empty>false</empty></data><status>200</status><statusText
+      xsi:nil="true"/></getArticleLinkedAllLinkingTargetsByIds2Return></getArticleLinkedAllLinkingTargetsByIds2Response></soapenv:Body></soapenv:Envelope>'
+    http_version: '1.0'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :post
+    uri: http://webservicepilot.tecdoc.net:80/pegasus-2-0/services/TecdocToCatWL
+    body: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://webservicepilot.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="http://webservicepilot.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"
+      xmlns:ins1="http://options.datatype.tocinterface.cat.tecdoc.net" xmlns:ins2="http://controlpanel.datatype.tocinterface.cat.tecdoc.net"
+      xmlns:ins3="http://articles.datatype.tocinterface.cat.tecdoc.net" xmlns:ins4="http://carselection.datatype.tocinterface.cat.tecdoc.net"
+      xmlns:ins5="http://datatype.cat.tecdoc.net" xmlns:ins6="http://axlesselection.datatype.tocinterface.cat.tecdoc.net"
+      xmlns:ins7="http://motorselection.datatype.tocinterface.cat.tecdoc.net" xmlns:ins8="http://assemblygroupselection.datatype.tocinterface.cat.tecdoc.net"
+      xmlns:ins9="http://specialselection.datatype.tocinterface.cat.tecdoc.net"><env:Body><ins0:getArticleLinkedAllLinkingTargetsByIds2><wsdl:in><wsdl:provider>330</wsdl:provider><wsdl:linkedArticlePairs><wsdl:array><wsdl:pairs><wsdl:articleLinkId>11037998</wsdl:articleLinkId><wsdl:linkingTargetId>29923</wsdl:linkingTargetId></wsdl:pairs><wsdl:pairs><wsdl:articleLinkId>11038003</wsdl:articleLinkId><wsdl:linkingTargetId>30963</wsdl:linkingTargetId></wsdl:pairs><wsdl:pairs><wsdl:articleLinkId>11037999</wsdl:articleLinkId><wsdl:linkingTargetId>29924</wsdl:linkingTargetId></wsdl:pairs><wsdl:pairs><wsdl:articleLinkId>11037981</wsdl:articleLinkId><wsdl:linkingTargetId>5637</wsdl:linkingTargetId></wsdl:pairs><wsdl:pairs><wsdl:articleLinkId>11037984</wsdl:articleLinkId><wsdl:linkingTargetId>7885</wsdl:linkingTargetId></wsdl:pairs></wsdl:array></wsdl:linkedArticlePairs><wsdl:lang>lv</wsdl:lang><wsdl:country>lv</wsdl:country><wsdl:linkingTargetType>C</wsdl:linkingTargetType><wsdl:immediateAttributs>true</wsdl:immediateAttributs><wsdl:articleId>1540027</wsdl:articleId></wsdl:in></ins0:getArticleLinkedAllLinkingTargetsByIds2></env:Body></env:Envelope>
+    headers:
+      soapaction:
+      - ! '"getArticleLinkedAllLinkingTargetsByIds2"'
+      content-type:
+      - text/xml;charset=UTF-8
+      content-length:
+      - '1365'
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Thu, 08 Mar 2012 12:52:59 GMT
+      server:
+      - Apache
+      content-type:
+      - text/xml;charset=utf-8
+      x-cache:
+      - MISS from demo.makit.lv
+      x-cache-lookup:
+      - MISS from demo.makit.lv:8080
+      via:
+      - 1.1 demo.makit.lv:8080 (squid/2.7.STABLE9)
+    body: ! '<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><getArticleLinkedAllLinkingTargetsByIds2Response
+      xmlns="http://webservicepilot.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"><getArticleLinkedAllLinkingTargetsByIds2Return
+      xmlns=""><data><array><array><articleLinkId>11037998</articleLinkId><linkedArticleImmediateAttributs><array><array><attrBlockNo>0</attrBlockNo><attrId>20</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>true</attrIsInterval><attrName>S&#x101;kot
+      ar izlaiduma gadu</attrName><attrShortName>s&#x101;kot ar izlaiduma gadu</attrShortName><attrSuccessorId>21</attrSuccessorId><attrType>D</attrType><attrUnit
+      xsi:nil="true"/><attrValue>200902</attrValue></array><array><attrBlockNo>0</attrBlockNo><attrId>105</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>false</attrIsInterval><attrName>Vad&#x101;mais
+      agreg&#x101;ts</attrName><attrShortName xsi:nil="true"/><attrSuccessorId xsi:nil="true"/><attrType>K</attrType><attrUnit
+      xsi:nil="true"/><attrValue>Piedz. agreg&#x101;ts: Hidropastiprin&#x101;t&#x101;ja
+      s&#x16B;knis</attrValue></array></array><empty>false</empty></linkedArticleImmediateAttributs><linkedAxles
+      xsi:nil="true"/><linkedMarks xsi:nil="true"/><linkedMotors xsi:nil="true"/><linkedVehicles><array><array><assembledFrom>200902</assembledFrom><assembledTo
+      xsi:nil="true"/><axisConfiguration xsi:nil="true"/><carDesc>1.6</carDesc><carId>29923</carId><constructionType>Univers&#x101;lis</constructionType><cylinderCapacity>1598</cylinderCapacity><manuDesc>OPEL</manuDesc><manuId>84</manuId><modelDesc>INSIGNIA
+      Sports Tourer</modelDesc><modelId>7861</modelId><powerHpFrom>116</powerHpFrom><powerHpTo>116</powerHpTo><powerKwFrom>85</powerKwFrom><powerKwTo>85</powerKwTo><tonnage
+      xsi:nil="true"/><yearOfConstructionFrom>200807</yearOfConstructionFrom><yearOfConstructionTo
+      xsi:nil="true"/></array></array><empty>false</empty></linkedVehicles><linkingTargetId>29923</linkingTargetId></array><array><articleLinkId>11038003</articleLinkId><linkedArticleImmediateAttributs><array><array><attrBlockNo>0</attrBlockNo><attrId>20</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>true</attrIsInterval><attrName>S&#x101;kot
+      ar izlaiduma gadu</attrName><attrShortName>s&#x101;kot ar izlaiduma gadu</attrShortName><attrSuccessorId>21</attrSuccessorId><attrType>D</attrType><attrUnit
+      xsi:nil="true"/><attrValue>200902</attrValue></array><array><attrBlockNo>0</attrBlockNo><attrId>105</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>false</attrIsInterval><attrName>Vad&#x101;mais
+      agreg&#x101;ts</attrName><attrShortName xsi:nil="true"/><attrSuccessorId xsi:nil="true"/><attrType>K</attrType><attrUnit
+      xsi:nil="true"/><attrValue>Piedz. agreg&#x101;ts: Hidropastiprin&#x101;t&#x101;ja
+      s&#x16B;knis</attrValue></array></array><empty>false</empty></linkedArticleImmediateAttributs><linkedAxles
+      xsi:nil="true"/><linkedMarks xsi:nil="true"/><linkedMotors xsi:nil="true"/><linkedVehicles><array><array><assembledFrom>200902</assembledFrom><assembledTo
+      xsi:nil="true"/><axisConfiguration xsi:nil="true"/><carDesc>1.6 Turbo</carDesc><carId>30963</carId><constructionType>Univers&#x101;lis</constructionType><cylinderCapacity>1598</cylinderCapacity><manuDesc>OPEL</manuDesc><manuId>84</manuId><modelDesc>INSIGNIA
+      Sports Tourer</modelDesc><modelId>7861</modelId><powerHpFrom>180</powerHpFrom><powerHpTo>180</powerHpTo><powerKwFrom>132</powerKwFrom><powerKwTo>132</powerKwTo><tonnage
+      xsi:nil="true"/><yearOfConstructionFrom>200901</yearOfConstructionFrom><yearOfConstructionTo
+      xsi:nil="true"/></array></array><empty>false</empty></linkedVehicles><linkingTargetId>30963</linkingTargetId></array><array><articleLinkId>11037999</articleLinkId><linkedArticleImmediateAttributs><array><array><attrBlockNo>0</attrBlockNo><attrId>20</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>true</attrIsInterval><attrName>S&#x101;kot
+      ar izlaiduma gadu</attrName><attrShortName>s&#x101;kot ar izlaiduma gadu</attrShortName><attrSuccessorId>21</attrSuccessorId><attrType>D</attrType><attrUnit
+      xsi:nil="true"/><attrValue>200902</attrValue></array><array><attrBlockNo>0</attrBlockNo><attrId>105</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>false</attrIsInterval><attrName>Vad&#x101;mais
+      agreg&#x101;ts</attrName><attrShortName xsi:nil="true"/><attrSuccessorId xsi:nil="true"/><attrType>K</attrType><attrUnit
+      xsi:nil="true"/><attrValue>Piedz. agreg&#x101;ts: Hidropastiprin&#x101;t&#x101;ja
+      s&#x16B;knis</attrValue></array></array><empty>false</empty></linkedArticleImmediateAttributs><linkedAxles
+      xsi:nil="true"/><linkedMarks xsi:nil="true"/><linkedMotors xsi:nil="true"/><linkedVehicles><array><array><assembledFrom>200902</assembledFrom><assembledTo
+      xsi:nil="true"/><axisConfiguration xsi:nil="true"/><carDesc>1.8</carDesc><carId>29924</carId><constructionType>Univers&#x101;lis</constructionType><cylinderCapacity>1796</cylinderCapacity><manuDesc>OPEL</manuDesc><manuId>84</manuId><modelDesc>INSIGNIA
+      Sports Tourer</modelDesc><modelId>7861</modelId><powerHpFrom>140</powerHpFrom><powerHpTo>140</powerHpTo><powerKwFrom>103</powerKwFrom><powerKwTo>103</powerKwTo><tonnage
+      xsi:nil="true"/><yearOfConstructionFrom>200807</yearOfConstructionFrom><yearOfConstructionTo
+      xsi:nil="true"/></array></array><empty>false</empty></linkedVehicles><linkingTargetId>29924</linkingTargetId></array><array><articleLinkId>11037981</articleLinkId><linkedArticleImmediateAttributs><array><array><attrBlockNo>0</attrBlockNo><attrId>105</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>false</attrIsInterval><attrName>Vad&#x101;mais
+      agreg&#x101;ts</attrName><attrShortName xsi:nil="true"/><attrSuccessorId xsi:nil="true"/><attrType>K</attrType><attrUnit
+      xsi:nil="true"/><attrValue>Piedz. agreg&#x101;ts: Hidropastiprin&#x101;t&#x101;ja
+      s&#x16B;knis</attrValue></array></array><empty>false</empty></linkedArticleImmediateAttributs><linkedAxles
+      xsi:nil="true"/><linkedMarks xsi:nil="true"/><linkedMotors xsi:nil="true"/><linkedVehicles><array><array><assembledFrom
+      xsi:nil="true"/><assembledTo xsi:nil="true"/><axisConfiguration xsi:nil="true"/><carDesc>420
+      GLS D</carDesc><carId>5637</carId><constructionType>Sedans</constructionType><cylinderCapacity>1998</cylinderCapacity><manuDesc>PROTO</manuDesc><manuId>778</manuId><modelDesc>PERSONA
+      400 (C9_S)</modelDesc><modelId>1471</modelId><powerHpFrom>65</powerHpFrom><powerHpTo>65</powerHpTo><powerKwFrom>48</powerKwFrom><powerKwTo>48</powerKwTo><tonnage
+      xsi:nil="true"/><yearOfConstructionFrom>199605</yearOfConstructionFrom><yearOfConstructionTo
+      xsi:nil="true"/></array></array><empty>false</empty></linkedVehicles><linkingTargetId>5637</linkingTargetId></array><array><articleLinkId>11037984</articleLinkId><linkedArticleImmediateAttributs><array><array><attrBlockNo>0</attrBlockNo><attrId>20</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>true</attrIsInterval><attrName>S&#x101;kot
+      ar izlaiduma gadu</attrName><attrShortName>s&#x101;kot ar izlaiduma gadu</attrShortName><attrSuccessorId>21</attrSuccessorId><attrType>D</attrType><attrUnit
+      xsi:nil="true"/><attrValue>199702</attrValue></array><array><attrBlockNo>0</attrBlockNo><attrId>105</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>false</attrIsInterval><attrName>Vad&#x101;mais
+      agreg&#x101;ts</attrName><attrShortName xsi:nil="true"/><attrSuccessorId xsi:nil="true"/><attrType>K</attrType><attrUnit
+      xsi:nil="true"/><attrValue>Piedz. agreg&#x101;ts: Hidropastiprin&#x101;t&#x101;ja
+      s&#x16B;knis</attrValue></array></array><empty>false</empty></linkedArticleImmediateAttributs><linkedAxles
+      xsi:nil="true"/><linkedMarks xsi:nil="true"/><linkedMotors xsi:nil="true"/><linkedVehicles><array><array><assembledFrom>199702</assembledFrom><assembledTo
+      xsi:nil="true"/><axisConfiguration xsi:nil="true"/><carDesc>420 TD</carDesc><carId>7885</carId><constructionType>Sedans</constructionType><cylinderCapacity>1998</cylinderCapacity><manuDesc>PROTO</manuDesc><manuId>778</manuId><modelDesc>PERSONA
+      400 (C9_S)</modelDesc><modelId>1471</modelId><powerHpFrom>82</powerHpFrom><powerHpTo>82</powerHpTo><powerKwFrom>60</powerKwFrom><powerKwTo>60</powerKwTo><tonnage
+      xsi:nil="true"/><yearOfConstructionFrom>199609</yearOfConstructionFrom><yearOfConstructionTo
+      xsi:nil="true"/></array></array><empty>false</empty></linkedVehicles><linkingTargetId>7885</linkingTargetId></array></array><empty>false</empty></data><status>200</status><statusText
+      xsi:nil="true"/></getArticleLinkedAllLinkingTargetsByIds2Return></getArticleLinkedAllLinkingTargetsByIds2Response></soapenv:Body></soapenv:Envelope>'
+    http_version: '1.0'

@@ -154,5 +154,19 @@ describe TecDoc::Article do
       @articles[0].linked_vehicles.map(&:motor_codes).flatten.uniq.include?("A 18 XER").should be_true
       @articles[0].linked_vehicles.first.class.should == TecDoc::Vehicle
     end
+
+    it "should return article linked vehicle with details" do
+      VCR.use_cassette('article_linked_vehicles_with_details') do
+        @articles[0].linked_vehicles_with_details
+      end
+
+      vehicle = @articles[0].linked_vehicles_with_details.detect{ |v| v.name =~ /HYUNDAI/i }
+      vehicle.attributes.length.should == 3
+
+      attribute = vehicle.attributes[0]
+      puts "\n\n\n", vehicle.attributes.inspect
+      attribute[:attr_name].should == "Sākot ar izlaiduma gadu"
+      attribute[:attr_value].should == "199207"
+    end
   end
 end

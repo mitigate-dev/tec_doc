@@ -14,7 +14,8 @@ module TecDoc
       :date_of_construction_to,
       :motor_codes,
       :manu_id,
-      :mod_id
+      :mod_id,
+      :attributes
 
     # Find vehicles for simplified selection with motor codes
     #
@@ -95,6 +96,10 @@ module TecDoc
       else
         nil
       end
+    end
+
+    def attributes
+      @attributes || []
     end
     
     # Vehicle linked assembly parent groups

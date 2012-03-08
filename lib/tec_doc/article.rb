@@ -177,13 +177,7 @@ module TecDoc
     end
     
     def linked_vehicle_ids
-      @linked_vehicle_ids ||= TecDoc.client.request(:get_article_linked_all_linking_target_2, {
-        :lang => scope[:lang],
-        :country => scope[:country],
-        :linking_target_type => "C",
-        :linking_target_id => -1,
-        :article_id => id
-      }).map{ |attrs| attrs[:linking_target_id].to_i }.uniq
+      @linked_vehicle_ids ||= linked_targets.map{ |attrs| attrs[:linking_target_id].to_i }.uniq
     end
     
     def linked_vehicles(options = {})
@@ -228,6 +222,44 @@ module TecDoc
       @linked_vehicles
     end
 
+    # Linked vehicles for article with car specific attributes
+    def linked_vehicles_with_details(options = {})
+      unless @linked_vehicles_with_details
+        links = linked_targets.map{ |link| link.delete(:linking_target_type); link }
+        batch_list = links.each_slice(25).to_a
+        
+        # Response from all batches
+        response = batch_list.inject([]) do |result, long_list|
+          result += TecDoc.client.request(:get_article_linked_all_linking_targets_by_ids_2, {
+            :linked_article_pairs => { :array => {:pairs => long_list} },
+            :lang => scope[:lang],
+            :country => scope[:country],
+            :linking_target_type => "C",
+            :immediate_attributs => true,
+            :article_id => id
+          })
+          result
+        end
+        
+        @linked_vehicles_with_details = response.map do |attrs|
+          details = (attrs[:linked_vehicles].to_a[0] || {})
+          vehicle                           = Vehicle.new
+          vehicle.id                        = details[:car_id].to_i
+          vehicle.name                      = "#{details[:manu_desc]} - #{details[:model_desc]} - #{details[:car_desc]}"
+          vehicle.power_hp_from             = details[:power_hp_from].to_i
+          vehicle.power_kw_from             = details[:power_kw_from].to_i
+          vehicle.power_hp_to               = details[:power_hp_to].to_i
+          vehicle.power_kw_to               = details[:power_kw_to].to_i
+          vehicle.cylinder_capacity         = details[:cylinder_capacity].to_i
+          vehicle.date_of_construction_from = DateParser.new(details[:year_of_construction_from]).to_date
+          vehicle.date_of_construction_to   = DateParser.new(details[:year_of_construction_to]).to_date
+          vehicle.attributes                = attrs[:linked_article_immediate_attributs].to_a
+          vehicle
+        end
+      end
+      @linked_vehicles_with_details
+    end
+
     private
 
     def article_details
@@ -250,6 +282,17 @@ module TecDoc
         :info => true,
         :article_id => { :array => { :ids => [id] } }
       })[0]
+    end
+
+    # Array with all linked target vehicles with article link id
+    def linked_targets
+      @linked_targets ||= TecDoc.client.request(:get_article_linked_all_linking_target_2, {
+        :lang => scope[:lang],
+        :country => scope[:country],
+        :linking_target_type => "C",
+        :linking_target_id => -1,
+        :article_id => id
+      })
     end
   end
 end
