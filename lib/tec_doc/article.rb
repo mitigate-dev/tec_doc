@@ -175,6 +175,17 @@ module TecDoc
       end
       @linked_manufacturers
     end
+
+    # Array with all linked target vehicles with article link id
+    def linked_targets
+      @linked_targets ||= TecDoc.client.request(:get_article_linked_all_linking_target_2, {
+        :lang => scope[:lang],
+        :country => scope[:country],
+        :linking_target_type => "C",
+        :linking_target_id => -1,
+        :article_id => id
+      })
+    end
     
     def linked_vehicle_ids
       @linked_vehicle_ids ||= linked_targets.map{ |attrs| attrs[:linking_target_id].to_i }.uniq
@@ -282,17 +293,6 @@ module TecDoc
         :info => true,
         :article_id => { :array => { :ids => [id] } }
       })[0]
-    end
-
-    # Array with all linked target vehicles with article link id
-    def linked_targets
-      @linked_targets ||= TecDoc.client.request(:get_article_linked_all_linking_target_2, {
-        :lang => scope[:lang],
-        :country => scope[:country],
-        :linking_target_type => "C",
-        :linking_target_id => -1,
-        :article_id => id
-      })
     end
   end
 end
