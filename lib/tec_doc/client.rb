@@ -18,6 +18,13 @@ module TecDoc
         response = connection.request(operation) do
           soap.body = { :in => { :provider => provider }.merge(options) }
         end
+        # Parse errors
+        status_node = response.doc.xpath("//status").first
+        if status_node.text != "200"
+          status_text_node = response.doc.xpath("//statusText").first
+          raise Error.new(status_text_node.text)
+        end
+        # Parse the document
         response.doc.xpath("//data/array/array").map do |node|
           node_to_hash(node)
         end

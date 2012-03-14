@@ -7,6 +7,7 @@ module TecDoc
   extend self
 
   autoload :Client,               "tec_doc/client"
+  autoload :Error,                "tec_doc/error"
 
   autoload :Article,              "tec_doc/article"
   autoload :ArticleDocument,      "tec_doc/article_document"
