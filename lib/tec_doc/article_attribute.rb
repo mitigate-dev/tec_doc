@@ -7,13 +7,11 @@ module TecDoc
         send("#{name.to_s.gsub(/^attr_/, '')}=", value)
       end
 
-      if @id
-        @id = @id.to_i
-      end
-
-      if @type == "D"
-        @value = DateParser.new(@value).to_date
-      end
+      @id             = @id.to_i                       if @id
+      @value_id       = @value_id.to_i                 if @value_id
+      @value          = DateParser.new(@value).to_date if @type == "D"
+      @is_interval    = (@is_interval == "true")       if @is_interval.is_a?(String)
+      @is_conditional = (@is_conditional == "true")    if @is_conditional.is_a?(String)
     end
   end
 end
