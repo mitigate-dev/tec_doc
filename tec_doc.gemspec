@@ -35,5 +35,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency "guard-rspec"
 
   s.add_runtime_dependency "savon"
+  s.add_runtime_dependency "httpi", ">= 0.9.6"
   s.add_runtime_dependency "i18n"
 end
