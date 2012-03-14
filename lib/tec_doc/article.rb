@@ -138,23 +138,23 @@ module TecDoc
     end
 
     def attributes
-      @attributes ||= article_details[:article_attributes].map do |attrs|
+      @attributes ||= article_details[:article_attributes].to_a.map do |attrs|
         ArticleAttribute.new(attrs)
       end
     end
 
     def ean_number
-      @ean_number ||= article_details[:ean_number].map(&:values).flatten.first
+      @ean_number ||= article_details[:ean_number].to_a.map(&:values).flatten.first
     end
 
     def oe_numbers
-      @oe_numbers ||= article_details[:oen_numbers].map do |attrs|
+      @oe_numbers ||= article_details[:oen_numbers].to_a.map do |attrs|
         ArticleOENumber.new(attrs)
       end
     end
     
     def trade_numbers
-      @trade_numbers ||= article_details[:usage_numbers].map(&:values).flatten.join(", ")
+      @trade_numbers ||= article_details[:usage_numbers].to_a.map(&:values).flatten.join(", ")
     end
     
     def information
@@ -282,7 +282,7 @@ module TecDoc
         :ean_numbers => true,
         :oe_numbers => true,
         :usage_numbers => true
-      })[0]
+      })[0] || {}
     end
     
     # Direct article to get all detail info
