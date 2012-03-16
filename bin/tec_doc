@@ -14,7 +14,7 @@ HTTPI.logger.level = Logger::INFO
 
 parser = OptionParser.new do |opts|
 
-  opts.banner = "Usage: tec_doc -p <provider id> -c <country code> [-l <language code>] [-v]"
+  opts.banner = "Usage: tec_doc -p <provider id> -c <country code> [-l <language code>] [-m <mode>] [-v]"
 
   opts.on("-p", "--provider <provider id>", "TecDoc provider ID") do |provider|
     TecDoc.client.provider = provider
