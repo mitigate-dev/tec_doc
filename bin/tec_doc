@@ -28,6 +28,10 @@ parser = OptionParser.new do |opts|
     I18n.locale = lang
   end
 
+  opts.on("-m", "--mode <test|live>", "Mode ('live' by default)") do |mode|
+    TecDoc.client.mode = mode.to_sym
+  end
+
   opts.on("-v", "--verbose", "") do |verbose|
     Savon.logger.level = Logger::DEBUG
     HTTPI.logger.level = Logger::DEBUG
@@ -42,6 +46,6 @@ unless TecDoc.client.provider && TecDoc.client.country
   exit 1
 end
 
-puts "TecDoc shell v#{TecDoc::VERSION}"
+puts "TecDoc shell v#{TecDoc::VERSION} [provider:#{TecDoc.client.provider} country:#{TecDoc.client.country} lang:#{I18n.locale} mode: #{TecDoc.client.mode}]"
 ARGV.clear # otherwise all script parameters get passed to IRB
 IRB.start
