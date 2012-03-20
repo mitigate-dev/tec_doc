@@ -236,7 +236,11 @@ module TecDoc
     # Linked vehicles for article with car specific attributes
     def linked_vehicles_with_details(options = {})
       unless @linked_vehicles_with_details
-        links = linked_targets.map{ |link| link.delete(:linking_target_type); link }
+        links = linked_targets.map do |link|
+          new_link = link.dup
+          new_link.delete(:linking_target_type)
+          new_link
+        end
         batch_list = links.each_slice(25).to_a
         
         # Response from all batches
@@ -251,7 +255,7 @@ module TecDoc
           })
           result
         end
-        
+
         @linked_vehicles_with_details = response.map do |attrs|
           details = (attrs[:linked_vehicles].to_a[0] || {})
           vehicle                           = Vehicle.new
@@ -265,6 +269,7 @@ module TecDoc
           vehicle.date_of_construction_from = DateParser.new(details[:year_of_construction_from]).to_date
           vehicle.date_of_construction_to   = DateParser.new(details[:year_of_construction_to]).to_date
           vehicle.attributes                = attrs[:linked_article_immediate_attributs].to_a
+          vehicle.article_link_id           = attrs[:article_link_id].to_i
           vehicle
         end
       end

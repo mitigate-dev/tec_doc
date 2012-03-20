@@ -15,7 +15,8 @@ module TecDoc
       :motor_codes,
       :manu_id,
       :mod_id,
-      :attributes
+      :attributes,
+      :article_link_id
 
     # Find vehicles for simplified selection with motor codes
     #
