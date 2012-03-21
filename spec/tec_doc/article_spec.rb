@@ -161,6 +161,8 @@ describe TecDoc::Article do
       end
 
       vehicle = @articles[0].linked_vehicles_with_details.detect{ |v| v.name =~ /HYUNDAI/i }
+      vehicle.manu_id.should > 0
+      vehicle.mod_id.should > 0
       vehicle.attributes.length.should == 3
 
       attribute = vehicle.attributes[0]

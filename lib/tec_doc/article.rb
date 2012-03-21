@@ -261,6 +261,8 @@ module TecDoc
           vehicle                           = Vehicle.new
           vehicle.id                        = details[:car_id].to_i
           vehicle.name                      = "#{details[:manu_desc]} - #{details[:model_desc]} - #{details[:car_desc]}"
+          vehicle.manu_id                   = details[:manu_id].to_i
+          vehicle.mod_id                    = details[:model_id].to_i
           vehicle.power_hp_from             = details[:power_hp_from].to_i
           vehicle.power_kw_from             = details[:power_kw_from].to_i
           vehicle.power_hp_to               = details[:power_hp_to].to_i
