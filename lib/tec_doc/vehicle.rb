@@ -44,6 +44,8 @@ module TecDoc
         vehicle = new
         car_attributes = attributes[:car_details]
         if car_attributes
+          vehicle.manu_id                   = options[:manu_id].to_i
+          vehicle.mod_id                    = options[:mod_id].to_i
           vehicle.id                        = car_attributes[:car_id].to_i
           vehicle.name                      = car_attributes[:car_name].to_s
           vehicle.cylinder_capacity         = car_attributes[:cylinder_capacity].to_i

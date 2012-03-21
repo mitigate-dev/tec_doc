@@ -25,6 +25,8 @@ describe TecDoc::Vehicle do
         model.id.should > 0
         model.name.should be_an_instance_of(String)
         model.name.size.should > 0
+        model.manu_id.should > 0
+        model.mod_id.should > 0
       end
     end
 
