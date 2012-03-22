@@ -170,4 +170,16 @@ describe TecDoc::Article do
       attribute.value.should == TecDoc::DateParser.new("199207").to_date
     end
   end
+
+  context "super long list for linking targets" do
+    it "should successfully rescue from error and fetch all linked vehicles by manufacturers" do
+      VCR.use_cassette('article_with_a_lot_linked_vehicles') do
+        @article = TecDoc::Article.all_with_details(:ids => [948671])[0]
+      end
+      VCR.use_cassette('linked_targets_by_manufacturers') do
+        @article.linked_targets
+      end
+      @article.linked_targets.size.should > 7000
+    end
+  end
 end

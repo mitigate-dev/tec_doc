@@ -1,0 +1,60 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :post
+    uri: http://webservicepilot.tecdoc.net:80/pegasus-2-0/services/TecdocToCatWL
+    body: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://webservicepilot.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="http://webservicepilot.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"
+      xmlns:ins1="http://options.datatype.tocinterface.cat.tecdoc.net" xmlns:ins2="http://controlpanel.datatype.tocinterface.cat.tecdoc.net"
+      xmlns:ins3="http://articles.datatype.tocinterface.cat.tecdoc.net" xmlns:ins4="http://carselection.datatype.tocinterface.cat.tecdoc.net"
+      xmlns:ins5="http://datatype.cat.tecdoc.net" xmlns:ins6="http://axlesselection.datatype.tocinterface.cat.tecdoc.net"
+      xmlns:ins7="http://motorselection.datatype.tocinterface.cat.tecdoc.net" xmlns:ins8="http://assemblygroupselection.datatype.tocinterface.cat.tecdoc.net"
+      xmlns:ins9="http://specialselection.datatype.tocinterface.cat.tecdoc.net"><env:Body><ins0:getDirectArticlesByIds2><wsdl:in><wsdl:provider>330</wsdl:provider><wsdl:lang>lv</wsdl:lang><wsdl:country>lv</wsdl:country><wsdl:attributs>true</wsdl:attributs><wsdl:eanNumbers>true</wsdl:eanNumbers><wsdl:info>true</wsdl:info><wsdl:oeNumbers>true</wsdl:oeNumbers><wsdl:usageNumbers>true</wsdl:usageNumbers><wsdl:articleId><wsdl:array><wsdl:ids>948671</wsdl:ids></wsdl:array></wsdl:articleId></wsdl:in></ins0:getDirectArticlesByIds2></env:Body></env:Envelope>
+    headers:
+      soapaction:
+      - ! '"getDirectArticlesByIds2"'
+      content-type:
+      - text/xml;charset=UTF-8
+      content-length:
+      - '1456'
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Thu, 22 Mar 2012 08:31:07 GMT
+      server:
+      - Apache
+      content-length:
+      - '3642'
+      content-type:
+      - text/xml;charset=utf-8
+      x-cache:
+      - MISS from demo.makit.lv
+      x-cache-lookup:
+      - MISS from demo.makit.lv:8080
+      via:
+      - 1.1 demo.makit.lv:8080 (squid/2.7.STABLE9)
+    body: <?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><getDirectArticlesByIds2Response
+      xmlns="http://webservicepilot.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"><getDirectArticlesByIds2Return
+      xmlns=""><data><array><array><articleAttributes><array><array><attrBlockNo>0</attrBlockNo><attrId>437</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>false</attrIsInterval><attrName>Lampas
+      tips</attrName><attrShortName xsi:nil="true"/><attrSuccessorId xsi:nil="true"/><attrType>K</attrType><attrUnit
+      xsi:nil="true"/><attrValue>PY21W</attrValue><attrValueId>3452239</attrValueId></array><array><attrBlockNo>0</attrBlockNo><attrId>6</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>false</attrIsInterval><attrName>Spriegums
+      [V]</attrName><attrShortName>Spriegums</attrShortName><attrSuccessorId xsi:nil="true"/><attrType>N</attrType><attrUnit>V</attrUnit><attrValue>12</attrValue><attrValueId>3452240</attrValueId></array><array><attrBlockNo>0</attrBlockNo><attrId>53</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>false</attrIsInterval><attrName>Nomin&#x101;l&#x101;
+      jauda [W]</attrName><attrShortName>Nomin&#x101;l&#x101; jauda</attrShortName><attrSuccessorId
+      xsi:nil="true"/><attrType>A</attrType><attrUnit>W</attrUnit><attrValue>21</attrValue><attrValueId>3452241</attrValueId></array><array><attrBlockNo>0</attrBlockNo><attrId>919</attrId><attrIsConditional>false</attrIsConditional><attrIsInterval>false</attrIsInterval><attrName>Patronas
+      izpild&#x12B;jums</attrName><attrShortName>Patronas izpild&#x12B;jums</attrShortName><attrSuccessorId
+      xsi:nil="true"/><attrType>A</attrType><attrUnit xsi:nil="true"/><attrValue>BAU15s</attrValue><attrValueId>3452242</attrValueId></array></array><empty>false</empty></articleAttributes><articleDocuments
+      xsi:nil="true"/><articleInfo><array/><empty>true</empty></articleInfo><articlePrices
+      xsi:nil="true"/><assignedArticle xsi:nil="true"/><directArticle><articleAddName>OSRAM
+      ULTRA LIFE</articleAddName><articleId>948671</articleId><articleName>Kv&#x113;lspuldze,
+      Pagriezienu sign&#x101;la lukturis</articleName><articleNo>7507ULT-02B</articleNo><articleState>1</articleState><articleStateName>Norm&#x101;ls</articleStateName><brandName>OSRAM</brandName><brandNo>67</brandNo><genericArticleId>105</genericArticleId><hasAppendage>false</hasAppendage><hasAxleLink>false</hasAxleLink><hasCsGraphics>false</hasCsGraphics><hasDocuments>true</hasDocuments><hasLessDiscount>false</hasLessDiscount><hasMarkLink>false</hasMarkLink><hasMotorLink>false</hasMotorLink><hasOEN>false</hasOEN><hasPartList>false</hasPartList><hasPrices>false</hasPrices><hasSecurityInfo>false</hasSecurityInfo><hasUsage>false</hasUsage><hasVehicleLink>true</hasVehicleLink><packingUnit>1</packingUnit><quantityPerPackingUnit>2</quantityPerPackingUnit></directArticle><documentData
+      xsi:nil="true"/><eanNumber><array><array><eanNumber>4008321415165</eanNumber></array></array><empty>false</empty></eanNumber><immediateAttributs
+      xsi:nil="true"/><immediateInfo xsi:nil="true"/><mainArticle xsi:nil="true"/><normalAustauschPrice
+      xsi:nil="true"/><oenNumbers><array/><empty>true</empty></oenNumbers><replacedByNumber
+      xsi:nil="true"/><replacedNumber xsi:nil="true"/><usageNumbers><array/><empty>true</empty></usageNumbers></array></array><empty>false</empty></data><status>200</status><statusText
+      xsi:nil="true"/></getDirectArticlesByIds2Return></getDirectArticlesByIds2Response></soapenv:Body></soapenv:Envelope>
+    http_version: '1.0'

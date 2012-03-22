@@ -177,14 +177,26 @@ module TecDoc
     end
 
     # Array with all linked target vehicles with article link id
+    # If request entity is too large, we have to request linked targets by manufacturers
     def linked_targets
-      @linked_targets ||= TecDoc.client.request(:get_article_linked_all_linking_target_2, {
-        :lang => scope[:lang],
-        :country => scope[:country],
-        :linking_target_type => "C",
-        :linking_target_id => -1,
-        :article_id => id
-      })
+      unless @linked_targets
+        options = {
+          :lang => scope[:lang],
+          :country => scope[:country],
+          :linking_target_type => "C",
+          :linking_target_id => -1,
+          :article_id => id
+        }
+        begin
+          @linked_targets = TecDoc.client.request(:get_article_linked_all_linking_target_2, options)
+        rescue
+          @linked_targets = linked_manufacturers.inject([]) do |result, manufacturer|
+            options[:linking_target_manu_id] = manufacturer.id
+            result += TecDoc.client.request(:get_article_linked_all_linking_target_2, options)
+          end
+        end
+      end
+      @linked_targets
     end
     
     def linked_vehicle_ids
