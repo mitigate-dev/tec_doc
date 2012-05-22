@@ -14,7 +14,7 @@ TecDoc.client = TecDoc::Client.new(:provider => 330, :country => "lv")
 
 ## Shell
 
-```
+```bash
 $ tec_doc -h
 $ tec_doc -p 100 -c lv -l lv
 ```
