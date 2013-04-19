@@ -4,6 +4,8 @@ module TecDoc
       :id,
       :name,
       :cylinder_capacity,
+      :fuel_type,
+      :fuel_type_process,
       :first_country,
       :linked,
       :power_hp_from,
@@ -80,12 +82,15 @@ module TecDoc
       }.merge(options)
       response = TecDoc.client.request(:get_vehicle_by_ids_2, options)
       if attrs = response.first
-        details  = attrs[:vehicle_details]  || {}
-        terms    = attrs[:vehicle_terms]    || {}
+        details   = attrs[:vehicle_details]  || {}
+        details2  = attrs[:vehicle_details2] || {}
+        terms     = attrs[:vehicle_terms]    || {}
         vehicle  = new
         vehicle.id                        = attrs[:car_id].to_i
         vehicle.name                      = terms[:car_type].to_s
         vehicle.cylinder_capacity         = details[:ccm_tech].to_i
+        vehicle.fuel_type                 = details2[:fuel_type].to_s
+        vehicle.fuel_type_process         = details2[:fuel_type_process].to_s
         vehicle.power_hp_from             = details[:power_hp_from].to_i
         vehicle.power_hp_to               = details[:power_hp_to].to_i
         vehicle.power_kw_from             = details[:power_kw_from].to_i
