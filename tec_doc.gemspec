@@ -19,14 +19,14 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.add_development_dependency "rake"
-  s.add_development_dependency "rspec"
+  s.add_development_dependency "rspec", "~> 2.8"
   s.add_development_dependency "simplecov"
-  s.add_development_dependency "vcr"
-  s.add_development_dependency "fakeweb"
+  s.add_development_dependency "vcr", "~> 1.11.3"
+  s.add_development_dependency "fakeweb", "~> 1.3.0"
   s.add_development_dependency "yard"
   s.add_development_dependency "redcarpet"
 
-  s.add_runtime_dependency "savon", "< 2"
+  s.add_runtime_dependency "savon", [">= 0.9.7", "< 2"]
   s.add_runtime_dependency "httpi", ">= 0.9.6"
   s.add_runtime_dependency "i18n"
 end
