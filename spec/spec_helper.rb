@@ -5,7 +5,9 @@ require "bundler/setup"
 require "vcr"
 require "simplecov"
 
-SimpleCov.start
+SimpleCov.start do
+  add_filter '/vendor/bundle/'
+end
 
 require "tec_doc"
 
