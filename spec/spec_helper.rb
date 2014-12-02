@@ -2,11 +2,12 @@ $:.unshift File.dirname(__FILE__) + '/../lib'
 
 require "rubygems"
 require "bundler/setup"
-require "tec_doc"
 require "vcr"
 require "simplecov"
 
 SimpleCov.start
+
+require "tec_doc"
 
 VCR.config do |c|
   c.cassette_library_dir = "spec/cassettes"
