@@ -24,7 +24,7 @@ module TecDoc
         :search_exact => 1,
         :sort_type => 1
       }.merge(options)
-      TecDoc.client.request(:get_article_direct_search_all_numbers2, options).map do |attributes|
+      TecDoc.client.request(:getArticleDirectSearchAllNumbersWithState, options).map do |attributes|
         new(attributes, options)
       end
     end
