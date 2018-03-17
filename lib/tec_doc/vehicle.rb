@@ -41,7 +41,7 @@ module TecDoc
         :lang => I18n.locale.to_s,
         :linked => false
       }.merge(options)
-      response = TecDoc.client.request(:get_vehicle_simplified_selection4, options)
+      response = TecDoc.client.request(:getVehicleIdsByCriteria, options)
       response.map do |attributes|
         vehicle = new
         car_attributes = attributes[:car_details]
@@ -64,7 +64,7 @@ module TecDoc
         vehicle
       end
     end
-    
+
     def self.find(options = {})
       id = options.delete(:id)
       options = {
@@ -80,7 +80,7 @@ module TecDoc
         :vehicle_details_2 => false,
         :vehicle_terms => true
       }.merge(options)
-      response = TecDoc.client.request(:get_vehicle_by_ids_2, options)
+      response = TecDoc.client.request(:getVehicleByIds3, options)
       if attrs = response.first
         details   = attrs[:vehicle_details]  || {}
         details2  = attrs[:vehicle_details2] || {}
@@ -113,7 +113,7 @@ module TecDoc
     def attributes=(attrs)
       @attributes = attrs.map{ |attr| ArticleAttribute.new(attr) }
     end
-    
+
     # Vehicle linked assembly parent groups
     def assembly_groups(options = {})
       options.merge!({

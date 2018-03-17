@@ -5,7 +5,7 @@ module TecDoc
     attr_accessor :scope
 
     # Get all vehicle manufacturers
-    # 
+    #
     # @option options [Integer] :car_type vehicle type (1: Passenger car, 2: Commercial vehicle, 3: Light commercial)
     # @option options [String] :countries_car_selection country code according to ISO 3166
     # @option options [TrueClass, FalseClass] :country_group_flag country group selection
@@ -21,7 +21,7 @@ module TecDoc
         :eval_favor => false,
         :lang => I18n.locale.to_s
       }.merge(options)
-      response = TecDoc.client.request(:get_vehicle_manufacturers3, options)
+      response = TecDoc.client.request(:getManufacturers, options)
       response.map do |attributes|
         manufacturer = new
         manufacturer.scope = options

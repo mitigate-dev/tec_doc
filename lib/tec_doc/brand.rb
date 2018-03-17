@@ -3,10 +3,10 @@ module TecDoc
     attr_accessor :number, :name
 
     # Get all brands available for provider.
-    # 
+    #
     # @return [Array<TecDoc::Brand>] list of brands
     def self.all
-      response = TecDoc.client.request(:get_brands_for_assortment)
+      response = TecDoc.client.request(:getBrandsForAssortment)
       response.map do |attributes|
         manufacturer = new
         manufacturer.number = attributes[:brand_no].to_i

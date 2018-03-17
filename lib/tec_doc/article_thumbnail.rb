@@ -1,11 +1,11 @@
 module TecDoc
   class ArticleThumbnail < ArticleDocument
     # Find article thumbnail documents
-    # 
+    #
     # @option options [Integer] :article_id Article ID
     # @return [Array<TecDoc::ArticleThumbnail>] list of article thumbnails
     def self.all(options = {})
-      response = TecDoc.client.request(:get_thumbnail_by_article_id, options)
+      response = TecDoc.client.request(:getThumbnailByArticleId, options)
       response.map do |attributes|
         thumbnail = new
         thumbnail.id        = attributes[:thumb_doc_id].to_i

@@ -15,7 +15,7 @@ module TecDoc
         :country => TecDoc.client.country,
         :lang => I18n.locale.to_s
       }.merge(options)
-      response = TecDoc.client.request(:get_article_documents, options)
+      response = TecDoc.client.request(:getArticleDocuments, options) # removed?
       response.map do |attributes|
         new attributes
       end
