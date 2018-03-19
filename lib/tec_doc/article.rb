@@ -18,7 +18,7 @@ module TecDoc
     # @return [Array<TecDoc::Article>] list of articles
     def self.search(options = {})
       options = {
-        :country => TecDoc.client.country,
+        :article_country => TecDoc.client.country,
         :lang => I18n.locale.to_s,
         :number_type => 10,
         :search_exact => 1,
@@ -39,10 +39,10 @@ module TecDoc
     # @option options [LongList] :generic_article_id
     # @option options [Long] :article_assembly_group_node_id
     # @return [Array<TecDoc::Article>] list of articles
-    def self.all(options)
+    def self.all(options) # Fix :generic_article_id option
       options = {
         :lang => I18n.locale.to_s,
-        :country => TecDoc.client.country
+        :article_country => TecDoc.client.country
       }.merge(options)
       TecDoc.client.request(:getArticleIdsWithState, options).map do |attributes|
         new(attributes, options)
@@ -64,13 +64,13 @@ module TecDoc
     def self.all_with_details(options)
       options = {
         :lang => I18n.locale.to_s,
-        :country => TecDoc.client.country,
+        :article_country => TecDoc.client.country,
         :attributs => true,
         :ean_numbers => true,
         :info => true,
         :oe_numbers => true,
         :usage_numbers => true,
-        :article_id => { :array => { :ids => options.delete(:ids) } }
+        :article_id => { :array => options.delete(:ids) } # TODO: Returns empty array with ids=[1655]
       }.merge(options)
 
       TecDoc.client.request(:getDirectArticlesByIds6, options).map do |attributes|
@@ -164,7 +164,7 @@ module TecDoc
     def linked_manufacturers
       unless @linked_manufacturers
         response = TecDoc.client.request(:getArticleLinkedAllLinkingTargetManufacturer, {
-          :country => scope[:country],
+          :article_country => scope[:country],
           :linking_target_type => "C",
           :article_id => id
         })
@@ -182,7 +182,7 @@ module TecDoc
       unless @linked_targets
         options = {
           :lang => scope[:lang],
-          :country => scope[:country],
+          :article_country => scope[:country],
           :linking_target_type => "C",
           :linking_target_id => -1,
           :article_id => id
@@ -209,12 +209,13 @@ module TecDoc
 
         # Response from all batches
         response = batch_list.inject([]) do |result, long_list|
-          result += TecDoc.client.request(:getVehicleByIds3,
-            {:car_ids => {
-              :array => {:ids => long_list}
+          result += TecDoc.client.request(:getVehicleByIds3, {
+            :car_ids => {
+              :array => long_list
             },
             :lang => scope[:lang],
             :country => scope[:country],
+            :article_country => scope[:country],
             :country_user_setting => scope[:country],
             :countries_car_selection => scope[:country],
             :motor_codes => true,
@@ -260,7 +261,7 @@ module TecDoc
           result += TecDoc.client.request(:getArticleLinkedAllLinkingTargetsByIds3, {
             :linked_article_pairs => { :array => {:pairs => long_list} },
             :lang => scope[:lang],
-            :country => scope[:country],
+            :article_country => scope[:country],
             :linking_target_type => "C",
             :immediate_attributs => true,
             :article_id => id
@@ -295,7 +296,7 @@ module TecDoc
     def article_details
       @article_details ||= TecDoc.client.request(:getDirectArticlesByIds6, {
         :lang => scope[:lang],
-        :country => scope[:country],
+        :article_country => scope[:country],
         :article_id => { :array => { :ids => [id] } },
         :attributs => true,
         :ean_numbers => true,
@@ -308,9 +309,9 @@ module TecDoc
     def direct_article_data_en
       @direct_article_data_en ||= TecDoc.client.request(:getDirectArticlesByIds6, {
         :lang => "en",
-        :country => TecDoc.client.country,
+        :article_country => TecDoc.client.country,
         :info => true,
-        :article_id => { :array => { :ids => [id] } }
+        :article_id => { :array => [id] }
       })[0]
     end
   end

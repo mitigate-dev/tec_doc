@@ -20,7 +20,7 @@ module TecDoc
       options[:sort_mode] = 2
       options = {
         :lang => I18n.locale.to_s,
-        :country => TecDoc.client.country
+        :article_country => TecDoc.client.country
       }.merge(options)
       TecDoc.client.request(:getGenericArticlesByManufacturer6, options).map do |attributes|
         new(attributes, options)

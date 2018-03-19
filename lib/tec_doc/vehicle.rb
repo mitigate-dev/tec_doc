@@ -41,7 +41,7 @@ module TecDoc
         :lang => I18n.locale.to_s,
         :linked => false
       }.merge(options)
-      response = TecDoc.client.request(:getVehicleIdsByCriteria, options)
+      response = TecDoc.client.request(:getVehicleIdsByCriteria, options) # TODO. Returns empty array
       response.map do |attributes|
         vehicle = new
         car_attributes = attributes[:car_details]
@@ -68,10 +68,11 @@ module TecDoc
     def self.find(options = {})
       id = options.delete(:id)
       options = {
-        :car_ids => { :array => { :ids => [id] } },
+        :car_ids => { :array => [id] },
         :countries_car_selection => TecDoc.client.country,
         :country_user_setting => TecDoc.client.country,
         :country => TecDoc.client.country,
+        :article_country => TecDoc.client.country,
         :lang => TecDoc.client.country,
         :axles => false,
         :cabs => false,
@@ -99,7 +100,7 @@ module TecDoc
         vehicle.date_of_construction_to   = DateParser.new(details[:year_of_constr_to]).to_date
         vehicle.manu_id                   = details[:manu_id].to_i
         vehicle.mod_id                    = details[:mod_id].to_i
-        vehicle.motor_codes = attrs[:motor_codes].map { |mc| mc[:motor_code] }
+        vehicle.motor_codes = attrs[:motor_codes].map { |mc| mc[:motor_code] } # TypeError: can't convert Symbol into Integer
         vehicle
       else
         nil

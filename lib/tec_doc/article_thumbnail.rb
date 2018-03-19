@@ -5,7 +5,7 @@ module TecDoc
     # @option options [Integer] :article_id Article ID
     # @return [Array<TecDoc::ArticleThumbnail>] list of article thumbnails
     def self.all(options = {})
-      response = TecDoc.client.request(:getThumbnailByArticleId, options)
+      response = TecDoc.client.request(:getThumbnailByArticleId, options) # Unknown call (removed?)
       response.map do |attributes|
         thumbnail = new
         thumbnail.id        = attributes[:thumb_doc_id].to_i
