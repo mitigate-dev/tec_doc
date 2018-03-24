@@ -27,7 +27,6 @@ module TecDoc
         :lang => I18n.locale.to_s
       }.merge(options)
 
-      options[:country] ||= TecDoc.client.country
       response = TecDoc.client.request(:getChildNodesAllLinkingTarget2, options)
 
       groups = response.map do |attributes|

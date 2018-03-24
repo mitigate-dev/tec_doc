@@ -16,13 +16,10 @@ module TecDoc
     # @return [Array<TecDoc::VehicleManufacturer>] list of vehicle models
     def self.all(options)
       options = {
-        :car_type => 1,
         :country => TecDoc.client.country,
-        :countries_car_selection => TecDoc.client.country,
         :country_group_flag => false,
-        :eval_favor => false,
         :lang => I18n.locale.to_s,
-        :linking_target_type: "C" # TODO: Specify needed type (mandatory in 3.0)
+        :linking_target_type => "P"
       }.merge(options)
       response = TecDoc.client.request(:getModelSeries, options)
       response.map do |attributes|

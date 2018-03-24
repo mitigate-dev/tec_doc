@@ -38,8 +38,7 @@ module TecDoc
         :countries_car_selection => TecDoc.client.country,
         :country_group_flag => false,
         :favoured_list => 1,
-        :lang => I18n.locale.to_s,
-        :linked => false
+        :lang => I18n.locale.to_s
       }.merge(options)
       response = TecDoc.client.request(:getVehicleIdsByCriteria, options) # TODO. Returns empty array
       response.map do |attributes|
@@ -118,8 +117,10 @@ module TecDoc
     # Vehicle linked assembly parent groups
     def assembly_groups(options = {})
       options.merge!({
-        :linking_target_type => "C",
+        :linking_target_type => "P",
         :linking_target_id => id,
+        :linked => true,
+        :article_country => TecDoc.client.country
       })
       AssemblyGroup.all(options)
     end
