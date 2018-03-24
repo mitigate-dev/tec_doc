@@ -34,13 +34,13 @@ module TecDoc
     # @return [Array<TecDoc::VehicleManufacturer>] list of vehicles with motor codes
     def self.all(options = {})
       options = {
-        :car_type => 1,
+        :car_type => "P",
         :countries_car_selection => TecDoc.client.country,
         :country_group_flag => false,
         :favoured_list => 1,
         :lang => I18n.locale.to_s
       }.merge(options)
-      response = TecDoc.client.request(:getVehicleIdsByCriteria, options) # TODO. Returns empty array
+      response = TecDoc.client.request(:getVehicleIdsByCriteria, options)
       response.map do |attributes|
         vehicle = new
         car_attributes = attributes[:car_details]
