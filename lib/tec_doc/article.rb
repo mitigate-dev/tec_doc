@@ -259,7 +259,7 @@ module TecDoc
         # Response from all batches
         response = batch_list.inject([]) do |result, long_list|
           result += TecDoc.client.request(:getArticleLinkedAllLinkingTargetsByIds3, {
-            :linked_article_pairs => { :array => {:pairs => long_list} },
+            :linked_article_pairs => { :array => long_list },
             :lang => scope[:lang],
             :article_country => scope[:country],
             :linking_target_type => "C",

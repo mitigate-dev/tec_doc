@@ -68,7 +68,7 @@ module TecDoc
       node.children.each do |n|
         if n.xpath("empty").text == "true"
           attributes[n.name.snakecase.to_sym] = []
-        elsif (n_array = n.xpath("array/array")).size > 0
+        elsif (n_array = n.xpath("array")).size > 0
           attributes[n.name.snakecase.to_sym] = n_array.map { |nn| node_to_hash(nn) }
         elsif n.children.reject { |nn| nn.is_a?(Nokogiri::XML::Text) }.size > 0
           attributes[n.name.snakecase.to_sym] = node_to_hash(n)

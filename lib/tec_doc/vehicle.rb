@@ -88,7 +88,7 @@ module TecDoc
         terms     = attrs[:vehicle_terms]    || {}
         vehicle  = new
         vehicle.id                        = attrs[:car_id].to_i
-        vehicle.name                      = terms[:car_type].to_s
+        vehicle.name                      = details[:type_name].to_s
         vehicle.cylinder_capacity         = details[:ccm_tech].to_i
         vehicle.fuel_type                 = details2[:fuel_type].to_s
         vehicle.fuel_type_process         = details2[:fuel_type_process].to_s
@@ -100,7 +100,7 @@ module TecDoc
         vehicle.date_of_construction_to   = DateParser.new(details[:year_of_constr_to]).to_date
         vehicle.manu_id                   = details[:manu_id].to_i
         vehicle.mod_id                    = details[:mod_id].to_i
-        vehicle.motor_codes = attrs[:motor_codes].map { |mc| mc[:motor_code] } # TypeError: can't convert Symbol into Integer
+        vehicle.motor_codes = attrs[:motor_codes].map { |mc| mc[:motor_code] }
         vehicle
       else
         nil
