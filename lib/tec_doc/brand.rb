@@ -6,10 +6,14 @@ module TecDoc
     #
     # @return [Array<TecDoc::Brand>] list of brands
     def self.all
-      response = TecDoc.client.request(:getBrandsForAssortment) # TecDoc::Error: Unknown Call: getBrandsForAssortment
+      options = {
+        :lang => TecDoc.client.country,
+        :article_country => TecDoc.client.country
+      }
+      response = TecDoc.client.request(:getAmBrands, options)
       response.map do |attributes|
         manufacturer = new
-        manufacturer.number = attributes[:brand_no].to_i
+        manufacturer.number = attributes[:brand_id].to_i
         manufacturer.name = attributes[:brand_name].to_s
         manufacturer
       end
