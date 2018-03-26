@@ -1,6 +1,6 @@
 module TecDoc
   class ArticleAttribute
-    attr_accessor :block_no, :id, :is_conditional, :is_interval, :name, :short_name, :successor_id, :type, :unit, :value, :value_id
+    attr_accessor :block_no, :id, :is_conditional, :is_interval, :is_linked, :name, :short_name, :successor_id, :type, :unit, :value, :value_id
 
     def initialize(attributes = {})
       attributes.each do |name, value|

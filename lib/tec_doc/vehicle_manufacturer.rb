@@ -15,7 +15,7 @@ module TecDoc
     # @return [Array<TecDoc::VehicleManufacturer>] list of vehicle manufacturers
     def self.all(options = {})
       options = {
-        :country: TecDoc.client.country,
+        :country => TecDoc.client.country,
         :country_group_flag => false,
         :lang => I18n.locale.to_s,
         :linking_target_type => "P"

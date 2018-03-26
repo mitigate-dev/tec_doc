@@ -70,7 +70,8 @@ module TecDoc
         :info => true,
         :oe_numbers => true,
         :usage_numbers => true,
-        :article_id => { :array => options.delete(:ids) } # TODO: Returns empty array with ids=[1655]
+        :basic_data => true,
+        :article_id => { :array => options.delete(:ids) }
       }.merge(options)
 
       TecDoc.client.request(:getDirectArticlesByIds6, options).map do |attributes|
