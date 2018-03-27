@@ -165,8 +165,8 @@ module TecDoc
     def linked_manufacturers
       unless @linked_manufacturers
         response = TecDoc.client.request(:getArticleLinkedAllLinkingTargetManufacturer, {
-          :article_country => scope[:country],
-          :linking_target_type => "C",
+          :article_country => scope[:article_country],
+          :linking_target_type => "P",
           :article_id => id
         })
 
@@ -183,8 +183,8 @@ module TecDoc
       unless @linked_targets
         options = {
           :lang => scope[:lang],
-          :article_country => scope[:country],
-          :linking_target_type => "C",
+          :article_country => scope[:article_country],
+          :linking_target_type => "P",
           :linking_target_id => -1,
           :article_id => id
         }
@@ -197,7 +197,7 @@ module TecDoc
           end
         end
       end
-      @linked_targets
+      @linked_targets = @linked_targets[0][:article_linkages]
     end
 
     def linked_vehicle_ids
@@ -215,10 +215,10 @@ module TecDoc
               :array => long_list
             },
             :lang => scope[:lang],
-            :country => scope[:country],
-            :article_country => scope[:country],
-            :country_user_setting => scope[:country],
-            :countries_car_selection => scope[:country],
+            :country => scope[:article_country],
+            :article_country => scope[:article_country],
+            :country_user_setting => scope[:article_country],
+            :countries_car_selection => scope[:article_country],
             :motor_codes => true,
             :axles => false,
             :cabs => false,
@@ -231,15 +231,15 @@ module TecDoc
         end
 
         @linked_vehicles = response.map do |attrs|
-          details = (attrs[:vehicle_details2] || {})
+          details = (attrs[:vehicle_details] || {})
           vehicle = Vehicle.new
           vehicle.id = attrs[:car_id].to_i
           vehicle.name = "#{details[:manu_name]} - #{details[:model_name]} - #{details[:type_name]}"
-          vehicle.power_hp_from             = details[:power_hp].to_i
-          vehicle.power_kw_from             = details[:power_kw].to_i
+          vehicle.power_hp_from             = details[:power_hp_from].to_i
+          vehicle.power_kw_from             = details[:power_kw_from].to_i
           vehicle.cylinder_capacity         = details[:cylinder_capacity_ccm].to_i
-          vehicle.date_of_construction_from = DateParser.new(details[:year_of_construction_from]).to_date
-          vehicle.date_of_construction_to   = DateParser.new(details[:year_of_construction_to]).to_date
+          vehicle.date_of_construction_from = DateParser.new(details[:year_of_constr_from]).to_date
+          vehicle.date_of_construction_to   = DateParser.new(details[:year_of_constr_to]).to_date
           vehicle.motor_codes               = attrs[:motor_codes].map { |mc| mc[:motor_code] }
           vehicle
         end
@@ -262,8 +262,8 @@ module TecDoc
           result += TecDoc.client.request(:getArticleLinkedAllLinkingTargetsByIds3, {
             :linked_article_pairs => { :array => long_list },
             :lang => scope[:lang],
-            :article_country => scope[:country],
-            :linking_target_type => "C",
+            :article_country => scope[:article_country],
+            :linking_target_type => "P",
             :immediate_attributs => true,
             :article_id => id
           })
@@ -297,8 +297,8 @@ module TecDoc
     def article_details
       @article_details ||= TecDoc.client.request(:getDirectArticlesByIds6, {
         :lang => scope[:lang],
-        :article_country => scope[:country],
-        :article_id => { :array => { :ids => [id] } },
+        :article_country => scope[:article_country],
+        :article_id => { :array => [id] },
         :attributs => true,
         :ean_numbers => true,
         :oe_numbers => true,
@@ -312,6 +312,7 @@ module TecDoc
         :lang => "en",
         :article_country => TecDoc.client.country,
         :info => true,
+        :basic_data => true,
         :article_id => { :array => [id] }
       })[0]
     end
