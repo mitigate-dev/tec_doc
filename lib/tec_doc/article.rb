@@ -217,14 +217,11 @@ module TecDoc
             :lang => scope[:lang],
             :country => scope[:article_country],
             :article_country => scope[:article_country],
-            :country_user_setting => scope[:article_country],
             :countries_car_selection => scope[:article_country],
             :motor_codes => true,
             :axles => false,
             :cabs => false,
             :secondary_types => false,
-            :vehicle_details2 => true,
-            :vehicle_terms => false,
             :wheelbases => false
           })
           result

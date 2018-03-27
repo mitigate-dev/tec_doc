@@ -40,16 +40,38 @@ module TecDoc
         :favoured_list => 1,
         :lang => I18n.locale.to_s
       }.merge(options)
-      response = TecDoc.client.request(:getVehicleIdsByCriteria, options)
+
+      vehicle_id_batches = \
+        TecDoc.client.request(:getVehicleIdsByCriteria, options)
+          .map { |car| car[:car_id] }.each_slice(25).to_a
+
+      response = vehicle_id_batches.inject([]) do |result, vehicle_ids|
+        result += TecDoc.client.request(:getVehicleByIds3, {
+          :car_ids => {
+            :array => vehicle_ids
+          },
+          :lang => I18n.locale.to_s,
+          :country => TecDoc.client.country,
+          :article_country => TecDoc.client.country,
+          :countries_car_selection => TecDoc.client.country,
+          :motor_codes => true,
+          :axles => false,
+          :cabs => false,
+          :secondary_types => false,
+          :wheelbases => false
+        })
+        result
+      end
+
       response.map do |attributes|
         vehicle = new
-        car_attributes = attributes[:car_details]
+        car_attributes = attributes[:vehicle_details]
         if car_attributes
           vehicle.manu_id                   = options[:manu_id].to_i
           vehicle.mod_id                    = options[:mod_id].to_i
           vehicle.id                        = car_attributes[:car_id].to_i
-          vehicle.name                      = car_attributes[:car_name].to_s
-          vehicle.cylinder_capacity         = car_attributes[:cylinder_capacity].to_i
+          vehicle.name                      = car_attributes[:type_name].to_s
+          vehicle.cylinder_capacity         = car_attributes[:cylinder_capacity_ccm].to_i
           vehicle.first_country             = car_attributes[:first_country].to_s
           vehicle.linked                    = car_attributes[:linked]
           vehicle.power_hp_from             = car_attributes[:power_hp_from].to_i
