@@ -12,11 +12,12 @@ module TecDoc
     # @return [Array<TecDoc::ArticleDocument>] list of article documents
     def self.all(options = {})
       options = {
-        :country => TecDoc.client.country,
-        :lang => I18n.locale.to_s
+        :article_country => TecDoc.client.country,
+        :lang => I18n.locale.to_s,
+        :documents => true
       }.merge(options)
-      response = TecDoc.client.request(:getArticleDocuments, options) # removed?
-      response.map do |attributes|
+      response = TecDoc.client.request(:getDirectArticlesByIds6, options).first
+      response[:article_documents].map do |attributes|
         new attributes
       end
     end

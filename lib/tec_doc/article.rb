@@ -129,8 +129,8 @@ module TecDoc
     def documents
       @documents ||= ArticleDocument.all({
         :lang => scope[:lang],
-        :country => scope[:country],
-        :article_id => id
+        :article_country => scope[:article_country],
+        :article_id => { :array => [id] }
       })
     end
 
