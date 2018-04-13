@@ -139,7 +139,7 @@ module TecDoc
     end
 
     def attributes
-      @attributes ||= article_details[:article_attributes].map do |attrs|
+      @attributes ||= article_details[:article_attributes].to_a.map do |attrs|
         ArticleAttribute.new(attrs)
       end
     end

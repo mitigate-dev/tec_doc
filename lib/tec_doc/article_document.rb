@@ -17,7 +17,7 @@ module TecDoc
         :documents => true
       }.merge(options)
       response = TecDoc.client.request(:getDirectArticlesByIds6, options).first
-      response[:article_documents].map do |attributes|
+      response[:article_documents].to_a.map do |attributes|
         new attributes
       end
     end
