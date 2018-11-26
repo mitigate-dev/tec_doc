@@ -81,7 +81,7 @@ module TecDoc
           vehicle.date_of_construction_from = DateParser.new(car_attributes[:year_of_constr_from]).to_date
           vehicle.date_of_construction_to   = DateParser.new(car_attributes[:year_of_constr_to]).to_date
         end
-        vehicle.motor_codes = attributes[:motor_codes].map { |mc| mc[:motor_code] }
+         vehicle.motor_codes = attributes[:motor_codes].to_a.map { |mc| mc[:motor_code] }
         vehicle
       end
     end
