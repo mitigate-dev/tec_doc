@@ -189,7 +189,7 @@ module TecDoc
           :article_id => id
         }
         begin
-          @linked_targets = TecDoc.client.request(:getArticleLinkedAllLinkingTarget3, options)[0][:article_linkages]
+          @linked_targets = TecDoc.client.request(:getArticleLinkedAllLinkingTarget3, options)[0][:article_linkages].to_a
         rescue
           @linked_targets = linked_manufacturers.inject([]) do |result, manufacturer|
             options[:linking_target_manu_id] = manufacturer.id
