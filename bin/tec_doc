@@ -7,9 +7,15 @@ require "tec_doc"
 require "optparse"
 require "irb"
 
+I18n.available_locales = %w[en lv]
 I18n.locale = "en"
 TecDoc.client = TecDoc::Client.new
-Savon.logger.level = Logger::INFO
+
+Savon.configure do |config|
+  config.logger = Logger.new(STDOUT)
+  config.logger.level = Logger::INFO
+end
+
 HTTPI.logger.level = Logger::INFO
 
 parser = OptionParser.new do |opts|
@@ -33,7 +39,7 @@ parser = OptionParser.new do |opts|
   end
 
   opts.on("-v", "--verbose", "") do |verbose|
-    Savon.logger.level = Logger::DEBUG
+    Savon.config.logger.level = Logger::DEBUG
     HTTPI.logger.level = Logger::DEBUG
   end
 

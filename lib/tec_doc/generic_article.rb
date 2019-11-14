@@ -2,9 +2,9 @@ module TecDoc
   class GenericArticle
     attr_accessor :id, :name
     attr_accessor :scope
-    
+
     # getGenericArticlesByManufacturer5()
-    
+
     # Get generic articles
     #
     # @option options [Integer] :assembly_group_node_id (optional)
@@ -20,13 +20,13 @@ module TecDoc
       options[:sort_mode] = 2
       options = {
         :lang => I18n.locale.to_s,
-        :country => TecDoc.client.country
+        :article_country => TecDoc.client.country
       }.merge(options)
-      TecDoc.client.request(:get_generic_articles_by_manufacturer6, options).map do |attributes|
+      TecDoc.client.request(:getGenericArticlesByManufacturer6, options).map do |attributes|
         new(attributes, options)
       end
     end
-    
+
     def initialize(attributes = {}, scope = {})
       @id    = (attributes[:id] || attributes[:generic_article_id]).to_i
       @name  = attributes[:article_norm_name]

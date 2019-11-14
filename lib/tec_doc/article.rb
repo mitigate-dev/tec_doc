@@ -6,7 +6,7 @@ module TecDoc
     attr_accessor :scope
 
     # Find article by all number types and brand number and generic article id.
-    # 
+    #
     # @option options [String] :article_number Article number will be converted within the search process to a simplified article number
     # @option options [Integer] :brand_no result of brand selection (optional)
     # @option options [String] :country country code according to ISO 3166
@@ -18,17 +18,17 @@ module TecDoc
     # @return [Array<TecDoc::Article>] list of articles
     def self.search(options = {})
       options = {
-        :country => TecDoc.client.country,
+        :article_country => TecDoc.client.country,
         :lang => I18n.locale.to_s,
         :number_type => 10,
         :search_exact => 1,
         :sort_type => 1
       }.merge(options)
-      TecDoc.client.request(:get_article_direct_search_all_numbers2, options).map do |attributes|
+      TecDoc.client.request(:getArticleDirectSearchAllNumbersWithState, options).map do |attributes|
         new(attributes, options)
       end
     end
-    
+
     # All articles by linked vehicle and brand number, generic article and assembly group
     #
     # @option options [String] :lang
@@ -39,17 +39,17 @@ module TecDoc
     # @option options [LongList] :generic_article_id
     # @option options [Long] :article_assembly_group_node_id
     # @return [Array<TecDoc::Article>] list of articles
-    def self.all(options)
+    def self.all(options) # Fix :generic_article_id option
       options = {
         :lang => I18n.locale.to_s,
-        :country => TecDoc.client.country
+        :article_country => TecDoc.client.country
       }.merge(options)
-      TecDoc.client.request(:get_article_ids3, options).map do |attributes|
+      TecDoc.client.request(:getArticleIdsWithState, options).map do |attributes|
         new(attributes, options)
       end
     end
-    
-        
+
+
     # All requested articles detail information
     #
     # @option options [String]  :lang
@@ -64,23 +64,24 @@ module TecDoc
     def self.all_with_details(options)
       options = {
         :lang => I18n.locale.to_s,
-        :country => TecDoc.client.country,
+        :article_country => TecDoc.client.country,
         :attributs => true,
         :ean_numbers => true,
         :info => true,
         :oe_numbers => true,
         :usage_numbers => true,
-        :article_id => { :array => { :ids => options.delete(:ids) } }
+        :basic_data => true,
+        :article_id => { :array => options.delete(:ids) }
       }.merge(options)
 
-      TecDoc.client.request(:get_direct_articles_by_ids2, options).map do |attributes|
+      TecDoc.client.request(:getDirectArticlesByIds6, options).map do |attributes|
         new(attributes, options)
       end
     end
 
     def initialize(attributes = {}, scope = {})
       article_data = (attributes[:direct_article] || attributes)
-      
+
       @id                 = article_data[:article_id].to_i
       @name               = article_data[:article_name].to_s
       @number             = article_data[:article_no].to_s
@@ -94,7 +95,7 @@ module TecDoc
 
       @ean_number   = attributes[:ean_number].to_a.map(&:values).flatten.first
       @trade_number = attributes[:usage_numbers].to_a.map(&:values).flatten.first
-      
+
       if attributes[:article_attributes]
         @attributes = attributes[:article_attributes].map do |attrs|
           ArticleAttribute.new(attrs)
@@ -107,11 +108,11 @@ module TecDoc
         end
       end
     end
-    
+
     def state
       @state ||= (article_details[:direct_article] || {})[:article_state_name]
     end
-    
+
     def packing_unit
       @packing_unit ||= (article_details[:direct_article] || {})[:packing_unit]
     end
@@ -128,8 +129,8 @@ module TecDoc
     def documents
       @documents ||= ArticleDocument.all({
         :lang => scope[:lang],
-        :country => scope[:country],
-        :article_id => id
+        :article_country => scope[:article_country],
+        :article_id => { :array => [id] }
       })
     end
 
@@ -138,7 +139,7 @@ module TecDoc
     end
 
     def attributes
-      @attributes ||= article_details[:article_attributes].map do |attrs|
+      @attributes ||= article_details[:article_attributes].to_a.map do |attrs|
         ArticleAttribute.new(attrs)
       end
     end
@@ -152,23 +153,23 @@ module TecDoc
         ArticleOENumber.new(attrs)
       end
     end
-    
+
     def trade_numbers
       @trade_numbers ||= article_details[:usage_numbers].map(&:values).flatten.join(", ")
     end
-    
+
     def information
       @information ||= direct_article_data_en[:article_info]
     end
-    
+
     def linked_manufacturers
       unless @linked_manufacturers
-        response = TecDoc.client.request(:get_article_linked_all_linking_target_manufacturer, {
-          :country => scope[:country],
-          :linking_target_type => "C",
+        response = TecDoc.client.request(:getArticleLinkedAllLinkingTargetManufacturer, {
+          :article_country => scope[:article_country],
+          :linking_target_type => "P",
           :article_id => id
         })
-        
+
         @linked_manufacturers = response.map do |attrs|
           VehicleManufacturer.new(attrs)
         end
@@ -182,62 +183,60 @@ module TecDoc
       unless @linked_targets
         options = {
           :lang => scope[:lang],
-          :country => scope[:country],
-          :linking_target_type => "C",
+          :article_country => scope[:article_country],
+          :linking_target_type => "P",
           :linking_target_id => -1,
           :article_id => id
         }
         begin
-          @linked_targets = TecDoc.client.request(:get_article_linked_all_linking_target_2, options)
+          @linked_targets = TecDoc.client.request(:getArticleLinkedAllLinkingTarget3, options)[0][:article_linkages].to_a
         rescue
           @linked_targets = linked_manufacturers.inject([]) do |result, manufacturer|
             options[:linking_target_manu_id] = manufacturer.id
-            result += TecDoc.client.request(:get_article_linked_all_linking_target_2, options)
+            result += TecDoc.client.request(:getArticleLinkedAllLinkingTarget3, options)
           end
         end
       end
       @linked_targets
     end
-    
+
     def linked_vehicle_ids
       @linked_vehicle_ids ||= linked_targets.map{ |attrs| attrs[:linking_target_id].to_i }.uniq
     end
-    
+
     def linked_vehicles(options = {})
       unless @linked_vehicles
         batch_list = linked_vehicle_ids.each_slice(25).to_a
-        
+
         # Response from all batches
         response = batch_list.inject([]) do |result, long_list|
-          result += TecDoc.client.request(:get_vehicle_by_ids_2,
-            {:car_ids => {
-              :array => {:ids => long_list}
+          result += TecDoc.client.request(:getVehicleByIds3, {
+            :car_ids => {
+              :array => long_list
             },
             :lang => scope[:lang],
-            :country => scope[:country],
-            :country_user_setting => scope[:country],
-            :countries_car_selection => scope[:country],
+            :country => scope[:article_country],
+            :article_country => scope[:article_country],
+            :countries_car_selection => scope[:article_country],
             :motor_codes => true,
             :axles => false,
             :cabs => false,
             :secondary_types => false,
-            :vehicle_details2 => true,
-            :vehicle_terms => false,
             :wheelbases => false
           })
           result
         end
-        
+
         @linked_vehicles = response.map do |attrs|
-          details = (attrs[:vehicle_details2] || {})
+          details = (attrs[:vehicle_details] || {})
           vehicle = Vehicle.new
           vehicle.id = attrs[:car_id].to_i
           vehicle.name = "#{details[:manu_name]} - #{details[:model_name]} - #{details[:type_name]}"
-          vehicle.power_hp_from             = details[:power_hp].to_i
-          vehicle.power_kw_from             = details[:power_kw].to_i
+          vehicle.power_hp_from             = details[:power_hp_from].to_i
+          vehicle.power_kw_from             = details[:power_kw_from].to_i
           vehicle.cylinder_capacity         = details[:cylinder_capacity_ccm].to_i
-          vehicle.date_of_construction_from = DateParser.new(details[:year_of_construction_from]).to_date
-          vehicle.date_of_construction_to   = DateParser.new(details[:year_of_construction_to]).to_date
+          vehicle.date_of_construction_from = DateParser.new(details[:year_of_constr_from]).to_date
+          vehicle.date_of_construction_to   = DateParser.new(details[:year_of_constr_to]).to_date
           vehicle.motor_codes               = attrs[:motor_codes].map { |mc| mc[:motor_code] }
           vehicle
         end
@@ -254,14 +253,14 @@ module TecDoc
           new_link
         end
         batch_list = links.each_slice(25).to_a
-        
+
         # Response from all batches
         response = batch_list.inject([]) do |result, long_list|
-          result += TecDoc.client.request(:get_article_linked_all_linking_targets_by_ids_2, {
-            :linked_article_pairs => { :array => {:pairs => long_list} },
+          result += TecDoc.client.request(:getArticleLinkedAllLinkingTargetsByIds3, {
+            :linked_article_pairs => { :array => long_list },
             :lang => scope[:lang],
-            :country => scope[:country],
-            :linking_target_type => "C",
+            :article_country => scope[:article_country],
+            :linking_target_type => "P",
             :immediate_attributs => true,
             :article_id => id
           })
@@ -293,24 +292,25 @@ module TecDoc
     private
 
     def article_details
-      @article_details ||= TecDoc.client.request(:get_direct_articles_by_ids2, {
+      @article_details ||= TecDoc.client.request(:getDirectArticlesByIds6, {
         :lang => scope[:lang],
-        :country => scope[:country],
-        :article_id => { :array => { :ids => [id] } },
+        :article_country => scope[:article_country],
+        :article_id => { :array => [id] },
         :attributs => true,
         :ean_numbers => true,
         :oe_numbers => true,
         :usage_numbers => true
       })[0]
     end
-    
+
     # Direct article to get all detail info
     def direct_article_data_en
-      @direct_article_data_en ||= TecDoc.client.request(:get_direct_articles_by_ids2, {
+      @direct_article_data_en ||= TecDoc.client.request(:getDirectArticlesByIds6, {
         :lang => "en",
-        :country => TecDoc.client.country,
+        :article_country => TecDoc.client.country,
         :info => true,
-        :article_id => { :array => { :ids => [id] } }
+        :basic_data => true,
+        :article_id => { :array => [id] }
       })[0]
     end
   end

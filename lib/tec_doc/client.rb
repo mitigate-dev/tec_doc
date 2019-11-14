@@ -15,7 +15,7 @@ module TecDoc
     def request(operation, options = {})
       log operation, options do
         response = connection.request(operation) do
-          soap.body = { :in => { :provider => provider }.merge(options) }
+          soap.body = { :provider => provider }.merge(options)
         end
         # Parse errors
         status_node = response.doc.xpath("//status").first
@@ -24,7 +24,7 @@ module TecDoc
           raise Error.new(status_text_node.text)
         end
         # Parse the document
-        response.doc.xpath("//data/array/array").map do |node|
+        response.doc.xpath("//data/array").map do |node|
           node_to_hash(node)
         end
         # response
@@ -33,11 +33,11 @@ module TecDoc
 
     def mode=(value)
       if value == :test
-        connection.wsdl.endpoint = "http://webservicepilot.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"
+        connection.wsdl.endpoint = "http://webservicepilot.tecdoc.net:80/pegasus-3-0/services/TecdocToCatDLB.soapEndpoint"
         connection.wsdl.namespace = connection.wsdl.endpoint
         @mode = :test
       else
-        connection.wsdl.endpoint = "http://webservice-cs.tecdoc.net/pegasus-2-0/services/TecdocToCatWL"
+        connection.wsdl.endpoint = "https://webservice.tecalliance.services/pegasus-3-0/services/TecdocToCatDLB.soapEndpoint"
         connection.wsdl.namespace = connection.wsdl.endpoint
         @mode = :live
       end
@@ -68,7 +68,7 @@ module TecDoc
       node.children.each do |n|
         if n.xpath("empty").text == "true"
           attributes[n.name.snakecase.to_sym] = []
-        elsif (n_array = n.xpath("array/array")).size > 0
+        elsif (n_array = n.xpath("array")).size > 0
           attributes[n.name.snakecase.to_sym] = n_array.map { |nn| node_to_hash(nn) }
         elsif n.children.reject { |nn| nn.is_a?(Nokogiri::XML::Text) }.size > 0
           attributes[n.name.snakecase.to_sym] = node_to_hash(n)

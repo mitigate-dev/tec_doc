@@ -34,23 +34,44 @@ module TecDoc
     # @return [Array<TecDoc::VehicleManufacturer>] list of vehicles with motor codes
     def self.all(options = {})
       options = {
-        :car_type => 1,
+        :car_type => "P",
         :countries_car_selection => TecDoc.client.country,
         :country_group_flag => false,
         :favoured_list => 1,
-        :lang => I18n.locale.to_s,
-        :linked => false
+        :lang => I18n.locale.to_s
       }.merge(options)
-      response = TecDoc.client.request(:get_vehicle_simplified_selection4, options)
+
+      vehicle_id_batches = \
+        TecDoc.client.request(:getVehicleIdsByCriteria, options)
+          .map { |car| car[:car_id] }.each_slice(25).to_a
+
+      response = vehicle_id_batches.inject([]) do |result, vehicle_ids|
+        result += TecDoc.client.request(:getVehicleByIds3, {
+          :car_ids => {
+            :array => vehicle_ids
+          },
+          :lang => I18n.locale.to_s,
+          :country => TecDoc.client.country,
+          :article_country => TecDoc.client.country,
+          :countries_car_selection => TecDoc.client.country,
+          :motor_codes => true,
+          :axles => false,
+          :cabs => false,
+          :secondary_types => false,
+          :wheelbases => false
+        })
+        result
+      end
+
       response.map do |attributes|
         vehicle = new
-        car_attributes = attributes[:car_details]
+        car_attributes = attributes[:vehicle_details]
         if car_attributes
           vehicle.manu_id                   = options[:manu_id].to_i
           vehicle.mod_id                    = options[:mod_id].to_i
           vehicle.id                        = car_attributes[:car_id].to_i
-          vehicle.name                      = car_attributes[:car_name].to_s
-          vehicle.cylinder_capacity         = car_attributes[:cylinder_capacity].to_i
+          vehicle.name                      = car_attributes[:type_name].to_s
+          vehicle.cylinder_capacity         = car_attributes[:cylinder_capacity_ccm].to_i
           vehicle.first_country             = car_attributes[:first_country].to_s
           vehicle.linked                    = car_attributes[:linked]
           vehicle.power_hp_from             = car_attributes[:power_hp_from].to_i
@@ -60,18 +81,19 @@ module TecDoc
           vehicle.date_of_construction_from = DateParser.new(car_attributes[:year_of_constr_from]).to_date
           vehicle.date_of_construction_to   = DateParser.new(car_attributes[:year_of_constr_to]).to_date
         end
-        vehicle.motor_codes = attributes[:motor_codes].map { |mc| mc[:motor_code] }
+         vehicle.motor_codes = attributes[:motor_codes].to_a.map { |mc| mc[:motor_code] }
         vehicle
       end
     end
-    
+
     def self.find(options = {})
       id = options.delete(:id)
       options = {
-        :car_ids => { :array => { :ids => [id] } },
+        :car_ids => { :array => [id] },
         :countries_car_selection => TecDoc.client.country,
         :country_user_setting => TecDoc.client.country,
         :country => TecDoc.client.country,
+        :article_country => TecDoc.client.country,
         :lang => TecDoc.client.country,
         :axles => false,
         :cabs => false,
@@ -80,14 +102,14 @@ module TecDoc
         :vehicle_details_2 => false,
         :vehicle_terms => true
       }.merge(options)
-      response = TecDoc.client.request(:get_vehicle_by_ids_2, options)
+      response = TecDoc.client.request(:getVehicleByIds3, options)
       if attrs = response.first
         details   = attrs[:vehicle_details]  || {}
         details2  = attrs[:vehicle_details2] || {}
         terms     = attrs[:vehicle_terms]    || {}
         vehicle  = new
         vehicle.id                        = attrs[:car_id].to_i
-        vehicle.name                      = terms[:car_type].to_s
+        vehicle.name                      = details[:type_name].to_s
         vehicle.cylinder_capacity         = details[:ccm_tech].to_i
         vehicle.fuel_type                 = details2[:fuel_type].to_s
         vehicle.fuel_type_process         = details2[:fuel_type_process].to_s
@@ -99,7 +121,7 @@ module TecDoc
         vehicle.date_of_construction_to   = DateParser.new(details[:year_of_constr_to]).to_date
         vehicle.manu_id                   = details[:manu_id].to_i
         vehicle.mod_id                    = details[:mod_id].to_i
-        vehicle.motor_codes = attrs[:motor_codes].map { |mc| mc[:motor_code] }
+        vehicle.motor_codes = attrs[:motor_codes].to_a.map { |mc| mc[:motor_code] }
         vehicle
       else
         nil
@@ -113,12 +135,14 @@ module TecDoc
     def attributes=(attrs)
       @attributes = attrs.map{ |attr| ArticleAttribute.new(attr) }
     end
-    
+
     # Vehicle linked assembly parent groups
     def assembly_groups(options = {})
       options.merge!({
-        :linking_target_type => "C",
+        :linking_target_type => "P",
         :linking_target_id => id,
+        :linked => true,
+        :article_country => TecDoc.client.country
       })
       AssemblyGroup.all(options)
     end

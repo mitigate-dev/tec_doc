@@ -4,7 +4,7 @@ module TecDoc
     attr_writer :children
 
     attr_accessor :scope
-    
+
     def initialize(attributes={})
       @id = attributes[:assembly_group_node_id].to_i
       @name = attributes[:assembly_group_name].to_s
@@ -16,7 +16,7 @@ module TecDoc
     end
 
     # Find vehicle, axle, motor or universal assembly groups for the search tree
-    # 
+    #
     # @option options [TrueClass, FalseClass] :child_nodes include child nodes
     # @option options [String] :lang language code according to ISO 639
     # @option options [String] :linking_target_type linking target (C: Vehicle type, M: Motor, A: Axle, K: Body Type, U: Universal)
@@ -26,19 +26,14 @@ module TecDoc
       options = {
         :lang => I18n.locale.to_s
       }.merge(options)
-      
-      if options[:linking_target_id]
-        options[:country] ||= TecDoc.client.country
-        response = TecDoc.client.request(:get_linked_child_nodes_all_linking_target, options)
-      else
-        response = TecDoc.client.request(:get_child_nodes_all_linking_target2, options)
-      end
-      
+
+      response = TecDoc.client.request(:getChildNodesAllLinkingTarget2, options)
+
       groups = response.map do |attributes|
         attributes[:scope] = options
         new(attributes)
       end
-      
+
       if options[:child_nodes]
         group_ids_map = {}
         groups.each do |group|
@@ -51,7 +46,7 @@ module TecDoc
           end
         end
       end
-      
+
       groups
     end
 
